@@ -1,0 +1,82 @@
+IF NOT EXISTS (
+    SELECT 1 
+    FROM sys.databases 
+    WHERE name = 'controleEstoqueDB'
+)
+BEGIN
+    CREATE DATABASE controleEstoqueDB;
+END;
+
+USE controleEstoqueDB
+
+IF NOT EXISTS (
+    SELECT 1 
+    FROM INFORMATION_SCHEMA.TABLES 
+    WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'cadFornecedor'
+)
+BEGIN
+    CREATE TABLE cadFornecedor
+    (
+        cdFornecedor INT PRIMARY KEY IDENTITY(1,1),
+        nmFornecedor VARCHAR(MAX),
+        dtCriacao DATETIME,
+        ativo BIT
+    );
+END;
+
+IF NOT EXISTS (
+    SELECT 1 
+    FROM INFORMATION_SCHEMA.TABLES 
+    WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'cadProduto'
+)
+BEGIN
+    CREATE TABLE cadProduto
+	(
+		cdProduto INT PRIMARY KEY IDENTITY(1,1),
+		nmProduto NVARCHAR(max),
+		dsProduto NVARCHAR(max),
+		valorCompra DECIMAL(18,2),
+		valorVenda DECIMAL(18,2),
+		dtCriacao DATETIME,
+		quantidade INT,
+		tamanho VARCHAR(50),
+		cdFornecedor INT NOT NULL
+		CONSTRAINT FK_cadProduto_cadFornecedor FOREIGN KEY (cdFornecedor)
+		REFERENCES cadFornecedor(cdFornecedor)
+	)
+END;
+
+IF NOT EXISTS (
+    SELECT 1 
+    FROM INFORMATION_SCHEMA.TABLES 
+    WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'cadVenda'
+)
+BEGIN
+    CREATE TABLE cadVenda
+	(
+		cdVenda INT PRIMARY KEY IDENTITY(1,1),
+		nmComprador NVARCHAR(256),
+		dtVenda DATETIME,
+		valorVenda DECIMAL(18,2),
+		valorLucro DECIMAL(18,2)
+	)
+END;
+
+IF NOT EXISTS (
+    SELECT 1 
+    FROM INFORMATION_SCHEMA.TABLES 
+    WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'cadVenda_produto'
+)
+BEGIN
+	CREATE TABLE cadVenda_produto
+	(
+		cdVendaProduto INT PRIMARY KEY IDENTITY(1,1),
+		cdVenda INT NOT NULL,
+		cdProduto INT NOT NULL,
+		CONSTRAINT FK_cadVenda_produto_cadVenda FOREIGN KEY (cdVenda)
+		REFERENCES cadVenda(cdVenda),
+		CONSTRAINT FK_cadVenda_produto_cadProduto FOREIGN KEY (cdProduto)
+		REFERENCES cadProduto(cdProduto)
+	);
+END;
+
