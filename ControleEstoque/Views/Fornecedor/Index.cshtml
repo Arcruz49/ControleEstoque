@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Fornecedores</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/datatable.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="container mt-4">
+        <h2 style="margin-bottom:30px">Fornecedores</h2>
+        <table id="fornecedorTable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Data de Criação</th>
+                    <th>Status</th>
+                    <th><i class="fa-solid fa-plus" title="Adicionar fornecedor" onclick="adicionarFornecedor()"></i></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <div class="modal fade" id="adicionarFornecedorModal" tabindex="-1" aria-labelledby="adicionarFornecedorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adicionarFornecedorModalLabel">Adicionar Fornecedor</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="adicionarFornecedorForm" action="your_action_url_here" method="post">
+                        <div class="mb-3">
+                            <label for="nomeFornecedor" class="form-label">Nome do Fornecedor</label>
+                            <input type="text" class="form-control" id="nomeFornecedor" name="NmFornecedor" required="required" placeholder="">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="statusFornecedor" class="form-label">Status</label>
+                            <select class="form-select" id="statusFornecedor" name="Ativo">
+                                <option value="true">Ativo</option>
+                                <option value="false">Inativo</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-secondary" onclick="fecharModal()" data-bs-dismiss="modal">Fechar</button>
+
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </form>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/jqueryDatatable.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#fornecedorTable').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: {
+                    url: '@Url.Action("List", "Fornecedor")',
+                    type: 'GET',
+                },
+                columns: [
+                    { data: 'id' },
+                    { data: 'nome' },
+                    { data: 'dataCriacao' },
+                    { data: 'status' },
+                    {
+                        data: 'id',
+                        render: function (data, type, row) {
+                            return '<a href="/Fornecedor/Edit/' + data + '" class=""><i title="Editar fornecedor" class="fa-solid fa-pen-to-square" style="color: #2d3034;"></i></a>';
+                        }
+                    }
+                ],
+                pagingType: "full_numbers",
+                stateSave: true,  
+                language: {
+                    search: "Pesquisar:",
+                    lengthMenu: "Mostrar _MENU_",
+                    info: "Mostrando _START_ a _END_ de _TOTAL_",
+                    paginate: {
+                        first: "Primeiro",
+                        last: "Último",
+                        next: "Próximo",
+                        previous: "Anterior"
+                    }
+                }
+            });
+        });
+
+        function adicionarFornecedor() {
+            $('#adicionarFornecedorModal').modal('show');
+
+        }
+
+        function fecharModal() {
+            $('#adicionarFornecedorModal').modal('hide');
+
+        }
+
+        $('#adicionarFornecedorForm').on('submit', function (e) {
+            e.preventDefault(); 
+
+            var formData = $(this).serialize();
+
+            $.ajax({
+                url: '@Url.Action("Create", "Fornecedor")', 
+                type: 'POST',
+                data: formData, 
+                success: function (response) {
+                    if (response.success) {
+                        alert(response.message);
+                        $('#adicionarFornecedorForm')[0].reset();
+                    } else {
+                        alert(response.message);
+                    }
+                },
+                error: function () {
+                    alert("Erro ao enviar os dados.");
+                }
+            });
+        });
+    </script>
+
+
+</body>
+</html>
