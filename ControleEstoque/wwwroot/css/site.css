@@ -28,3 +28,6 @@ body {
 #fornecedorTable th, #fornecedorTable td {
     text-align: center;
 }
+#ProdutoTable th, #ProdutoTable td {
+    text-align: center;
+}

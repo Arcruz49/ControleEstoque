@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fYj6adcD9Mlgzw/5HM7pSTM7dQbaHVfHCrXuYVubaVY=",
+  "Hash": "G3FyHtEcOYJAOqxbB94lBq008dEkKTHm8rGDrZc/wkY=",
   "Source": "ControleEstoque",
   "BasePath": "_content/ControleEstoque",
   "Mode": "Default",
@@ -131,6 +131,25 @@
       "OriginalItemSpec": "wwwroot\\js\\jqueryDatatable.js"
     },
     {
+      "Identity": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\js\\mask.js",
+      "SourceId": "ControleEstoque",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\",
+      "BasePath": "_content/ControleEstoque",
+      "RelativePath": "js/mask.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\mask.js"
+    },
+    {
       "Identity": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\js\\site.js",
       "SourceId": "ControleEstoque",
       "SourceType": "Discovered",
@@ -148,6 +167,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\js\\sweetAlert.js",
+      "SourceId": "ControleEstoque",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\",
+      "BasePath": "_content/ControleEstoque",
+      "RelativePath": "js/sweetAlert.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\sweetAlert.js"
     },
     {
       "Identity": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

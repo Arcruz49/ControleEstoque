@@ -34,7 +34,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="adicionarFornecedorModalLabel">Adicionar Fornecedor</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    <button type="button" onclick="fecharModalAdicionar()" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                 </div>
                 <div class="modal-body">
                     <form id="adicionarFornecedorForm" action="your_action_url_here" method="post">
@@ -50,11 +50,41 @@
                                 <option value="false">Inativo</option>
                             </select>
                         </div>
-                        <button type="button" class="btn btn-secondary" onclick="fecharModal()" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-secondary" onclick="fecharModalAdicionar()" data-bs-dismiss="modal">Fechar</button>
 
                         <button type="submit" class="btn btn-primary">Salvar</button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="modal fade" id="editarFornecedorModal" tabindex="-1" aria-labelledby="editarFornecedorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editarFornecedorModalLabel">Adicionar Fornecedor</h5>
+                    <button type="button" onclick="fecharModalEditar()" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editarFornecedorForm" action="your_action_url_here" method="post">
+                        <input type="hidden" id="idFornecedorEdit" name="CdFornecedor" />
+                        <div class="mb-3">
+                            <label for="nomeFornecedor" class="form-label">Nome do Fornecedor</label>
+                            <input type="text" class="form-control" id="nomeFornecedorEdit" name="NmFornecedor" required="required" placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="statusFornecedor" class="form-label">Status</label>
+                            <select class="form-select" id="statusFornecedorEdit" name="Ativo">
+                                <option value="true">Ativo</option>
+                                <option value="false">Inativo</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-secondary" onclick="fecharModalEditar()" data-bs-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </form>
+
+                </div>
             </div>
         </div>
     </div>
@@ -64,8 +94,9 @@
     <script src="~/js/jqueryDatatable.js"></script>
 
     <script>
+        let table;
         $(document).ready(function () {
-            $('#fornecedorTable').DataTable({
+            table = $('#fornecedorTable').DataTable({
                 processing: true,
                 serverSide: true,
                 ajax: {
@@ -79,13 +110,13 @@
                     { data: 'status' },
                     {
                         data: 'id',
-                        render: function (data, type, row) {
-                            return '<a href="/Fornecedor/Edit/' + data + '" class=""><i title="Editar fornecedor" class="fa-solid fa-pen-to-square" style="color: #2d3034;"></i></a>';
+                        render: function (data) {
+                            return '<a onclick="editarFornecedor('+ data +')" class=""><i title="Editar fornecedor" class="fa-solid fa-pen-to-square" style="color: #2d3034;"></i></a>';
                         }
                     }
                 ],
                 pagingType: "full_numbers",
-                stateSave: true,  
+                stateSave: true,
                 language: {
                     search: "Pesquisar:",
                     lengthMenu: "Mostrar _MENU_",
@@ -100,13 +131,46 @@
             });
         });
 
+
         function adicionarFornecedor() {
             $('#adicionarFornecedorModal').modal('show');
+        }
+
+        function editarFornecedor(cd) {
+            $.ajax({
+                url: '@Url.Action("Edit", "Fornecedor")',
+                type: 'GET',
+                data: { cd: cd },
+                success: function (response) {
+                    if (response.success) {
+                        $('#idFornecedorEdit').val(response.cdFornecedor); 
+                        $('#nomeFornecedorEdit').val(response.nmFornecedor);
+
+                        $('#statusFornecedorEdit').val(response.status ? 'true' : 'false');
+
+                        $('#editarFornecedorModal').modal('show');
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Erro",
+                            text: response.message,
+                        });
+                    }
+                },
+                error: function () {
+                    alert("Erro ao enviar os dados.");
+                }
+            });
+        }
+
+
+        function fecharModalAdicionar() {
+            $('#adicionarFornecedorModal').modal('hide');
 
         }
 
-        function fecharModal() {
-            $('#adicionarFornecedorModal').modal('hide');
+        function fecharModalEditar() {
+            $('#editarFornecedorModal').modal('hide');
 
         }
 
@@ -116,15 +180,61 @@
             var formData = $(this).serialize();
 
             $.ajax({
-                url: '@Url.Action("Create", "Fornecedor")', 
+                url: '@Url.Action("Create", "Fornecedor")',
                 type: 'POST',
-                data: formData, 
+                data: formData,
                 success: function (response) {
                     if (response.success) {
-                        alert(response.message);
+                        Swal.fire({
+                            title: response.message,
+                            icon: "success",
+                        });
+
                         $('#adicionarFornecedorForm')[0].reset();
+                        $('#adicionarFornecedorModal').modal('hide');
+
+                        $('#fornecedorTable').DataTable().ajax.reload(null, false);
                     } else {
-                        alert(response.message);
+                        Swal.fire({
+                            icon: "error",
+                            title: "Erro",
+                            text: response.message,
+                        });
+                    }
+                },
+                error: function () {
+                    alert("Erro ao enviar os dados.");
+                }
+            });
+        });
+
+
+        $('#editarFornecedorForm').on('submit', function (e) {
+            e.preventDefault();
+
+            var formData = $(this).serialize();
+
+            $.ajax({
+                url: '@Url.Action("Edit", "Fornecedor")',
+                type: 'POST',
+                data: formData,
+                success: function (response) {
+                    if (response.success) {
+                        Swal.fire({
+                            title: response.message,
+                            icon: "success",
+                        });
+
+                        $('#editarFornecedorForm')[0].reset();
+                        $('#editarFornecedorModal').modal('hide');
+
+                        $('#fornecedorTable').DataTable().ajax.reload(null, false);
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Erro",
+                            text: response.message,
+                        });
                     }
                 },
                 error: function () {

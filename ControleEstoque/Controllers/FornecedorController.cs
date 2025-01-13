@@ -69,14 +69,79 @@ namespace ControleEstoque.Controllers
                 db.CadFornecedor.Add(fornecedor);
                 db.SaveChanges();
 
-                return Json(new { success = true, message = "Fornecedor adicionado com sucesso" });
+                return Json(new { success = true, message = "Fornecedor adicionado com sucesso." });
             }
-            catch(Exception ex)
+            catch(Exception ex) 
             {
                 return Json(new { success = false, message = ex.Message });
             }
         }
 
+        [HttpGet]
+        public JsonResult Edit(int cd = 0)
+        {
+            try
+            {
 
+                if(cd == 0) return Json(new { success = false, message = "Fornedecor não identificado." });
+
+                var fornecedor = db.CadFornecedor.Where(a => a.CdFornecedor == cd).FirstOrDefault();
+
+                if(fornecedor == null) return Json(new { success = false, message = "Fornedecor não identificado." });
+
+                return Json(new { success = true, nmFornecedor = fornecedor.NmFornecedor, cdFornecedor = fornecedor.CdFornecedor, status = fornecedor.Ativo });
+
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
+
+        [HttpPost]
+        public JsonResult Edit(CadFornecedor fornecedor)
+        {
+            try
+            {
+                if (fornecedor.CdFornecedor == 0)
+                    return Json(new { success = false, message = "Fornecedor não identificado." });
+
+                var fornecedorExistente = db.CadFornecedor.FirstOrDefault(a => a.CdFornecedor == fornecedor.CdFornecedor);
+
+                if (fornecedorExistente == null)
+                    return Json(new { success = false, message = "Fornecedor não encontrado." });
+
+                fornecedorExistente.NmFornecedor = fornecedor.NmFornecedor;
+                fornecedorExistente.Ativo = fornecedor.Ativo;
+                
+
+                db.SaveChanges();
+
+                return Json(new { success = true, message = "Fornecedor alterado."});
+
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+
+            }
+        }
+
+        [HttpGet]
+        public JsonResult GetFornecedoresAtivos()
+        {
+            try
+            {
+                var query = db.CadFornecedor
+                              .Where(a => a.Ativo == true)
+                              .Select(a => new { a.CdFornecedor, a.NmFornecedor }).ToList();
+
+                return Json(new { success = true, message = query });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
     }
 }

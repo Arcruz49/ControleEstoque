@@ -21,8 +21,16 @@
       "PackagePath": "staticwebassets\\js\\jqueryDatatable.js"
     },
     {
+      "Id": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\js\\mask.js",
+      "PackagePath": "staticwebassets\\js\\mask.js"
+    },
+    {
       "Id": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\js\\sweetAlert.js",
+      "PackagePath": "staticwebassets\\js\\sweetAlert.js"
     },
     {
       "Id": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\lib\\bootstrap\\LICENSE",
