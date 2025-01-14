@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .icon{
@@ -30,4 +30,19 @@ body {
 }
 #ProdutoTable th, #ProdutoTable td {
     text-align: center;
+}
+
+#clienteTable th, #clienteTable td {
+    text-align: center;
+}
+
+.mainContainer {
+    background-color: #fff;
+    margin-right: 60px;
+    margin-left: 130px;
+    margin-top: 30px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
 }

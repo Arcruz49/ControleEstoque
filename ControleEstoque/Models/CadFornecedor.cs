@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 namespace ControleEstoque.Models;
 
-public partial class CadFornecedor
+public partial class cadFornecedor
 {
-    public int CdFornecedor { get; set; }
+    public int cdFornecedor { get; set; }
 
-    public string? NmFornecedor { get; set; }
+    public string? nmFornecedor { get; set; }
 
-    public DateTime? DtCriacao { get; set; }
+    public DateTime? dtCriacao { get; set; }
 
-    public bool? Ativo { get; set; }
+    public bool? ativo { get; set; }
 
-    public virtual ICollection<CadProduto> CadProdutos { get; set; } = new List<CadProduto>();
+    public virtual ICollection<cadProduto> cadProdutos { get; set; } = new List<cadProduto>();
 }

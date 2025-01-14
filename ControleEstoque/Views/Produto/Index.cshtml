@@ -25,7 +25,6 @@
                     <th>Tamanho</th>
                     <th>Fornecedor</th>
 
-
                     <th><i class="fa-solid fa-plus" title="Adicionar Produto" onclick="adicionarProduto()"></i></th>
                 </tr>
             </thead>
@@ -33,7 +32,6 @@
             </tbody>
         </table>
     </div>
-
 
     <div class="modal fade" id="adicionarProdutoModal" tabindex="-1" aria-labelledby="adicionarProdutoModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -94,8 +92,6 @@
         </div>
     </div>
 
-
-
     <div class="modal fade" id="editarProdutoModal" tabindex="-1" aria-labelledby="editarProdutoModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -105,7 +101,7 @@
                 </div>
                 <div class="modal-body">
                     <form id="editarProdutoForm" action="your_action_url_here" method="post">
-                        <input type="hidden" id="cdProdutoEdit" name="CdProduto" />
+                        <input type="hidden" id="cdProdutoEdit" name="cdProduto" />
                         <div class="mb-3">
                             <label for="nmProduto" class="form-label">Nome do Produto</label>
                             <input type="text" class="form-control" id="nmProdutoEditar" name="nmProduto" required="required" placeholder="">
@@ -155,10 +151,6 @@
         </div>
     </div>
 
-
-
-
-
     <script src="~/js/jquery.js"></script>
     <script src="~/js/jqueryDatatable.js"></script>
     <script src="~/js/mask.js"></script>
@@ -177,14 +169,15 @@
                     { data: 'id' },
                     { data: 'nome' },
                     { data: 'descricao' },
+                    
                     {
-                        data: 'valorVenda',
+                        data: 'valorCompra',
                         render: function (data) {
                             return 'R$ ' + parseFloat(data).toFixed(2).replace('.', ',');
                         }
                     },
                     {
-                        data: 'valorCompra',
+                        data: 'valorVenda',
                         render: function (data) {
                             return 'R$ ' + parseFloat(data).toFixed(2).replace('.', ',');
                         }
@@ -247,7 +240,6 @@
                 $(this).val(moneyMask(value));
             });
 
-
             $.ajax({
                 url: '@Url.Action("GetFornecedoresAtivos", "Fornecedor")',
                 type: 'GET',
@@ -271,7 +263,6 @@
                     alert('Erro ao buscar fornecedores: ' + error);
                 }
             });
-
 
             $.ajax({
                 url: '@Url.Action("GetFornecedoresAtivos", "Fornecedor")',
@@ -309,8 +300,6 @@
         function fecharModalEditar() {
             $('#editarProdutoModal').modal('hide');
         }
-
-
 
         $('#adicionarProdutoForm').on('submit', function (e) {
             e.preventDefault();
@@ -374,7 +363,6 @@
                 cdFornecedor: fornecedor
             };
 
-
             $.ajax({
                 url: '@Url.Action("Edit", "Produto")',
                 type: 'POST',
@@ -403,8 +391,6 @@
                 }
             });
         });
-
-
 
         function editarProduto(cdProduto) {
             $.ajax({
@@ -438,12 +424,7 @@
             });
         }
 
-
-
     </script>
-
-
-
 
 </body>
 </html>

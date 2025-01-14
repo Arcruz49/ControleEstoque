@@ -49,18 +49,40 @@ END;
 IF NOT EXISTS (
     SELECT 1 
     FROM INFORMATION_SCHEMA.TABLES 
+    WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'cadCliente'
+)
+BEGIN
+	CREATE TABLE cadCliente
+	(
+		cdCliente INT PRIMARY KEY IDENTITY(1,1),
+		nmCliente nvarchar(256),
+		numeroCelular nvarchar(256),
+		cidade nvarchar(256),
+		bairro nvarchar(256),
+		rua nvarchar(256),
+		numero nvarchar(256),
+		complemento nvarchar(256),
+	);
+END;
+
+IF NOT EXISTS (
+    SELECT 1 
+    FROM INFORMATION_SCHEMA.TABLES 
     WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'cadVenda'
 )
 BEGIN
     CREATE TABLE cadVenda
 	(
 		cdVenda INT PRIMARY KEY IDENTITY(1,1),
-		nmComprador NVARCHAR(256),
+		cdCliente INT, 
 		dtVenda DATETIME,
 		valorVenda DECIMAL(18,2),
-		valorLucro DECIMAL(18,2)
-	)
+		valorLucro DECIMAL(18,2),
+		CONSTRAINT FK_cadVenda_cadCliente FOREIGN KEY (cdCliente) REFERENCES cadCliente(cdCliente)
+	);
 END;
+
+
 
 IF NOT EXISTS (
     SELECT 1 

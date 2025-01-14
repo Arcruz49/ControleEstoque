@@ -3,27 +3,27 @@ using System.Collections.Generic;
 
 namespace ControleEstoque.Models;
 
-public partial class CadProduto
+public partial class cadProduto
 {
-    public int CdProduto { get; set; }
+    public int cdProduto { get; set; }
 
-    public string? NmProduto { get; set; }
+    public string? nmProduto { get; set; }
 
-    public string? DsProduto { get; set; }
+    public string? dsProduto { get; set; }
 
-    public decimal? ValorCompra { get; set; }
+    public decimal? valorCompra { get; set; }
 
-    public decimal? ValorVenda { get; set; }
+    public decimal? valorVenda { get; set; }
 
-    public DateTime? DtCriacao { get; set; }
+    public DateTime? dtCriacao { get; set; }
 
-    public int? Quantidade { get; set; }
+    public int? quantidade { get; set; }
 
-    public string? Tamanho { get; set; }
+    public string? tamanho { get; set; }
 
-    public int CdFornecedor { get; set; }
+    public int cdFornecedor { get; set; }
 
-    public virtual ICollection<CadVendaProduto> CadVendaProdutos { get; set; } = new List<CadVendaProduto>();
+    public virtual ICollection<cadVenda_produto> cadVenda_produtos { get; set; } = new List<cadVenda_produto>();
 
-    public virtual CadFornecedor CdFornecedorNavigation { get; set; } = null!;
+    public virtual cadFornecedor cdFornecedorNavigation { get; set; } = null!;
 }

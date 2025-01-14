@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 namespace ControleEstoque.Models;
 
-public partial class CadVendaProduto
+public partial class cadVenda_produto
 {
-    public int CdVendaProduto { get; set; }
+    public int cdVendaProduto { get; set; }
 
-    public int CdVenda { get; set; }
+    public int cdVenda { get; set; }
 
     public int cdProduto { get; set; }
 
     public virtual cadProduto cdProdutoNavigation { get; set; } = null!;
 
-    public virtual CadVenda CdVendaNavigation { get; set; } = null!;
+    public virtual cadVendum cdVendaNavigation { get; set; } = null!;
 }

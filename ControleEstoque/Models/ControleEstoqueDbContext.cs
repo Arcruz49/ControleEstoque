@@ -4,24 +4,26 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ControleEstoque.Models;
 
-public partial class ControleEstoqueDbContext : DbContext
+public partial class controleEstoqueDBContext : DbContext
 {
-    public ControleEstoqueDbContext()
+    public controleEstoqueDBContext()
     {
     }
 
-    public ControleEstoqueDbContext(DbContextOptions<ControleEstoqueDbContext> options)
+    public controleEstoqueDBContext(DbContextOptions<controleEstoqueDBContext> options)
         : base(options)
     {
     }
 
-    public virtual DbSet<CadFornecedor> CadFornecedor { get; set; }
+    public virtual DbSet<cadCliente> cadCliente { get; set; }
 
-    public virtual DbSet<CadProduto> CadProduto { get; set; }
+    public virtual DbSet<cadFornecedor> cadFornecedor { get; set; }
 
-    public virtual DbSet<CadVendaProduto> CadVendaProduto { get; set; }
+    public virtual DbSet<cadProduto> cadProduto { get; set; }
 
-    public virtual DbSet<CadVenda> CadVenda { get; set; }
+    public virtual DbSet<cadVenda_produto> cadVenda_produto { get; set; }
+
+    public virtual DbSet<cadVendum> cadVenda { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -29,93 +31,78 @@ public partial class ControleEstoqueDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<CadFornecedor>(entity =>
+        modelBuilder.Entity<cadCliente>(entity =>
         {
-            entity.HasKey(e => e.CdFornecedor).HasName("PK__cadForne__CE234A90F913AF44");
+            entity.HasKey(e => e.cdCliente).HasName("PK__cadClien__64864EC6D6438B7E");
+
+            entity.ToTable("cadCliente");
+
+            entity.Property(e => e.bairro).HasMaxLength(256);
+            entity.Property(e => e.cidade).HasMaxLength(256);
+            entity.Property(e => e.complemento).HasMaxLength(256);
+            entity.Property(e => e.nmCliente).HasMaxLength(256);
+            entity.Property(e => e.numero).HasMaxLength(256);
+            entity.Property(e => e.numeroCelular).HasMaxLength(256);
+            entity.Property(e => e.rua).HasMaxLength(256);
+        });
+
+        modelBuilder.Entity<cadFornecedor>(entity =>
+        {
+            entity.HasKey(e => e.cdFornecedor).HasName("PK__cadForne__CE234A905CB5DF87");
 
             entity.ToTable("cadFornecedor");
 
-            entity.Property(e => e.CdFornecedor).HasColumnName("cdFornecedor");
-            entity.Property(e => e.Ativo).HasColumnName("ativo");
-            entity.Property(e => e.DtCriacao)
-                .HasColumnType("datetime")
-                .HasColumnName("dtCriacao");
-            entity.Property(e => e.NmFornecedor)
-                .IsUnicode(false)
-                .HasColumnName("nmFornecedor");
+            entity.Property(e => e.dtCriacao).HasColumnType("datetime");
+            entity.Property(e => e.nmFornecedor).IsUnicode(false);
         });
 
-        modelBuilder.Entity<CadProduto>(entity =>
+        modelBuilder.Entity<cadProduto>(entity =>
         {
-            entity.HasKey(e => e.CdProduto).HasName("PK__cadProdu__8897B7734FD124D5");
+            entity.HasKey(e => e.cdProduto).HasName("PK__cadProdu__8897B7732E40DFE5");
 
             entity.ToTable("cadProduto");
 
-            entity.Property(e => e.CdProduto).HasColumnName("cdProduto");
-            entity.Property(e => e.CdFornecedor).HasColumnName("cdFornecedor");
-            entity.Property(e => e.DsProduto).HasColumnName("dsProduto");
-            entity.Property(e => e.DtCriacao)
-                .HasColumnType("datetime")
-                .HasColumnName("dtCriacao");
-            entity.Property(e => e.NmProduto).HasColumnName("nmProduto");
-            entity.Property(e => e.Quantidade).HasColumnName("quantidade");
-            entity.Property(e => e.Tamanho)
+            entity.Property(e => e.dtCriacao).HasColumnType("datetime");
+            entity.Property(e => e.tamanho)
                 .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("tamanho");
-            entity.Property(e => e.ValorCompra)
-                .HasColumnType("decimal(18, 2)")
-                .HasColumnName("valorCompra");
-            entity.Property(e => e.ValorVenda)
-                .HasColumnType("decimal(18, 2)")
-                .HasColumnName("valorVenda");
+                .IsUnicode(false);
+            entity.Property(e => e.valorCompra).HasColumnType("decimal(18, 2)");
+            entity.Property(e => e.valorVenda).HasColumnType("decimal(18, 2)");
 
-            entity.HasOne(d => d.CdFornecedorNavigation).WithMany(p => p.CadProdutos)
-                .HasForeignKey(d => d.CdFornecedor)
+            entity.HasOne(d => d.cdFornecedorNavigation).WithMany(p => p.cadProdutos)
+                .HasForeignKey(d => d.cdFornecedor)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_cadProduto_cadFornecedor");
         });
 
-        modelBuilder.Entity<CadVendaProduto>(entity =>
+        modelBuilder.Entity<cadVenda_produto>(entity =>
         {
-            entity.HasKey(e => e.CdVendaProduto).HasName("PK__cadVenda__CB73D0B5A689E3CD");
+            entity.HasKey(e => e.cdVendaProduto).HasName("PK__cadVenda__CB73D0B56C79A717");
 
             entity.ToTable("cadVenda_produto");
 
-            entity.Property(e => e.CdVendaProduto).HasColumnName("cdVendaProduto");
-            entity.Property(e => e.CdProduto).HasColumnName("cdProduto");
-            entity.Property(e => e.CdVenda).HasColumnName("cdVenda");
-
-            entity.HasOne(d => d.CdProdutoNavigation).WithMany(p => p.CadVendaProdutos)
-                .HasForeignKey(d => d.CdProduto)
+            entity.HasOne(d => d.cdProdutoNavigation).WithMany(p => p.cadVenda_produtos)
+                .HasForeignKey(d => d.cdProduto)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_cadVenda_produto_cadProduto");
 
-            entity.HasOne(d => d.CdVendaNavigation).WithMany(p => p.CadVendaProdutos)
-                .HasForeignKey(d => d.CdVenda)
+            entity.HasOne(d => d.cdVendaNavigation).WithMany(p => p.cadVenda_produtos)
+                .HasForeignKey(d => d.cdVenda)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_cadVenda_produto_cadVenda");
         });
 
-        modelBuilder.Entity<CadVenda>(entity =>
+        modelBuilder.Entity<cadVendum>(entity =>
         {
-            entity.HasKey(e => e.CdVenda).HasName("PK__cadVenda__CD0A7B10A757AFCA");
+            entity.HasKey(e => e.cdVenda).HasName("PK__cadVenda__CD0A7B10E7F13A06");
 
-            entity.ToTable("cadVenda");
+            entity.Property(e => e.dtVenda).HasColumnType("datetime");
+            entity.Property(e => e.valorLucro).HasColumnType("decimal(18, 2)");
+            entity.Property(e => e.valorVenda).HasColumnType("decimal(18, 2)");
 
-            entity.Property(e => e.CdVenda).HasColumnName("cdVenda");
-            entity.Property(e => e.DtVenda)
-                .HasColumnType("datetime")
-                .HasColumnName("dtVenda");
-            entity.Property(e => e.NmComprador)
-                .HasMaxLength(256)
-                .HasColumnName("nmComprador");
-            entity.Property(e => e.ValorLucro)
-                .HasColumnType("decimal(18, 2)")
-                .HasColumnName("valorLucro");
-            entity.Property(e => e.ValorVenda)
-                .HasColumnType("decimal(18, 2)")
-                .HasColumnName("valorVenda");
+            entity.HasOne(d => d.cdClienteNavigation).WithMany(p => p.cadVenda)
+                .HasForeignKey(d => d.cdCliente)
+                .HasConstraintName("FK_cadVenda_cadCliente");
         });
 
         OnModelCreatingPartial(modelBuilder);

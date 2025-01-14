@@ -6,9 +6,9 @@ namespace ControleEstoque.Controllers
 {
     public class FornecedorController : Controller
     {
-        private readonly ControleEstoqueDbContext db;
+        private readonly controleEstoqueDBContext db;
 
-        public FornecedorController(ControleEstoqueDbContext _db)
+        public FornecedorController(controleEstoqueDBContext _db)
         {
             db = _db;
         }
@@ -25,27 +25,27 @@ namespace ControleEstoque.Controllers
             var length = int.Parse(Request.Query["length"].FirstOrDefault() ?? "10");
             var searchValue = Request.Query["search[value]"].FirstOrDefault();
 
-            var totalRecords = db.CadFornecedor.Count();
+            var totalRecords = db.cadFornecedor.Count();
 
-            var query = db.CadFornecedor.AsQueryable();
+            var query = db.cadFornecedor.AsQueryable();
             if (!string.IsNullOrEmpty(searchValue))
             {
-                query = query.Where(f => f.NmFornecedor.Contains(searchValue));
+                query = query.Where(f => f.nmFornecedor.Contains(searchValue));
             }
 
             var filteredRecords = query.Count();
 
             
             var fornecedores = query
-                .OrderBy(f => f.CdFornecedor) 
+                .OrderBy(f => f.cdFornecedor) 
                 .Skip(start)
                 .Take(length)
                 .Select(f => new
                 {
-                    id = f.CdFornecedor,
-                    nome = f.NmFornecedor,
-                    dataCriacao = f.DtCriacao.HasValue ? f.DtCriacao.Value.ToString("dd/MM/yyyy") : null,
-                    status = f.Ativo.HasValue ? (f.Ativo.Value ? "Ativo" : "Inativo") : "Indefinido"
+                    id = f.cdFornecedor,
+                    nome = f.nmFornecedor,
+                    dataCriacao = f.dtCriacao.HasValue ? f.dtCriacao.Value.ToString("dd/MM/yyyy") : null,
+                    status = f.ativo.HasValue ? (f.ativo.Value ? "Ativo" : "Inativo") : "Indefinido"
                 })
                 .ToList();
 
@@ -59,14 +59,14 @@ namespace ControleEstoque.Controllers
         }
 
         [HttpPost]
-        public JsonResult Create(CadFornecedor fornecedor)
+        public JsonResult Create(cadFornecedor fornecedor)
         {
             try
             {
-                if(string.IsNullOrEmpty(fornecedor.NmFornecedor) || string.IsNullOrWhiteSpace(fornecedor.NmFornecedor)) return Json(new { success = false, message = "Nome Inválido" });
+                if(string.IsNullOrEmpty(fornecedor.nmFornecedor) || string.IsNullOrWhiteSpace(fornecedor.nmFornecedor)) return Json(new { success = false, message = "Nome Inválido" });
 
-                fornecedor.DtCriacao = DateTime.Now;
-                db.CadFornecedor.Add(fornecedor);
+                fornecedor.dtCriacao = DateTime.Now;
+                db.cadFornecedor.Add(fornecedor);
                 db.SaveChanges();
 
                 return Json(new { success = true, message = "Fornecedor adicionado com sucesso." });
@@ -85,11 +85,11 @@ namespace ControleEstoque.Controllers
 
                 if(cd == 0) return Json(new { success = false, message = "Fornedecor não identificado." });
 
-                var fornecedor = db.CadFornecedor.Where(a => a.CdFornecedor == cd).FirstOrDefault();
+                var fornecedor = db.cadFornecedor.Where(a => a.cdFornecedor == cd).FirstOrDefault();
 
                 if(fornecedor == null) return Json(new { success = false, message = "Fornedecor não identificado." });
 
-                return Json(new { success = true, nmFornecedor = fornecedor.NmFornecedor, cdFornecedor = fornecedor.CdFornecedor, status = fornecedor.Ativo });
+                return Json(new { success = true, nmFornecedor = fornecedor.nmFornecedor, cdFornecedor = fornecedor.cdFornecedor, status = fornecedor.ativo });
 
             }
             catch (Exception ex)
@@ -99,20 +99,20 @@ namespace ControleEstoque.Controllers
         }
 
         [HttpPost]
-        public JsonResult Edit(CadFornecedor fornecedor)
+        public JsonResult Edit(cadFornecedor fornecedor)
         {
             try
             {
-                if (fornecedor.CdFornecedor == 0)
+                if (fornecedor.cdFornecedor == 0)
                     return Json(new { success = false, message = "Fornecedor não identificado." });
 
-                var fornecedorExistente = db.CadFornecedor.FirstOrDefault(a => a.CdFornecedor == fornecedor.CdFornecedor);
+                var fornecedorExistente = db.cadFornecedor.FirstOrDefault(a => a.cdFornecedor == fornecedor.cdFornecedor);
 
                 if (fornecedorExistente == null)
                     return Json(new { success = false, message = "Fornecedor não encontrado." });
 
-                fornecedorExistente.NmFornecedor = fornecedor.NmFornecedor;
-                fornecedorExistente.Ativo = fornecedor.Ativo;
+                fornecedorExistente.nmFornecedor = fornecedor.nmFornecedor;
+                fornecedorExistente.ativo = fornecedor.ativo;
                 
 
                 db.SaveChanges();
@@ -132,9 +132,9 @@ namespace ControleEstoque.Controllers
         {
             try
             {
-                var query = db.CadFornecedor
-                              .Where(a => a.Ativo == true)
-                              .Select(a => new { a.CdFornecedor, a.NmFornecedor }).ToList();
+                var query = db.cadFornecedor
+                              .Where(a => a.ativo == true)
+                              .Select(a => new { a.cdFornecedor, a.nmFornecedor }).ToList();
 
                 return Json(new { success = true, message = query });
             }

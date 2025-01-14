@@ -5,10 +5,10 @@ namespace ControleEstoque.Controllers
 {
     public class ProdutoController : Controller
     {
-        private readonly ControleEstoqueDbContext db;
+        private readonly controleEstoqueDBContext db;
 
 
-        public ProdutoController(ControleEstoqueDbContext _db)
+        public ProdutoController(controleEstoqueDBContext _db)
         {
             db = _db;
         }
@@ -26,32 +26,32 @@ namespace ControleEstoque.Controllers
             var length = int.Parse(Request.Query["length"].FirstOrDefault() ?? "10");
             var searchValue = Request.Query["search[value]"].FirstOrDefault();
 
-            var totalRecords = db.CadFornecedor.Count();
+            var totalRecords = db.cadProduto.Count();
 
-            var query = db.CadProduto.AsQueryable();
+            var query = db.cadProduto.AsQueryable();
             if (!string.IsNullOrEmpty(searchValue))
             {
-                query = query.Where(f => f.NmProduto.Contains(searchValue));
+                query = query.Where(f => f.nmProduto.Contains(searchValue));
             }
 
             var filteredRecords = query.Count();
 
 
             var produtos = query
-                .OrderBy(f => f.CdProduto)
+                .OrderBy(f => f.cdProduto)
                 .Skip(start)
                 .Take(length)
                 .Select(f => new
                 {
-                    id = f.CdProduto,
-                    nome = f.NmProduto,
-                    descricao = f.DsProduto,
-                    valorCompra = f.ValorCompra,
-                    valorVenda = f.ValorVenda,
-                    dataCriacao = f.DtCriacao.HasValue ? f.DtCriacao.Value.ToString("dd/MM/yyyy") : null,
-                    quantidade = f.Quantidade,
-                    tamanho = f.Tamanho,
-                    fornecedor = f.CdFornecedorNavigation.NmFornecedor,
+                    id = f.cdProduto,
+                    nome = f.nmProduto,
+                    descricao = f.dsProduto,
+                    valorCompra = f.valorCompra,
+                    valorVenda = f.valorVenda,
+                    dataCriacao = f.dtCriacao.HasValue ? f.dtCriacao.Value.ToString("dd/MM/yyyy") : null,
+                    quantidade = f.quantidade,
+                    tamanho = f.tamanho,
+                    fornecedor = f.cdFornecedorNavigation.nmFornecedor,
                 })
                 .ToList();
 
@@ -66,22 +66,22 @@ namespace ControleEstoque.Controllers
 
 
         [HttpPost]
-        public JsonResult Create(CadProduto produto)
+        public JsonResult Create(cadProduto produto)
         {
             try
             {
                 #region validações
                 
-                if (string.IsNullOrEmpty(produto.NmProduto) || string.IsNullOrWhiteSpace(produto.NmProduto)) return Json(new { success = false, message = "Nome Inválido" });
-                if (string.IsNullOrEmpty(produto.Tamanho) || string.IsNullOrWhiteSpace(produto.Tamanho)) return Json(new { success = false, message = "Tamanho Inválido" });
-                if (produto.ValorCompra == null) return Json(new { success = false, message = "Valor de compra Inválido" });
-                if (produto.ValorVenda == null) return Json(new { success = false, message = "Valor de venda Inválido" });
-                if (produto.Quantidade == null) return Json(new { success = false, message = "Quantidade Inválida" });
-                if (produto.CdFornecedor == 0) return Json(new { success = false, message = "Fornecedor Inválido" });
+                if (string.IsNullOrEmpty(produto.nmProduto) || string.IsNullOrWhiteSpace(produto.nmProduto)) return Json(new { success = false, message = "Nome Inválido" });
+                if (string.IsNullOrEmpty(produto.tamanho) || string.IsNullOrWhiteSpace(produto.tamanho)) return Json(new { success = false, message = "tamanho Inválido" });
+                if (produto.valorCompra == null) return Json(new { success = false, message = "Valor de compra Inválido" });
+                if (produto.valorVenda == null) return Json(new { success = false, message = "Valor de venda Inválido" });
+                if (produto.quantidade == null) return Json(new { success = false, message = "quantidade Inválida" });
+                if (produto.cdFornecedor == 0) return Json(new { success = false, message = "Fornecedor Inválido" });
 
                 #endregion
-                produto.DtCriacao = DateTime.Now;
-                db.CadProduto.Add(produto);
+                produto.dtCriacao = DateTime.Now;
+                db.cadProduto.Add(produto);
                 db.SaveChanges();
 
                 return Json(new { success = true, message = "Produto adicionado com sucesso." });
@@ -99,21 +99,21 @@ namespace ControleEstoque.Controllers
             {
                 if (cd == 0) return Json(new { success = false, message = "Produto não identificado." });
 
-                var produto = db.CadProduto.Where(a => a.CdProduto == cd).FirstOrDefault();
+                var produto = db.cadProduto.Where(a => a.cdProduto == cd).FirstOrDefault();
 
                 if (produto == null) return Json(new { success = false, message = "Produto não identificado." });
 
                 return Json(new
                 {
                     success = true,
-                    cdProduto = produto.CdProduto,
-                    nmProduto = produto.NmProduto,
-                    dsProduto = produto.DsProduto,
-                    valorCompra = produto.ValorCompra,
-                    valorVenda = produto.ValorVenda,
-                    quantidade = produto.Quantidade,
-                    tamanho = produto.Tamanho,
-                    fornecedor = produto.CdFornecedor
+                    cdProduto = produto.cdProduto,
+                    nmProduto = produto.nmProduto,
+                    dsProduto = produto.dsProduto,
+                    valorCompra = produto.valorCompra,
+                    valorVenda = produto.valorVenda,
+                    quantidade = produto.quantidade,
+                    tamanho = produto.tamanho,
+                    fornecedor = produto.cdFornecedor
                 });
 
             }
@@ -124,32 +124,32 @@ namespace ControleEstoque.Controllers
         }
 
         [HttpPost]
-        public JsonResult Edit(CadProduto produto)
+        public JsonResult Edit(cadProduto produto)
         {
             try
             {
-                if (produto.CdProduto == 0)
+                if (produto.cdProduto == 0)
                     return Json(new { success = false, message = "Produto não identificado." });
 
-                var produtoExistente = db.CadProduto.FirstOrDefault(a => a.CdProduto == produto.CdProduto);
+                var produtoExistente = db.cadProduto.FirstOrDefault(a => a.cdProduto == produto.cdProduto);
 
                 if (produtoExistente == null)
                     return Json(new { success = false, message = "Produto não encontrado." });
 
-                if (string.IsNullOrEmpty(produto.NmProduto) || string.IsNullOrWhiteSpace(produto.NmProduto)) return Json(new { success = false, message = "Nome Inválido" });
-                if (string.IsNullOrEmpty(produto.Tamanho) || string.IsNullOrWhiteSpace(produto.Tamanho)) return Json(new { success = false, message = "Tamanho Inválido" });
-                if (produto.ValorCompra == null) return Json(new { success = false, message = "Valor de compra Inválido" });
-                if (produto.ValorVenda == null) return Json(new { success = false, message = "Valor de venda Inválido" });
-                if (produto.Quantidade == null) return Json(new { success = false, message = "Quantidade Inválida" });
-                if (produto.CdFornecedor == 0) return Json(new { success = false, message = "Fornecedor Inválido" });
+                if (string.IsNullOrEmpty(produto.nmProduto) || string.IsNullOrWhiteSpace(produto.nmProduto)) return Json(new { success = false, message = "Nome Inválido" });
+                if (string.IsNullOrEmpty(produto.tamanho) || string.IsNullOrWhiteSpace(produto.tamanho)) return Json(new { success = false, message = "tamanho Inválido" });
+                if (produto.valorCompra == null) return Json(new { success = false, message = "Valor de compra Inválido" });
+                if (produto.valorVenda == null) return Json(new { success = false, message = "Valor de venda Inválido" });
+                if (produto.quantidade == null) return Json(new { success = false, message = "quantidade Inválida" });
+                if (produto.cdFornecedor == 0) return Json(new { success = false, message = "Fornecedor Inválido" });
 
-                produtoExistente.NmProduto = produto.NmProduto;
-                produtoExistente.DsProduto = produto.DsProduto;
-                produtoExistente.ValorCompra = produto.ValorCompra;
-                produtoExistente.ValorVenda = produto.ValorVenda;
-                produtoExistente.Quantidade = produto.Quantidade;
-                produtoExistente.Tamanho = produto.Tamanho;
-                produtoExistente.CdFornecedor = produto.CdFornecedor;
+                produtoExistente.nmProduto = produto.nmProduto;
+                produtoExistente.dsProduto = produto.dsProduto;
+                produtoExistente.valorCompra = produto.valorCompra;
+                produtoExistente.valorVenda = produto.valorVenda;
+                produtoExistente.quantidade = produto.quantidade;
+                produtoExistente.tamanho = produto.tamanho;
+                produtoExistente.cdFornecedor = produto.cdFornecedor;
 
 
                 db.SaveChanges();

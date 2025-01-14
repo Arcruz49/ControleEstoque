@@ -14,7 +14,8 @@
 
     </style>
 </head>
-<body>
+    
+<body style="background-color: #f8f4f4;">
     <header>
         <div class="sidebar sidebar-narrow-unfoldable border-end">
             <div class="sidebar-header border-bottom">
@@ -33,7 +34,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" asp-area="" asp-controller="Cliente" asp-action="Index">
                         <i class="fa-solid fa-user-group icon"></i> Clientes
                     </a>
                 </li>
@@ -50,13 +51,13 @@
             </ul>
         </div>
     </header>
-    <div class="container" style="margin-bottom: 300px   ">
+    <div class="mainContainer" style="margin-bottom: 300px   ">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer style="margin-top: 50px" class="border-top footer text-muted">
+    <footer style="margin-top: 10px; background-color: #fff" class="border-top footer text-muted">
         <div class="container">
             &copy; 2025 - Controle Estoque - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>

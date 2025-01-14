@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Produtos</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/datatable.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="container mt-4">
+        <h2 style="margin-bottom:30px">Clientes</h2>
+        <table id="clienteTable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Celular</th>
+                    <th>Endereço</th>
+                    <th>N° Compras</th>
+
+                    <th><i class="fa-solid fa-plus" title="Adicionar Cliente" onclick="adicionarCliente()"></i></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal fade" id="adicionarClienteModal" tabindex="-1" aria-labelledby="adicionarClienteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adicionarClienteModalLabel">Adicionar Cliente</h5>
+                    <button type="button" onclick="fecharModalAdicionarCliente()" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="adicionarClienteForm" action="your_action_url_here" method="post">
+                        <div class="mb-3">
+                            <label for="nomeCliente" class="form-label">Nome do Cliente</label>
+                            <input type="text" class="form-control" id="nomeCliente" name="NmCliente" required placeholder="">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="numeroCelular" class="form-label">Número de Celular</label>
+                            <input type="text" class="form-control" id="numeroCelular" name="NumeroCelular" required placeholder="">
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="cidade" class="form-label">Cidade</label>
+                                <input type="text" class="form-control" id="cidade" name="Cidade" required placeholder="">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bairro" class="form-label">Bairro</label>
+                                <input type="text" class="form-control" id="bairro" name="Bairro" required placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="rua" class="form-label">Rua</label>
+                                <input type="text" class="form-control" id="rua" name="Rua" required placeholder="">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="numeroEndereco" class="form-label">Número</label>
+                                <input type="text" class="form-control" id="numeroEndereco" name="Numero" required placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="complemento" class="form-label">Complemento</label>
+                            <input type="text" class="form-control" id="complemento" name="Complemento" placeholder="">
+                        </div>
+
+                        <button type="button" class="btn btn-secondary" onclick="fecharModalAdicionarCliente()" data-bs-dismiss="modal">Fechar</button>
+
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="editarClienteModal" tabindex="-1" aria-labelledby="editarClienteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editarClienteModalLabel">Editar Cliente</h5>
+                    <button type="button" onclick="fecharModalEditarCliente()" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editarClienteForm" action="your_action_url_here" method="post">
+                        <div class="mb-3">
+                            <label for="nomeCliente" class="form-label">Nome do Cliente</label>
+                            <input type="text" class="form-control" id="nomeCliente" name="NmCliente" required placeholder="">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="numeroCelular" class="form-label">Número de Celular</label>
+                            <input type="text" class="form-control" id="numeroCelular" name="NumeroCelular" required placeholder="">
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="cidade" class="form-label">Cidade</label>
+                                <input type="text" class="form-control" id="cidade" name="Cidade" required placeholder="">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bairro" class="form-label">Bairro</label>
+                                <input type="text" class="form-control" id="bairro" name="Bairro" required placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="rua" class="form-label">Rua</label>
+                                <input type="text" class="form-control" id="rua" name="Rua" required placeholder="">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="numeroEndereco" class="form-label">Número</label>
+                                <input type="text" class="form-control" id="numeroEndereco" name="Numero" required placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="complemento" class="form-label">Complemento</label>
+                            <input type="text" class="form-control" id="complemento" name="Complemento" placeholder="">
+                        </div>
+
+                        <button type="button" class="btn btn-secondary" onclick="fecharModalEditarCliente()" data-bs-dismiss="modal">Fechar</button>
+
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/jqueryDatatable.js"></script>
+    <script src="~/js/mask.js"></script>
+
+    <script>
+        let table;
+        $(document).ready(function () {
+            table = $('#clienteTable').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: {
+                    url: '@Url.Action("List", "Cliente")',
+                    type: 'GET',
+                },
+                columns: [
+                    { data: 'id' },
+                    { data: 'nome' },
+                    { data: 'celular' },
+                    { data: 'endereco' },
+                    { data: 'compras' },
+                    {
+                        data: 'id',
+                        render: function (data) {
+                            return '<a onclick="editarCliente(' + data + ')" class=""><i title="Editar cliente" class="fa-solid fa-pen-to-square" style="color: #2d3034;"></i></a>';
+                        }
+                    }
+                ],
+                pagingType: "full_numbers",
+                stateSave: true,
+                language: {
+                    search: "Pesquisar:",
+                    lengthMenu: "Mostrar _MENU_",
+                    info: "Mostrando _START_ a _END_ de _TOTAL_",
+                    infoFiltered: "",
+                    paginate: {
+                        first: "Primeiro",
+                        last: "Último",
+                        next: "Próximo",
+                        previous: "Anterior"
+                    }
+                }
+            });
+        });
+
+        // const moneyMask = (value) => {
+        //     value = value.replace('.', '').replace(',', '').replace(/\D/g, '');
+        //     const options = { minimumFractionDigits: 2 };
+        //     const result = new Intl.NumberFormat('pt-BR', options).format(parseFloat(value) / 100);
+
+        //     console.log(result);
+        //     return 'R$ ' + result;
+        // };
+
+        
+        function adicionarCliente() {
+            $('#adicionarClienteModal').modal('show');
+        }
+
+        function fecharModalAdicionarCliente() {
+            $('#adicionarClienteModal').modal('hide');
+        }
+
+        function fecharModalEditarCliente() {
+            $('#editarClienteModal').modal('hide');
+        }
+
+        $('#adicionarProdutoForm').on('submit', function (e) {
+            e.preventDefault();
+            var fornecedor = $('#fornecedor').val();
+            var valorCompra = parseFloat($('#valorCompra').val().replace('R$', '').replace('.', '').replace(',', '.'));
+            var valorVenda = parseFloat($('#valorVenda').val().replace('R$', '').replace('.', '').replace(',', '.'));
+
+            var formData = {
+                nmProduto: $('#nmProduto').val(),
+                dsProduto: $('#dsProduto').val(),
+                valorCompra: valorCompra,
+                valorVenda: valorVenda,
+                quantidade: $('#quantidade').val(),
+                tamanho: $('#tamanho').val(),
+                cdFornecedor: fornecedor
+            };
+
+            $.ajax({
+                url: '@Url.Action("Create", "Produto")',
+                type: 'POST',
+                data: formData,
+                success: function (response) {
+                    if (response.success) {
+                        Swal.fire({
+                            title: response.message,
+                            icon: "success",
+                        });
+
+                        $('#adicionarProdutoForm')[0].reset();
+                        $('#adicionarProdutoModal').modal('hide');
+
+                        $('#ProdutoTable').DataTable().ajax.reload(null, false);
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Erro",
+                            text: response.message,
+                        });
+                    }
+                },
+                error: function () {
+                    alert("Erro ao enviar os dados.");
+                }
+            });
+        });
+
+        $('#editarProdutoForm').on('submit', function (e) {
+            e.preventDefault();
+            var fornecedor = $('#fornecedorEditar').val();
+            var valorCompra = parseFloat($('#valorCompraEditar').val().replace('R$', '').replace('.', '').replace(',', '.'));
+            var valorVenda = parseFloat($('#valorVendaEditar').val().replace('R$', '').replace('.', '').replace(',', '.'));
+
+            var formData = {
+                cdProduto: $('#cdProdutoEdit').val(),
+                nmProduto: $('#nmProdutoEditar').val(),
+                dsProduto: $('#dsProdutoEditar').val(),
+                valorCompra: valorCompra,
+                valorVenda: valorVenda,
+                quantidade: $('#quantidadeEditar').val(),
+                tamanho: $('#tamanhoEditar').val(),
+                cdFornecedor: fornecedor
+            };
+
+            $.ajax({
+                url: '@Url.Action("Edit", "Produto")',
+                type: 'POST',
+                data: formData,
+                success: function (response) {
+                    if (response.success) {
+                        Swal.fire({
+                            title: response.message,
+                            icon: "success",
+                        });
+
+                        $('#editarProdutoForm')[0].reset();
+                        $('#editarProdutoModal').modal('hide');
+
+                        $('#ProdutoTable').DataTable().ajax.reload(null, false);
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Erro",
+                            text: response.message,
+                        });
+                    }
+                },
+                error: function () {
+                    alert("Erro ao enviar os dados.");
+                }
+            });
+        });
+
+        function editarProduto(cdProduto) {
+            $.ajax({
+                url: '@Url.Action("Edit", "Produto")',
+                type: 'GET',
+                data: { cd: cdProduto },
+                success: function (response) {
+                    debugger
+                    if (response.success) {
+                        $('#nmProdutoEditar').val(response.nmProduto);
+                        $('#cdProdutoEdit').val(response.cdProduto);
+                        $('#dsProdutoEditar').val(response.dsProduto);
+                        $('#valorCompraEditar').val(response.valorCompra);
+                        $('#valorVendaEditar').val(response.valorVenda);
+                        $('#quantidadeEditar').val(response.quantidade);
+                        $('#tamanhoEditar').val(response.tamanho);
+                        $('#fornecedorEditar').val(response.fornecedor);
+
+                        $('#editarProdutoModal').modal('show');
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Erro",
+                            text: response.message
+                        });
+                    }
+                },
+                error: function () {
+                    alert("Erro ao carregar os dados do produto.");
+                }
+            });
+        }
+
+    </script>
+
+</body>
+</html>
