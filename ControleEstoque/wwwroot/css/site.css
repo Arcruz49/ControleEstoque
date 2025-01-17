@@ -46,3 +46,8 @@ body {
     border: 1px solid #ddd; 
     border-radius: 10px; 
 }
+
+#ProdutoTable th:nth-child(1),
+#ProdutoTable td:nth-child(1) {
+    display: none;
+}

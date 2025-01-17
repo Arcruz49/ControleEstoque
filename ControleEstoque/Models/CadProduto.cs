@@ -7,6 +7,8 @@ public partial class cadProduto
 {
     public int cdProduto { get; set; }
 
+    public string? codigo { get; set; }
+
     public string? nmProduto { get; set; }
 
     public string? dsProduto { get; set; }

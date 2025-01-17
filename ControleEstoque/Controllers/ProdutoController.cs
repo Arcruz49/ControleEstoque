@@ -44,6 +44,7 @@ namespace ControleEstoque.Controllers
                 .Select(f => new
                 {
                     id = f.cdProduto,
+                    codigo = f.codigo,
                     nome = f.nmProduto,
                     descricao = f.dsProduto,
                     valorCompra = f.valorCompra,
@@ -73,10 +74,11 @@ namespace ControleEstoque.Controllers
                 #region validações
                 
                 if (string.IsNullOrEmpty(produto.nmProduto) || string.IsNullOrWhiteSpace(produto.nmProduto)) return Json(new { success = false, message = "Nome Inválido" });
-                if (string.IsNullOrEmpty(produto.tamanho) || string.IsNullOrWhiteSpace(produto.tamanho)) return Json(new { success = false, message = "tamanho Inválido" });
+                if (string.IsNullOrEmpty(produto.tamanho) || string.IsNullOrWhiteSpace(produto.tamanho)) return Json(new { success = false, message = "Tamanho Inválido" });
+                if (string.IsNullOrEmpty(produto.codigo) || string.IsNullOrWhiteSpace(produto.codigo)) return Json(new { success = false, message = "Código inválido" });
                 if (produto.valorCompra == null) return Json(new { success = false, message = "Valor de compra Inválido" });
                 if (produto.valorVenda == null) return Json(new { success = false, message = "Valor de venda Inválido" });
-                if (produto.quantidade == null) return Json(new { success = false, message = "quantidade Inválida" });
+                if (produto.quantidade == null) return Json(new { success = false, message = "Quantidade Inválida" });
                 if (produto.cdFornecedor == 0) return Json(new { success = false, message = "Fornecedor Inválido" });
 
                 #endregion
@@ -107,6 +109,7 @@ namespace ControleEstoque.Controllers
                 {
                     success = true,
                     cdProduto = produto.cdProduto,
+                    codigo = produto.codigo,
                     nmProduto = produto.nmProduto,
                     dsProduto = produto.dsProduto,
                     valorCompra = produto.valorCompra,
@@ -136,14 +139,20 @@ namespace ControleEstoque.Controllers
                 if (produtoExistente == null)
                     return Json(new { success = false, message = "Produto não encontrado." });
 
+                #region validações
+
                 if (string.IsNullOrEmpty(produto.nmProduto) || string.IsNullOrWhiteSpace(produto.nmProduto)) return Json(new { success = false, message = "Nome Inválido" });
                 if (string.IsNullOrEmpty(produto.tamanho) || string.IsNullOrWhiteSpace(produto.tamanho)) return Json(new { success = false, message = "tamanho Inválido" });
+                if (string.IsNullOrEmpty(produto.codigo) || string.IsNullOrWhiteSpace(produto.codigo)) return Json(new { success = false, message = "Código inválido" });
                 if (produto.valorCompra == null) return Json(new { success = false, message = "Valor de compra Inválido" });
                 if (produto.valorVenda == null) return Json(new { success = false, message = "Valor de venda Inválido" });
                 if (produto.quantidade == null) return Json(new { success = false, message = "quantidade Inválida" });
                 if (produto.cdFornecedor == 0) return Json(new { success = false, message = "Fornecedor Inválido" });
 
+                #endregion
+
                 produtoExistente.nmProduto = produto.nmProduto;
+                produtoExistente.codigo = produto.codigo;
                 produtoExistente.dsProduto = produto.dsProduto;
                 produtoExistente.valorCompra = produto.valorCompra;
                 produtoExistente.valorVenda = produto.valorVenda;

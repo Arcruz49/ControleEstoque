@@ -16,6 +16,7 @@
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>Código</th>
                     <th>Nome</th>
                     <th>Descrição</th>
                     <th>Valor Compra</th>
@@ -42,9 +43,17 @@
                 </div>
                 <div class="modal-body">
                     <form id="adicionarProdutoForm" action="your_action_url_here" method="post">
+
+                        
+
                         <div class="mb-3">
                             <label for="nmProduto" class="form-label">Nome do Produto</label>
                             <input type="text" class="form-control" id="nmProduto" name="nmProduto" required="required" placeholder="">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="codigo" class="form-label">Código do Produto</label>
+                            <input type="text" class="form-control" id="codigo" name="codigo" required="required" placeholder="">
                         </div>
 
                         <div class="mb-3">
@@ -108,6 +117,11 @@
                         </div>
 
                         <div class="mb-3">
+                            <label for="codigoEdit" class="form-label">Código do Produto</label>
+                            <input type="text" class="form-control" id="codigoEdit" name="codigo" required="required" placeholder="">
+                        </div>
+
+                        <div class="mb-3">
                             <label for="dsProduto" class="form-label">Descrição do Produto</label>
                             <textarea rows="3" style="resize: none" class="form-control" id="dsProdutoEditar" name="dsProduto" required="required" placeholder=""></textarea>
                         </div>
@@ -151,6 +165,13 @@
         </div>
     </div>
 
+    <style>
+        #ProdutoTable th:nth-child(1),
+        #ProdutoTable td:nth-child(1) {
+            display: none;
+        }
+    </style>
+
     <script src="~/js/jquery.js"></script>
     <script src="~/js/jqueryDatatable.js"></script>
     <script src="~/js/mask.js"></script>
@@ -167,9 +188,9 @@
                 },
                 columns: [
                     { data: 'id' },
+                    { data: 'codigo' },
                     { data: 'nome' },
                     { data: 'descricao' },
-                    
                     {
                         data: 'valorCompra',
                         render: function (data) {
@@ -193,6 +214,13 @@
                         }
                     }
                 ],
+                columnDefs: [
+                    {
+                        targets: 0, 
+                        visible: false, 
+                        searchable: false
+                    }
+                ],
                 pagingType: "full_numbers",
                 stateSave: true,
                 language: {
@@ -209,6 +237,7 @@
                 }
             });
         });
+
 
         const moneyMask = (value) => {
             value = value.replace('.', '').replace(',', '').replace(/\D/g, ''); 
@@ -309,6 +338,7 @@
 
             var formData = {
                 nmProduto: $('#nmProduto').val(),
+                codigo: $('#codigo').val(),
                 dsProduto: $('#dsProduto').val(),
                 valorCompra: valorCompra,  
                 valorVenda: valorVenda,    
@@ -354,6 +384,7 @@
 
             var formData = {
                 cdProduto: $('#cdProdutoEdit').val(),
+                codigo: $('#codigoEdit').val(),
                 nmProduto: $('#nmProdutoEditar').val(),
                 dsProduto: $('#dsProdutoEditar').val(),
                 valorCompra: valorCompra,
@@ -401,6 +432,7 @@
                     debugger
                     if (response.success) {
                         $('#nmProdutoEditar').val(response.nmProduto);
+                        $('#codigoEdit').val(response.codigo);
                         $('#cdProdutoEdit').val(response.cdProduto);
                         $('#dsProdutoEditar').val(response.dsProduto);
                         $('#valorCompraEditar').val(response.valorCompra);
