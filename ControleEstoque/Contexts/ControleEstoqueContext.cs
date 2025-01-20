@@ -34,13 +34,14 @@ public partial class ControleEstoqueContext : DbContext
     {
         modelBuilder.Entity<cadCliente>(entity =>
         {
-            entity.HasKey(e => e.cdCliente).HasName("PK__cadClien__64864EC666307430");
+            entity.HasKey(e => e.cdCliente).HasName("PK__cadClien__64864EC6C9355263");
 
             entity.ToTable("cadCliente");
 
             entity.Property(e => e.bairro).HasMaxLength(256);
             entity.Property(e => e.cidade).HasMaxLength(256);
             entity.Property(e => e.complemento).HasMaxLength(256);
+            entity.Property(e => e.cpf).HasMaxLength(256);
             entity.Property(e => e.nmCliente).HasMaxLength(256);
             entity.Property(e => e.numero).HasMaxLength(256);
             entity.Property(e => e.numeroCelular).HasMaxLength(256);
@@ -49,7 +50,7 @@ public partial class ControleEstoqueContext : DbContext
 
         modelBuilder.Entity<cadFornecedor>(entity =>
         {
-            entity.HasKey(e => e.cdFornecedor).HasName("PK__cadForne__CE234A900198E32A");
+            entity.HasKey(e => e.cdFornecedor).HasName("PK__cadForne__CE234A90F6B99BD1");
 
             entity.ToTable("cadFornecedor");
 
@@ -59,7 +60,7 @@ public partial class ControleEstoqueContext : DbContext
 
         modelBuilder.Entity<cadProduto>(entity =>
         {
-            entity.HasKey(e => e.cdProduto).HasName("PK__cadProdu__8897B7734D848382");
+            entity.HasKey(e => e.cdProduto).HasName("PK__cadProdu__8897B773F9A38E82");
 
             entity.ToTable("cadProduto");
 
@@ -78,7 +79,7 @@ public partial class ControleEstoqueContext : DbContext
 
         modelBuilder.Entity<cadVenda_produto>(entity =>
         {
-            entity.HasKey(e => e.cdVendaProduto).HasName("PK__cadVenda__CB73D0B54C759F93");
+            entity.HasKey(e => e.cdVendaProduto).HasName("PK__cadVenda__CB73D0B560E79845");
 
             entity.ToTable("cadVenda_produto");
 
@@ -95,7 +96,7 @@ public partial class ControleEstoqueContext : DbContext
 
         modelBuilder.Entity<cadVendum>(entity =>
         {
-            entity.HasKey(e => e.cdVenda).HasName("PK__cadVenda__CD0A7B1085E5C1E2");
+            entity.HasKey(e => e.cdVenda).HasName("PK__cadVenda__CD0A7B1033BFD889");
 
             entity.Property(e => e.dtVenda).HasColumnType("datetime");
             entity.Property(e => e.valorLucro).HasColumnType("decimal(18, 2)");

@@ -1,8 +1,201 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .stat-box {
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+        }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+            .stat-box h3 {
+                font-size: 2rem;
+                margin: 0;
+            }
+
+            .stat-box p {
+                margin: 0;
+            }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 style="margin-bottom:30px">DashBoard</h2>
+
+        <!-- Filtros -->
+        <div class="row mb-4">
+            <div class="col-md-1">
+                <label for="filterRange" class="form-label">Filtrar por:</label>
+                <select id="filterRange" class="form-select">
+                    <option value="day">Dia</option>
+                    <option value="month">Mês</option>
+                    <option value="year">Ano</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="specificInput" class="form-label">Selecione:</label>
+                <input type="date" id="specificDate" class="form-control d-none">
+                <input type="month" id="specificMonth" class="form-control d-none">
+                <select id="specificYear" class="form-select d-none">
+                </select>
+            </div>
+            <div class="col-md-1 align-self-end">
+                <button id="applyFilter" class="btn btn-primary w-100">Filtrar</button>
+            </div>
+        </div>
+
+        <div class="row text-white">
+
+            <div class="col-md-3">
+                <div class="stat-box" style="background-color: #E7E5DF">
+                    <h3 id="totalSales">0</h3>
+                    <p>Quantidade de Vendas</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="stat-box" style="background-color: #94CCD4">
+                    <h3 id="totalRevenue">R$ 0,00</h3>
+                    <p>Valor Ganho</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="stat-box" style="background-color: #E38E8C">
+                    <h3 id="totalExpense">R$ 0,00</h3>
+                    <p>Valor Gasto</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="stat-box" style="background-color: #96D0C2">
+                    <h3 id="totalProfit">R$ 0,00</h3>
+                    <p>Lucro Total</p>
+                </div>
+            </div>
+            
+            
+            
+        </div>
+
+        <!-- Gráfico -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <canvas id="salesChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            const currentYear = new Date().getFullYear();
+            const $specificDate = $("#specificDate");
+            const $specificMonth = $("#specificMonth");
+            const $specificYear = $("#specificYear");
+
+            // Preencher opções de ano dinamicamente
+            for (let i = currentYear; i >= currentYear - 10; i--) {
+                $specificYear.append(new Option(i, i));
+            }
+
+            // Atualizar os campos de filtro com base na seleção
+            $("#filterRange").change(function () {
+                const filter = $(this).val();
+                $specificDate.addClass("d-none");
+                $specificMonth.addClass("d-none");
+                $specificYear.addClass("d-none");
+
+                if (filter === "day") {
+                    $specificDate.removeClass("d-none");
+                } else if (filter === "month") {
+                    $specificMonth.removeClass("d-none");
+                } else if (filter === "year") {
+                    $specificYear.removeClass("d-none");
+                }
+            });
+
+            // Selecionar automaticamente o filtro "Dia" ao carregar a página
+            $("#filterRange").val("day").trigger("change");
+
+            // Botão de aplicar filtro
+            $("#applyFilter").click(function () {
+                const filterRange = $("#filterRange").val();
+                let selectedValue = null;
+
+                if (filterRange === "day") {
+                    selectedValue = $specificDate.val();
+                } else if (filterRange === "month") {
+                    selectedValue = $specificMonth.val();
+                } else if (filterRange === "year") {
+                    selectedValue = $specificYear.val();
+                }
+
+                if (selectedValue) {
+                    // Fazer requisição AJAX
+                    $.ajax({
+                        url: "/Home/GetDados",
+                        type: "GET",
+                        data: {
+                            tipoFiltro: filterRange === "day" ? 1 : filterRange === "month" ? 2 : 3,
+                            data: selectedValue
+                        },
+                        success: function (response) {
+                            // Atualizar os valores do dashboard
+                            $("#totalSales").text(response.quantidadeVendas);
+                            $("#totalRevenue").text(`R$ ${response.valorGanho}`);
+                            $("#totalExpense").text(`R$ ${response.valorGasto}`);
+                            $("#totalProfit").text(`R$ ${response.lucroTotal}`);
+
+                            // Atualizar o gráfico
+                            salesChart.data.labels = response.graficoLabels;
+                            salesChart.data.datasets[0].data = response.graficoValores;
+                            salesChart.update();
+                        },
+                        error: function (xhr, status, error) {
+                            console.error("Erro ao obter dados:", error);
+                            alert("Erro ao aplicar filtro. Tente novamente.");
+                        }
+                    });
+                } else {
+                    alert("Por favor, selecione um valor válido.");
+                }
+            });
+
+            // Configurações do gráfico
+            const ctx = $("#salesChart")[0].getContext("2d");
+            const salesChart = new Chart(ctx, {
+                type: "bar",
+                data: {
+                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    datasets: [
+                        {
+                            label: "Vendas (R$)",
+                            data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                            backgroundColor: "rgba(54, 162, 235, 0.6)",
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: "top",
+                        },
+                    },
+                },
+            });
+        });
+
+
+    </script>
+</body>
+</html>

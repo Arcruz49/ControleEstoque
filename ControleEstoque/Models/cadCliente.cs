@@ -9,6 +9,8 @@ public partial class cadCliente
 
     public string? nmCliente { get; set; }
 
+    public string? cpf { get; set; }
+
     public string? numeroCelular { get; set; }
 
     public string? cidade { get; set; }

@@ -28,5 +28,29 @@ namespace ControleEstoque.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [HttpGet]
+        public JsonResult GetDados(DateTime data, int tipoFiltro = 0)
+        {
+
+            //switch (tipoFiltro)
+            //{
+            //    case 1
+            //}
+
+
+            var resultado = new
+            {
+                quantidadeVendas = 100,  // Exemplo
+                valorGanho = 25000.00,  // Exemplo
+                valorGasto = 10000.00,  // Exemplo
+                lucroTotal = 15000.00,  // Exemplo
+                graficoLabels = new[] { "Jan", "Feb", "Mar", "Apr", "May" }, // Exemplos
+                graficoValores = new[] { 500, 700, 900, 1200, 1100 } // Exemplos
+            };
+
+            return Json(resultado);
+        }
+
     }
 }

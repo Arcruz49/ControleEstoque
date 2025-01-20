@@ -46,6 +46,7 @@ namespace ControleEstoque.Controllers
                 {
                     id = f.cdCliente,
                     nome = f.nmCliente,
+                    cpf = f.cpf,
                     celular = f.numeroCelular,
                     endereco = string.Format($@"Cidade: {f.cidade}; Bairro: {f.bairro}; Rua: {f.rua}; Número: {f.numero}; Complemento: {f.complemento};"),
                     compras = f.cadVenda.Count()
@@ -139,7 +140,7 @@ namespace ControleEstoque.Controllers
             {
                 var clientes = db.cadClientes
                     .Where(c => string.IsNullOrEmpty(search) || c.nmCliente.Contains(search)) 
-                    .Select(c => new { id = c.cdCliente, text = c.nmCliente, cpf = "12345" }) 
+                    .Select(c => new { id = c.cdCliente, text = c.nmCliente, cpf = c.cpf }) 
                     .OrderBy(c => c.text)
                     .ToList();
 

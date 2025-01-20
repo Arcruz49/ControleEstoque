@@ -18,6 +18,7 @@
 
                     <th>ID</th>
                     <th>Nome</th>
+                    <th>CPF</th>
                     <th>Celular</th>
                     <th>Endereço</th>
                     <th>N° Compras</th>
@@ -42,6 +43,11 @@
                         <div class="mb-3">
                             <label for="nomeCliente" class="form-label">Nome do Cliente</label>
                             <input type="text" class="form-control" id="nomeCliente" name="NmCliente" required placeholder="">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="cpf" class="form-label">CPF do Cliente</label>
+                            <input type="text" class="form-control" id="cpf" name="cpf" required placeholder="">
                         </div>
 
                         <div class="mb-3">
@@ -104,6 +110,11 @@
                         </div>
 
                         <div class="mb-3">
+                            <label for="cpf" class="form-label">CPF do Cliente</label>
+                            <input type="text" class="form-control" id="cpfEdit" name="cpf" required placeholder="">
+                        </div>
+
+                        <div class="mb-3">
                             <label for="numeroCelular" class="form-label">Número de Celular</label>
                             <input type="text" class="form-control" id="numeroCelularEdit" name="NumeroCelular" required placeholder="">
                         </div>
@@ -153,6 +164,9 @@
         $(document).ready(function () {
             $('#numeroCelular').mask('(00) 00000-0000');
             $('#numeroCelularEdit').mask('(00) 00000-0000');
+            $('#cpfEdit').mask('000.000.000-00', { reverse: true });
+            $('#cpf').mask('000.000.000-00', { reverse: true });
+
         });
 
         let table;
@@ -167,6 +181,7 @@
                 columns: [
                     { data: 'id' },
                     { data: 'nome' },
+                    { data: 'cpf' },
                     { data: 'celular' },
                     { data: 'endereco' },
                     { data: 'compras' },
@@ -292,6 +307,7 @@
                     debugger
                     if (response.success) {
                         $('#cdClienteEdit').val(response.message.cdCliente);
+                        $('#cpfEdit').val(response.message.cpf);
                         $('#nomeClienteEdit').val(response.message.nmCliente);
                         $('#numeroCelularEdit').val(response.message.numeroCelular);
                         $('#cidadeEdit').val(response.message.cidade);
