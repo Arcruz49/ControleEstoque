@@ -1,9 +1,10 @@
+using ControleEstoque.Contexts;
 using ControleEstoque.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<controleEstoqueDBContext>(options =>
+builder.Services.AddDbContext<ControleEstoqueContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddControllersWithViews();

@@ -15,6 +15,7 @@
         <table id="clienteTable" class="table table-striped">
             <thead>
                 <tr>
+
                     <th>ID</th>
                     <th>Nome</th>
                     <th>Celular</th>
@@ -94,42 +95,44 @@
                     <button type="button" onclick="fecharModalEditarCliente()" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="editarClienteForm" action="your_action_url_here" method="post">
+                    <form id="editarClienteForm" method="post">
+                        <input type="hidden" id="cdClienteEdit" name="cdCliente" />
+
                         <div class="mb-3">
                             <label for="nomeCliente" class="form-label">Nome do Cliente</label>
-                            <input type="text" class="form-control" id="nomeCliente" name="NmCliente" required placeholder="">
+                            <input type="text" class="form-control" id="nomeClienteEdit" name="NmCliente" required placeholder="">
                         </div>
 
                         <div class="mb-3">
                             <label for="numeroCelular" class="form-label">Número de Celular</label>
-                            <input type="text" class="form-control" id="numeroCelular" name="NumeroCelular" required placeholder="">
+                            <input type="text" class="form-control" id="numeroCelularEdit" name="NumeroCelular" required placeholder="">
                         </div>
 
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="cidade" class="form-label">Cidade</label>
-                                <input type="text" class="form-control" id="cidade" name="Cidade" required placeholder="">
+                                <input type="text" class="form-control" id="cidadeEdit" name="Cidade" required placeholder="">
                             </div>
                             <div class="col-md-6">
                                 <label for="bairro" class="form-label">Bairro</label>
-                                <input type="text" class="form-control" id="bairro" name="Bairro" required placeholder="">
+                                <input type="text" class="form-control" id="bairroEdit" name="Bairro" required placeholder="">
                             </div>
                         </div>
 
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="rua" class="form-label">Rua</label>
-                                <input type="text" class="form-control" id="rua" name="Rua" required placeholder="">
+                                <input type="text" class="form-control" id="ruaEdit" name="Rua" required placeholder="">
                             </div>
                             <div class="col-md-6">
                                 <label for="numeroEndereco" class="form-label">Número</label>
-                                <input type="text" class="form-control" id="numeroEndereco" name="Numero" required placeholder="">
+                                <input type="text" class="form-control" id="numeroEnderecoEdit" name="Numero" required placeholder="">
                             </div>
                         </div>
 
                         <div class="mb-3">
                             <label for="complemento" class="form-label">Complemento</label>
-                            <input type="text" class="form-control" id="complemento" name="Complemento" placeholder="">
+                            <input type="text" class="form-control" id="complementoEdit" name="Complemento" placeholder="">
                         </div>
 
                         <button type="button" class="btn btn-secondary" onclick="fecharModalEditarCliente()" data-bs-dismiss="modal">Fechar</button>
@@ -146,6 +149,12 @@
     <script src="~/js/mask.js"></script>
 
     <script>
+
+        $(document).ready(function () {
+            $('#numeroCelular').mask('(00) 00000-0000');
+            $('#numeroCelularEdit').mask('(00) 00000-0000');
+        });
+
         let table;
         $(document).ready(function () {
             table = $('#clienteTable').DataTable({
@@ -207,24 +216,13 @@
             $('#editarClienteModal').modal('hide');
         }
 
-        $('#adicionarProdutoForm').on('submit', function (e) {
+        $('#adicionarClienteForm').on('submit', function (e) {
             e.preventDefault();
-            var fornecedor = $('#fornecedor').val();
-            var valorCompra = parseFloat($('#valorCompra').val().replace('R$', '').replace('.', '').replace(',', '.'));
-            var valorVenda = parseFloat($('#valorVenda').val().replace('R$', '').replace('.', '').replace(',', '.'));
-
-            var formData = {
-                nmProduto: $('#nmProduto').val(),
-                dsProduto: $('#dsProduto').val(),
-                valorCompra: valorCompra,
-                valorVenda: valorVenda,
-                quantidade: $('#quantidade').val(),
-                tamanho: $('#tamanho').val(),
-                cdFornecedor: fornecedor
-            };
+            
+            var formData = $(this).serialize();
 
             $.ajax({
-                url: '@Url.Action("Create", "Produto")',
+                url: '@Url.Action("Create", "Cliente")',
                 type: 'POST',
                 data: formData,
                 success: function (response) {
@@ -234,10 +232,10 @@
                             icon: "success",
                         });
 
-                        $('#adicionarProdutoForm')[0].reset();
-                        $('#adicionarProdutoModal').modal('hide');
+                        $('#adicionarClienteForm')[0].reset();
+                        $('#adicionarClienteModal').modal('hide');
 
-                        $('#ProdutoTable').DataTable().ajax.reload(null, false);
+                        $('#clienteTable').DataTable().ajax.reload(null, false);
                     } else {
                         Swal.fire({
                             icon: "error",
@@ -252,25 +250,12 @@
             });
         });
 
-        $('#editarProdutoForm').on('submit', function (e) {
+        $('#editarClienteForm').on('submit', function (e) {
             e.preventDefault();
-            var fornecedor = $('#fornecedorEditar').val();
-            var valorCompra = parseFloat($('#valorCompraEditar').val().replace('R$', '').replace('.', '').replace(',', '.'));
-            var valorVenda = parseFloat($('#valorVendaEditar').val().replace('R$', '').replace('.', '').replace(',', '.'));
-
-            var formData = {
-                cdProduto: $('#cdProdutoEdit').val(),
-                nmProduto: $('#nmProdutoEditar').val(),
-                dsProduto: $('#dsProdutoEditar').val(),
-                valorCompra: valorCompra,
-                valorVenda: valorVenda,
-                quantidade: $('#quantidadeEditar').val(),
-                tamanho: $('#tamanhoEditar').val(),
-                cdFornecedor: fornecedor
-            };
+            var formData = $(this).serialize();
 
             $.ajax({
-                url: '@Url.Action("Edit", "Produto")',
+                url: '@Url.Action("Edit", "Cliente")',
                 type: 'POST',
                 data: formData,
                 success: function (response) {
@@ -278,12 +263,12 @@
                         Swal.fire({
                             title: response.message,
                             icon: "success",
+                        }).then(() => {
+                            $('#clienteTable').DataTable().ajax.reload(null, false);
+
+                            $('#editarClienteForm')[0].reset();
+                            $('#editarClienteModal').modal('hide');
                         });
-
-                        $('#editarProdutoForm')[0].reset();
-                        $('#editarProdutoModal').modal('hide');
-
-                        $('#ProdutoTable').DataTable().ajax.reload(null, false);
                     } else {
                         Swal.fire({
                             icon: "error",
@@ -298,24 +283,24 @@
             });
         });
 
-        function editarProduto(cdProduto) {
+        function editarCliente(cdCliente) {
             $.ajax({
-                url: '@Url.Action("Edit", "Produto")',
+                url: '@Url.Action("Edit", "Cliente")',
                 type: 'GET',
-                data: { cd: cdProduto },
+                data: { cdCliente: cdCliente },
                 success: function (response) {
                     debugger
                     if (response.success) {
-                        $('#nmProdutoEditar').val(response.nmProduto);
-                        $('#cdProdutoEdit').val(response.cdProduto);
-                        $('#dsProdutoEditar').val(response.dsProduto);
-                        $('#valorCompraEditar').val(response.valorCompra);
-                        $('#valorVendaEditar').val(response.valorVenda);
-                        $('#quantidadeEditar').val(response.quantidade);
-                        $('#tamanhoEditar').val(response.tamanho);
-                        $('#fornecedorEditar').val(response.fornecedor);
+                        $('#cdClienteEdit').val(response.message.cdCliente);
+                        $('#nomeClienteEdit').val(response.message.nmCliente);
+                        $('#numeroCelularEdit').val(response.message.numeroCelular);
+                        $('#cidadeEdit').val(response.message.cidade);
+                        $('#bairroEdit').val(response.message.bairro);
+                        $('#ruaEdit').val(response.message.rua);
+                        $('#numeroEnderecoEdit').val(response.message.numero);
+                        $('#complementoEdit').val(response.message.complemento);
 
-                        $('#editarProdutoModal').modal('show');
+                        $('#editarClienteModal').modal('show');
                     } else {
                         Swal.fire({
                             icon: "error",
@@ -325,7 +310,7 @@
                     }
                 },
                 error: function () {
-                    alert("Erro ao carregar os dados do produto.");
+                    alert("Erro ao carregar os dados do cliente.");
                 }
             });
         }

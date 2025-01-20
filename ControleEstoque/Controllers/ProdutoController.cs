@@ -1,14 +1,15 @@
-﻿using ControleEstoque.Models;
+﻿using ControleEstoque.Contexts;
+using ControleEstoque.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ControleEstoque.Controllers
 {
     public class ProdutoController : Controller
     {
-        private readonly controleEstoqueDBContext db;
+        private readonly ControleEstoqueContext db;
 
 
-        public ProdutoController(controleEstoqueDBContext _db)
+        public ProdutoController(ControleEstoqueContext _db)
         {
             db = _db;
         }
@@ -26,9 +27,9 @@ namespace ControleEstoque.Controllers
             var length = int.Parse(Request.Query["length"].FirstOrDefault() ?? "10");
             var searchValue = Request.Query["search[value]"].FirstOrDefault();
 
-            var totalRecords = db.cadProduto.Count();
+            var totalRecords = db.cadProdutos.Count();
 
-            var query = db.cadProduto.AsQueryable();
+            var query = db.cadProdutos.AsQueryable();
             if (!string.IsNullOrEmpty(searchValue))
             {
                 query = query.Where(f => f.nmProduto.Contains(searchValue));
@@ -83,7 +84,7 @@ namespace ControleEstoque.Controllers
 
                 #endregion
                 produto.dtCriacao = DateTime.Now;
-                db.cadProduto.Add(produto);
+                db.cadProdutos.Add(produto);
                 db.SaveChanges();
 
                 return Json(new { success = true, message = "Produto adicionado com sucesso." });
@@ -101,7 +102,7 @@ namespace ControleEstoque.Controllers
             {
                 if (cd == 0) return Json(new { success = false, message = "Produto não identificado." });
 
-                var produto = db.cadProduto.Where(a => a.cdProduto == cd).FirstOrDefault();
+                var produto = db.cadProdutos.Where(a => a.cdProduto == cd).FirstOrDefault();
 
                 if (produto == null) return Json(new { success = false, message = "Produto não identificado." });
 
@@ -131,10 +132,10 @@ namespace ControleEstoque.Controllers
         {
             try
             {
-                if (produto.cdProduto == 0)
-                    return Json(new { success = false, message = "Produto não identificado." });
+                if(produto == null) return Json(new { success = false, message = "Produto não identificado." });
+                if (produto.cdProduto == 0) return Json(new { success = false, message = "Produto não identificado." });
 
-                var produtoExistente = db.cadProduto.FirstOrDefault(a => a.cdProduto == produto.cdProduto);
+                var produtoExistente = db.cadProdutos.FirstOrDefault(a => a.cdProduto == produto.cdProduto);
 
                 if (produtoExistente == null)
                     return Json(new { success = false, message = "Produto não encontrado." });
@@ -160,7 +161,6 @@ namespace ControleEstoque.Controllers
                 produtoExistente.tamanho = produto.tamanho;
                 produtoExistente.cdFornecedor = produto.cdFornecedor;
 
-
                 db.SaveChanges();
 
                 return Json(new { success = true, message = "Produto alterado." });
@@ -170,6 +170,29 @@ namespace ControleEstoque.Controllers
             {
                 return Json(new { success = false, message = ex.Message });
 
+            }
+        }
+
+        [HttpGet]
+        public JsonResult GetProdutos(string search)
+        {
+            try
+            {
+                var produtos = db.cadProdutos
+                    .Where(c => string.IsNullOrEmpty(search) || c.nmProduto.Contains(search))
+                    .Select(c => new { id = c.cdProduto, text = c.nmProduto, tamanho = c.tamanho, valor = c.valorVenda, codigo = c.codigo })
+                    .OrderBy(c => c.text)
+                    .ToList();
+
+                return Json(new
+                {
+                    success = true,
+                    results = produtos
+                });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
             }
         }
 

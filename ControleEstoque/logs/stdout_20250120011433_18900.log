@@ -1,0 +1,151 @@
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [c].[cdProduto] AS [id], [c].[nmProduto] AS [text], [c].[tamanho], [c].[valorVenda] AS [valor], [c].[codigo]
+      FROM [cadProduto] AS [c]
+      ORDER BY [c].[nmProduto]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [cadVenda] AS [c]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [c].[cdCliente] AS [id], [c].[nmCliente] AS [text], N'12345' AS [cpf]
+      FROM [cadCliente] AS [c]
+      ORDER BY [c].[nmCliente]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [cadVenda] AS [c]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (19ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[cdVenda], [c0].[nmCliente], [t].[valorVenda], [t].[valorLucro], CASE
+          WHEN [t].[dtVenda] IS NOT NULL THEN CAST(1 AS bit)
+          ELSE CAST(0 AS bit)
+      END, [t].[dtVenda], (
+          SELECT COUNT(*)
+          FROM [cadVenda_produto] AS [c1]
+          WHERE [t].[cdVenda] = [c1].[CdVenda])
+      FROM (
+          SELECT [c].[cdVenda], [c].[cdCliente], [c].[dtVenda], [c].[valorLucro], [c].[valorVenda]
+          FROM [cadVenda] AS [c]
+          ORDER BY [c].[cdCliente]
+          OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+      ) AS [t]
+      LEFT JOIN [cadCliente] AS [c0] ON [t].[cdCliente] = [c0].[cdCliente]
+      ORDER BY [t].[cdCliente]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [cadVenda] AS [c]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [cadVenda] AS [c]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[cdVenda], [c0].[nmCliente], [t].[valorVenda], [t].[valorLucro], CASE
+          WHEN [t].[dtVenda] IS NOT NULL THEN CAST(1 AS bit)
+          ELSE CAST(0 AS bit)
+      END, [t].[dtVenda], (
+          SELECT COUNT(*)
+          FROM [cadVenda_produto] AS [c1]
+          WHERE [t].[cdVenda] = [c1].[CdVenda])
+      FROM (
+          SELECT [c].[cdVenda], [c].[cdCliente], [c].[dtVenda], [c].[valorLucro], [c].[valorVenda]
+          FROM [cadVenda] AS [c]
+          ORDER BY [c].[cdCliente]
+          OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+      ) AS [t]
+      LEFT JOIN [cadCliente] AS [c0] ON [t].[cdCliente] = [c0].[cdCliente]
+      ORDER BY [t].[cdCliente]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [cadVenda] AS [c]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [cadVenda] AS [c]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [c].[cdCliente] AS [id], [c].[nmCliente] AS [text], N'12345' AS [cpf]
+      FROM [cadCliente] AS [c]
+      ORDER BY [c].[nmCliente]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [c].[cdProduto] AS [id], [c].[nmProduto] AS [text], [c].[tamanho], [c].[valorVenda] AS [valor], [c].[codigo]
+      FROM [cadProduto] AS [c]
+      ORDER BY [c].[nmProduto]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[cdVenda], [c0].[nmCliente], [t].[valorVenda], [t].[valorLucro], CASE
+          WHEN [t].[dtVenda] IS NOT NULL THEN CAST(1 AS bit)
+          ELSE CAST(0 AS bit)
+      END, [t].[dtVenda], (
+          SELECT COUNT(*)
+          FROM [cadVenda_produto] AS [c1]
+          WHERE [t].[cdVenda] = [c1].[CdVenda])
+      FROM (
+          SELECT [c].[cdVenda], [c].[cdCliente], [c].[dtVenda], [c].[valorLucro], [c].[valorVenda]
+          FROM [cadVenda] AS [c]
+          ORDER BY [c].[cdCliente]
+          OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+      ) AS [t]
+      LEFT JOIN [cadCliente] AS [c0] ON [t].[cdCliente] = [c0].[cdCliente]
+      ORDER BY [t].[cdCliente]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [cadVenda] AS [c]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [c].[cdCliente] AS [id], [c].[nmCliente] AS [text], N'12345' AS [cpf]
+      FROM [cadCliente] AS [c]
+      ORDER BY [c].[nmCliente]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [c].[cdProduto] AS [id], [c].[nmProduto] AS [text], [c].[tamanho], [c].[valorVenda] AS [valor], [c].[codigo]
+      FROM [cadProduto] AS [c]
+      ORDER BY [c].[nmProduto]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [cadVenda] AS [c]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[cdVenda], [c0].[nmCliente], [t].[valorVenda], [t].[valorLucro], CASE
+          WHEN [t].[dtVenda] IS NOT NULL THEN CAST(1 AS bit)
+          ELSE CAST(0 AS bit)
+      END, [t].[dtVenda], (
+          SELECT COUNT(*)
+          FROM [cadVenda_produto] AS [c1]
+          WHERE [t].[cdVenda] = [c1].[CdVenda])
+      FROM (
+          SELECT [c].[cdVenda], [c].[cdCliente], [c].[dtVenda], [c].[valorLucro], [c].[valorVenda]
+          FROM [cadVenda] AS [c]
+          ORDER BY [c].[cdCliente]
+          OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+      ) AS [t]
+      LEFT JOIN [cadCliente] AS [c0] ON [t].[cdCliente] = [c0].[cdCliente]
+      ORDER BY [t].[cdCliente]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [cadVenda] AS [c]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [c].[cdCliente] AS [id], [c].[nmCliente] AS [text], N'12345' AS [cpf]
+      FROM [cadCliente] AS [c]
+      ORDER BY [c].[nmCliente]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [c].[cdProduto] AS [id], [c].[nmProduto] AS [text], [c].[tamanho], [c].[valorVenda] AS [valor], [c].[codigo]
+      FROM [cadProduto] AS [c]
+      ORDER BY [c].[nmProduto]
+info: Microsoft.EntityFrameworkCore.Database.Command[2

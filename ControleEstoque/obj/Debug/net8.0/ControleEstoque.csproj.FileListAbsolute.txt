@@ -136,3 +136,4 @@ C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque
 C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque\obj\Debug\net8.0\ControleEstoque.csproj.AssemblyReference.cache
 C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque\obj\Debug\net8.0\Controle.DC1A0F87.Up2Date
 C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque\bin\Debug\net8.0\web.config
+C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque\bin\Debug\net8.0\Newtonsoft.Json.dll

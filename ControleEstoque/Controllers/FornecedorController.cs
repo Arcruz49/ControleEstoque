@@ -1,4 +1,5 @@
-﻿using ControleEstoque.Models;
+﻿using ControleEstoque.Contexts;
+using ControleEstoque.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,9 +7,9 @@ namespace ControleEstoque.Controllers
 {
     public class FornecedorController : Controller
     {
-        private readonly controleEstoqueDBContext db;
+        private readonly ControleEstoqueContext db;
 
-        public FornecedorController(controleEstoqueDBContext _db)
+        public FornecedorController(ControleEstoqueContext _db)
         {
             db = _db;
         }
@@ -25,9 +26,9 @@ namespace ControleEstoque.Controllers
             var length = int.Parse(Request.Query["length"].FirstOrDefault() ?? "10");
             var searchValue = Request.Query["search[value]"].FirstOrDefault();
 
-            var totalRecords = db.cadFornecedor.Count();
+            var totalRecords = db.cadFornecedors.Count();
 
-            var query = db.cadFornecedor.AsQueryable();
+            var query = db.cadFornecedors.AsQueryable();
             if (!string.IsNullOrEmpty(searchValue))
             {
                 query = query.Where(f => f.nmFornecedor.Contains(searchValue));
@@ -66,7 +67,7 @@ namespace ControleEstoque.Controllers
                 if(string.IsNullOrEmpty(fornecedor.nmFornecedor) || string.IsNullOrWhiteSpace(fornecedor.nmFornecedor)) return Json(new { success = false, message = "Nome Inválido" });
 
                 fornecedor.dtCriacao = DateTime.Now;
-                db.cadFornecedor.Add(fornecedor);
+                db.cadFornecedors.Add(fornecedor);
                 db.SaveChanges();
 
                 return Json(new { success = true, message = "Fornecedor adicionado com sucesso." });
@@ -85,7 +86,7 @@ namespace ControleEstoque.Controllers
 
                 if(cd == 0) return Json(new { success = false, message = "Fornedecor não identificado." });
 
-                var fornecedor = db.cadFornecedor.Where(a => a.cdFornecedor == cd).FirstOrDefault();
+                var fornecedor = db.cadFornecedors.Where(a => a.cdFornecedor == cd).FirstOrDefault();
 
                 if(fornecedor == null) return Json(new { success = false, message = "Fornedecor não identificado." });
 
@@ -106,7 +107,7 @@ namespace ControleEstoque.Controllers
                 if (fornecedor.cdFornecedor == 0)
                     return Json(new { success = false, message = "Fornecedor não identificado." });
 
-                var fornecedorExistente = db.cadFornecedor.FirstOrDefault(a => a.cdFornecedor == fornecedor.cdFornecedor);
+                var fornecedorExistente = db.cadFornecedors.FirstOrDefault(a => a.cdFornecedor == fornecedor.cdFornecedor);
 
                 if (fornecedorExistente == null)
                     return Json(new { success = false, message = "Fornecedor não encontrado." });
@@ -132,7 +133,7 @@ namespace ControleEstoque.Controllers
         {
             try
             {
-                var query = db.cadFornecedor
+                var query = db.cadFornecedors
                               .Where(a => a.ativo == true)
                               .Select(a => new { a.cdFornecedor, a.nmFornecedor }).ToList();
 

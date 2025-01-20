@@ -33,6 +33,7 @@ BEGIN
     CREATE TABLE cadProduto
 	(
 		cdProduto INT PRIMARY KEY IDENTITY(1,1),
+		codigo NVARCHAR(max),
 		nmProduto NVARCHAR(max),
 		dsProduto NVARCHAR(max),
 		valorCompra DECIMAL(18,2),
@@ -95,6 +96,7 @@ BEGIN
 		cdVendaProduto INT PRIMARY KEY IDENTITY(1,1),
 		cdVenda INT NOT NULL,
 		cdProduto INT NOT NULL,
+		quantidade int,
 		CONSTRAINT FK_cadVenda_produto_cadVenda FOREIGN KEY (cdVenda)
 		REFERENCES cadVenda(cdVenda),
 		CONSTRAINT FK_cadVenda_produto_cadProduto FOREIGN KEY (cdProduto)

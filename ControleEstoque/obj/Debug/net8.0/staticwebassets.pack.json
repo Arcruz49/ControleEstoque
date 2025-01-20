@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\js\\mask.js"
     },
     {
+      "Id": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\js\\select2.js",
+      "PackagePath": "staticwebassets\\js\\select2.js"
+    },
+    {
       "Id": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
@@ -167,6 +171,10 @@
     {
       "Id": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\lib\\bootstrap\\dist\\css\\datatable.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\datatable.css"
+    },
+    {
+      "Id": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\lib\\bootstrap\\dist\\css\\select2.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\select2.css"
     },
     {
       "Id": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",

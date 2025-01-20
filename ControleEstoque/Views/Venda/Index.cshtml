@@ -1,0 +1,556 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Fornecedores</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/datatable.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <!-- Link para o CSS do Select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+
+    <!-- Link para o JS do jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Link para o JS do Select2 -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+
+
+
+</head>
+<body>
+
+    <div class="container mt-4">
+        <h2 style="margin-bottom:30px">Vendas</h2>
+        <table id="VendaTable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Cliente</th>
+                    <th>Valor de Venda</th>
+                    <th>Lucro</th>
+                    <th>Data Venda</th>
+                    <th>Qtd. Produtos</th>
+                    <th><i class="fa-solid fa-plus" title="Adicionar Venda" onclick="adicionarVenda()"></i></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="modal fade" id="adicionarVendaModal" tabindex="-1" aria-labelledby="adicionarVendaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adicionarVendaModalLabel">Adicionar Venda</h5>
+                    <button type="button" class="btn-close" onclick="fecharModalAdicionar()" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="adicionarVendaForm" action="#" method="post">
+
+                        <div class="mb-3 row">
+                            <div class="col-md-6">
+                                <label for="clienteVenda" class="form-label">Cliente</label>
+                                <br />
+                                <select class="form-select custom-select-height" id="clienteVenda" name="CdCliente" required>
+                                    <option value="">Selecione um Cliente</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="dataVenda" class="form-label">Data da Venda</label>
+                                <input type="date" class="form-control" id="dataVenda" name="DtVenda" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row align-items-end">
+                            <div class="col-md-10">
+                                <label for="ProdutosVenda" class="form-label">Produtos</label>
+                                <select class="form-select" id="ProdutosVenda" name="Produtos"></select>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-success p-0" id="adicionarProdutoBtn" style="width: 38px; height: 38px;">
+                                    <i class="fa-regular fa-square-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <table class="table" id="produtosTabela">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Produto</th>
+                                    <th>Tamanho</th>
+                                    <th>Quantidade</th>
+                                    <th>Preço</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Produtos adicionados dinamicamente serão exibidos aqui -->
+                            </tbody>
+                        </table>
+
+                        <div class="mb-3 row">
+                            <label for="valorTotalVenda" class="col-md-2 col-form-label">Valor Total:</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control-plaintext fw-bold" id="valorTotalVenda" value="R$ 0,00" readonly>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-secondary" onclick="fecharModalAdicionar()" data-bs-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="editarVendaModal" tabindex="-1" aria-labelledby="editarVendaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editarVendaModalLabel">Adicionar Venda</h5>
+                    <button type="button" onclick="fecharModalEditar()" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editarVendaForm" action="your_action_url_here" method="post">
+                        <input type="hidden" id="idVendaEdit" name="CdVenda" />
+                        <div class="mb-3">
+                            <label for="nomeVenda" class="form-label">Nome do Venda</label>
+                            <input type="text" class="form-control" id="nomeVendaEdit" name="NmVenda" required="required" placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="statusVenda" class="form-label">Status</label>
+                            <select class="form-select" id="statusVendaEdit" name="Produtos[]" multiple="multiple">
+                                <option value="true">Ativo</option>
+                                <option value="false">Inativo</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-secondary" onclick="fecharModalEditar()" data-bs-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/jqueryDatatable.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+
+    <script>
+
+        let table;
+        $(document).ready(function () {
+            table = $('#VendaTable').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: {
+                    url: '@Url.Action("List", "Venda")',
+                    type: 'GET',
+                },
+                columns: [
+                    { data: 'id' },
+                    { data: 'nomeCliente' },
+                    {
+                        data: 'valorVenda',
+                        render: function (data) {
+                            return 'R$ ' + parseFloat(data).toFixed(2).replace('.', ',');
+                        }
+                    },
+                    {
+                        data: 'valorLucro',
+                        render: function (data) {
+                            return '<span style="color: green;">R$ ' + parseFloat(data).toFixed(2).replace('.', ',') + '</span>';
+                        }
+                    },
+                    { data: 'dtVenda' },
+                    {
+                        data: 'qtdProdutos',
+                        render: function (data) {
+                            return data + ' itens'; // Exemplo de formatação de quantidade
+                        }
+                    },
+                    {
+                        data: 'id',
+                        render: function (data) {
+                            return '<a onclick="editarVenda(' + data + ')" class=""><i title="Editar fornecedor" class="fa-solid fa-pen-to-square" style="color: #2d3034;"></i></a>';
+                        }
+                    }
+                ],
+                pagingType: "full_numbers",
+                stateSave: true,
+                language: {
+                    search: "Pesquisar:",
+                    lengthMenu: "Mostrar _MENU_",
+                    info: "Mostrando _START_ a _END_ de _TOTAL_",
+                    paginate: {
+                        first: "Primeiro",
+                        last: "Último",
+                        next: "Próximo",
+                        previous: "Anterior"
+                    }
+                }
+            });
+
+            $.ajax({
+                url: '@Url.Action("GetClientes", "Cliente")',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    var select = $('#clienteVenda');
+                    select.empty();
+
+                    data.results.forEach(function (cliente) {
+                        select.append('<option value="' + cliente.id + '" data-nome="' + cliente.text + '" data-cpf="' + cliente.cpf + '">' + cliente.text + '</option>');
+                    });
+
+                    $('#clienteVenda').select2({
+                        placeholder: "Selecione uma opção",
+                        width: '80%',
+                        dropdownParent: "#adicionarVendaModal",
+                        templateResult: function (data) {
+                            if (!data.id) { return data.text; } 
+
+                            var $result = $('<div class="cliente-info"></div>');
+                            var nome = $('<div class="cliente-nome"></div>').text(data.element.dataset.nome);
+                            var cpf = $('<div class="cliente-cpf"></div>').text('CPF: ' + data.element.dataset.cpf);
+
+                            $result.append(nome).append(cpf);
+                            return $result;
+                        },
+                        templateSelection: function (data) {
+                            return data.element.dataset.nome || data.text;
+                        },
+                        matcher: function (params, data) {
+                            if ($.trim(params.term) === '') {
+                                return data;
+                            }
+
+                            var text = data.text || data.element.dataset.nome || '';
+
+                            if (text.toUpperCase().indexOf(params.term.toUpperCase()) > -1) {
+                                return data;
+                            }
+
+                            return null; 
+                        }
+                    });
+                },
+                error: function () {
+                    alert("Erro ao carregar os clientes.");
+                }
+            });
+
+
+            var today = new Date().toISOString().split('T')[0];
+            $('#dataVenda').val(today);
+
+
+
+            $.ajax({
+                url: '@Url.Action("GetProdutos", "Produto")',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    var select = $('#ProdutosVenda');
+                    select.empty(); 
+
+                    data.results.forEach(function (produto) {
+                        select.append('<option value="' + produto.id + '" data-nome="' + produto.text + '" data-tamanho="' + produto.tamanho + '" data-valor="' + produto.valor + '" data-codigo="' + produto.codigo + '">' + produto.text + '</option>');
+                    });
+
+                    select.select2({
+                        width: '100%',
+                        dropdownParent: "#adicionarVendaModal",
+                        templateResult: function (data) {
+                            if (!data.id) { return data.text; } 
+
+                            var $result = $('<div class="produto-info"></div>');
+                            var nome = $('<div class="produto-nome"></div>').text(data.element.dataset.nome);
+                            var codigo = $('<div class="produto-codigo"></div>').text('Código: ' + data.element.dataset.codigo);
+                            var tamanho = $('<div class="produto-tamanho"></div>').text('Tamanho: ' + data.element.dataset.tamanho);
+
+                            $result.append(nome).append(codigo).append(tamanho);
+                            return $result;
+                        },
+                        templateSelection: function (data) {
+                            return data.element.dataset.nome || data.text; 
+                        },
+                        matcher: function (params, data) {
+                            if ($.trim(params.term) === '') {
+                                return data;
+                            }
+
+                            var text = data.text || data.element.dataset.nome || '';
+
+                            if (text.toUpperCase().indexOf(params.term.toUpperCase()) > -1) {
+                                return data;
+                            }
+
+                            return null;
+                        }
+                    });
+                },
+
+                error: function () {
+                    alert("Erro ao carregar os produtos.");
+                }
+            });
+
+
+
+
+        });
+
+
+
+
+
+        function adicionarVenda() {
+            $('#adicionarVendaModal').modal('show');
+        }
+
+        function editarVenda(cd) {
+            $.ajax({
+                url: '@Url.Action("Edit", "Fornecedor")',
+                type: 'GET',
+                data: { cd: cd },
+                success: function (response) {
+                    if (response.success) {
+                        $('#idFornecedorEdit').val(response.cdFornecedor);
+                        $('#nomeFornecedorEdit').val(response.nmFornecedor);
+
+                        $('#statusFornecedorEdit').val(response.status ? 'true' : 'false');
+
+                        $('#editarFornecedorModal').modal('show');
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Erro",
+                            text: response.message,
+                        });
+                    }
+                },
+                error: function () {
+                    alert("Erro ao enviar os dados.");
+                }
+            });
+        }
+
+
+        function fecharModalAdicionar() {
+            $('#adicionarVendaModal').modal('hide');
+
+        }
+
+        function fecharModalEditar() {
+            $('#editarFornecedorModal').modal('hide');
+
+        }
+
+        $('#adicionarVendaForm').on('submit', function (e) {
+            e.preventDefault();
+
+            var clienteId = $('#clienteVenda').val();
+            var valorTotal = parseFloat($('#valorTotalVenda').val()); 
+            var dataVenda = $('#dataVenda').val();
+
+            if (!clienteId || !dataVenda) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Erro",
+                    text: "Preencha todos os campos obrigatórios!",
+                });
+                return;
+            }
+
+            var produtos = [];
+            $('#produtosTabela tbody tr').each(function () {
+                var produtoId = $(this).data('id');
+                var quantidade = $(this).find('.quantidade-produto').val();
+                var preco = $(this).find('.preco-produto').val();
+
+                if (produtoId && quantidade && preco) {
+                    produtos.push({
+                        cdProduto: produtoId,
+                        quantidade: parseInt(quantidade, 10),
+                        preco: parseFloat(preco),
+                    });
+                }
+            });
+
+            if (produtos.length === 0) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Erro",
+                    text: "Adicione ao menos um produto à venda!",
+                });
+                return;
+            }
+
+            var dados = {
+                cdCliente: clienteId, 
+                dataVenda: dataVenda, 
+                produtos: produtos,   
+            };
+
+            $.ajax({
+                url: '@Url.Action("Create", "Venda")',
+                type: 'POST',
+                data: { dados: JSON.stringify(dados) },
+                success: function (response) {
+                    if (response.success) {
+                        Swal.fire({
+                            title: response.message,
+                            icon: "success",
+                        });
+
+                        $('#adicionarVendaForm')[0].reset();
+                        $('#adicionarVendaModal').modal('hide');
+
+                        $('#VendaTable').DataTable().ajax.reload(null, false); 
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Erro",
+                            text: response.message,
+                        });
+                    }
+                },
+                error: function () {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Erro",
+                        text: "Erro ao enviar os dados para o servidor.",
+                    });
+                }
+            });
+        });
+
+
+
+        $('#editarFornecedorForm').on('submit', function (e) {
+            e.preventDefault();
+
+            var formData = $(this).serialize();
+
+            $.ajax({
+                url: '@Url.Action("Edit", "Fornecedor")',
+                type: 'POST',
+                data: formData,
+                success: function (response) {
+                    if (response.success) {
+                        Swal.fire({
+                            title: response.message,
+                            icon: "success",
+                        });
+
+                        $('#editarFornecedorForm')[0].reset();
+                        $('#editarFornecedorModal').modal('hide');
+
+                        $('#fornecedorTable').DataTable().ajax.reload(null, false);
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Erro",
+                            text: response.message,
+                        });
+                    }
+                },
+                error: function () {
+                    alert("Erro ao enviar os dados.");
+                }
+            });
+        });
+
+
+
+
+        function atualizarValorTotal() {
+            let valorTotal = 0;
+
+            $('#produtosTabela tbody tr').each(function () {
+                const valorProduto = parseFloat($(this).find('.preco-produto').val()) || 0;
+                const quantidadeProduto = parseInt($(this).find('.quantidade-produto').val()) || 0;
+                valorTotal += valorProduto * quantidadeProduto;
+            });
+
+            $('#valorTotalVenda').val(`R$ ${valorTotal.toFixed(2)}`);
+        }
+
+        $('#adicionarProdutoBtn').click(function () {
+            const produtoSelecionado = $('#ProdutosVenda').select2('data')[0]; 
+
+            if (!produtoSelecionado) {
+                alert('Selecione um produto antes de adicionar.');
+                return;
+            }
+
+            const id = produtoSelecionado.id;
+            const codigo = produtoSelecionado.element.dataset.codigo;
+            const nome = produtoSelecionado.element.dataset.nome;
+            const tamanho = produtoSelecionado.element.dataset.tamanho;
+            const valor = parseFloat(produtoSelecionado.element.dataset.valor || "0.00").toFixed(2); 
+
+            if ($('#produtosTabela tbody tr[data-id="' + id + '"]').length > 0) {
+                alert('O produto já foi adicionado.');
+                return;
+            }
+
+            const novaLinha = `
+                <tr data-id="${id}">
+                    <td>${codigo}</td>
+                    <td>${nome}</td>
+                    <td>${tamanho}</td>
+                    <td>
+                        <input type="number" class="form-control quantidade-produto" min="1" value="1">
+                    </td>
+                    <td>
+                        <input type="text" class="form-control preco-produto" value="${valor}" readonly>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-remover-produto"><i class="fa-regular fa-trash-can"></i></button>
+                    </td>
+                </tr>
+            `;
+
+            $('#produtosTabela tbody').append(novaLinha);
+
+            atualizarValorTotal();
+
+            $('#ProdutosVenda').val(null).trigger('change');
+        });
+
+        $('#produtosTabela').on('input', '.quantidade-produto', function () {
+            atualizarValorTotal();
+        });
+
+        $('#produtosTabela').on('click', '.btn-remover-produto', function () {
+            $(this).closest('tr').remove();
+            atualizarValorTotal();
+        });
+
+
+
+
+
+       
+        
+
+
+    </script>
+
+
+</body>
+</html>

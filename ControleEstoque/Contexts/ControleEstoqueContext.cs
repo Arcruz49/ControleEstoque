@@ -1,27 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using ControleEstoque.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ControleEstoque.Models;
+namespace ControleEstoque.Contexts;
 
-public partial class controleEstoqueDBContext : DbContext
+public partial class ControleEstoqueContext : DbContext
 {
-    public controleEstoqueDBContext()
+    public ControleEstoqueContext()
     {
     }
 
-    public controleEstoqueDBContext(DbContextOptions<controleEstoqueDBContext> options)
+    public ControleEstoqueContext(DbContextOptions<ControleEstoqueContext> options)
         : base(options)
     {
     }
 
-    public virtual DbSet<cadCliente> cadCliente { get; set; }
+    public virtual DbSet<cadCliente> cadClientes { get; set; }
 
-    public virtual DbSet<cadFornecedor> cadFornecedor { get; set; }
+    public virtual DbSet<cadFornecedor> cadFornecedors { get; set; }
 
-    public virtual DbSet<cadProduto> cadProduto { get; set; }
+    public virtual DbSet<cadProduto> cadProdutos { get; set; }
 
-    public virtual DbSet<cadVenda_produto> cadVenda_produto { get; set; }
+    public virtual DbSet<cadVenda_produto> cadVenda_produtos { get; set; }
 
     public virtual DbSet<cadVendum> cadVenda { get; set; }
 
@@ -77,7 +78,7 @@ public partial class controleEstoqueDBContext : DbContext
 
         modelBuilder.Entity<cadVenda_produto>(entity =>
         {
-            entity.HasKey(e => e.cdVendaProduto).HasName("PK__cadVenda__CB73D0B51642CBBC");
+            entity.HasKey(e => e.cdVendaProduto).HasName("PK__cadVenda__CB73D0B54C759F93");
 
             entity.ToTable("cadVenda_produto");
 

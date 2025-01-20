@@ -11,6 +11,8 @@ public partial class cadVenda_produto
 
     public int cdProduto { get; set; }
 
+    public int? quantidade { get; set; }
+
     public virtual cadProduto cdProdutoNavigation { get; set; } = null!;
 
     public virtual cadVendum cdVendaNavigation { get; set; } = null!;

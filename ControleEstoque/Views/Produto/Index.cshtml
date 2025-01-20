@@ -165,12 +165,7 @@
         </div>
     </div>
 
-    <style>
-        #ProdutoTable th:nth-child(1),
-        #ProdutoTable td:nth-child(1) {
-            display: none;
-        }
-    </style>
+
 
     <script src="~/js/jquery.js"></script>
     <script src="~/js/jqueryDatatable.js"></script>
@@ -188,7 +183,7 @@
                 },
                 columns: [
                     { data: 'id' },
-                    { data: 'codigo' },
+                    { data: 'codigo' }, 
                     { data: 'nome' },
                     { data: 'descricao' },
                     {
@@ -214,13 +209,7 @@
                         }
                     }
                 ],
-                columnDefs: [
-                    {
-                        targets: 0, 
-                        visible: false, 
-                        searchable: false
-                    }
-                ],
+                
                 pagingType: "full_numbers",
                 stateSave: true,
                 language: {

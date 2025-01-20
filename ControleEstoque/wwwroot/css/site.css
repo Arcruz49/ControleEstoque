@@ -36,6 +36,10 @@ body {
     text-align: center;
 }
 
+#VendaTable th, #VendaTable td {
+    text-align: center;
+}
+
 .mainContainer {
     background-color: #fff;
     margin-right: 60px;
@@ -50,4 +54,134 @@ body {
 #ProdutoTable th:nth-child(1),
 #ProdutoTable td:nth-child(1) {
     display: none;
+}
+
+
+
+
+
+
+/* Estilizando a barra de pesquisa */
+.dataTables_wrapper .dataTables_filter {
+    margin-bottom: 15px;
+}
+
+    .dataTables_wrapper .dataTables_filter label {
+        font-size: 14px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .dataTables_wrapper .dataTables_filter input {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 5px 10px;
+        font-size: 14px;
+        width: 250px;
+    }
+
+/* Estilizando a paginação */
+.dataTables_wrapper .dataTables_paginate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin: 0 3px;
+        padding: 5px 10px;
+        color: #333;
+        background-color: #f9f9f9;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+            background-color: #007bff;
+            color: #fff;
+            border-color: #007bff;
+        }
+
+/* Estilizando o menu de itens por página */
+.dataTables_wrapper .dataTables_length {
+    margin-bottom: 15px;
+}
+
+    .dataTables_wrapper .dataTables_length label {
+        font-size: 14px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .dataTables_wrapper .dataTables_length select {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 5px;
+        font-size: 14px;
+    }
+
+/* Estilizando as informações de paginação */
+.dataTables_wrapper .dataTables_info {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.modal-backdrop {
+    z-index: 1040 !important; /* Ajusta o z-index do backdrop do modal */
+}
+
+.modal {
+    z-index: 1050 !important; /* Ajusta o z-index do modal */
+}
+
+#clienteVenda {
+    width: 50%
+}
+
+.select2-dropdown {
+    z-index: 9999 !important; /* Um valor muito alto para garantir que fique acima de tudo */
+}
+
+.select2-search__field {
+    z-index: 9999 !important;
+}
+
+/* Personalizando a exibição do dropdown */
+.select2-container .select2-results__option {
+    white-space: normal; /* Permite quebras de linha dentro da opção */
+}
+
+/* Estilo do nome do cliente */
+.select2-results__option .cliente-info {
+    display: block;
+}
+
+.select2-results__option .cliente-nome {
+    font-size: 1rem; /* Tamanho do nome */
+    font-weight: bold; /* Nome em negrito */
+}
+
+.select2-results__option .cliente-cpf {
+    font-size: 0.8rem; /* CPF em tamanho menor */
+    color: #888; /* Cor mais clara para o CPF */
+    margin-top: 4px; /* Distância entre o nome e o CPF */
+}
+
+
+.custom-select-height {
+    height: 50px; /* Ajuste o valor para o tamanho desejado */
+    padding-top: .375rem;
+    padding-bottom: .375rem;
 }

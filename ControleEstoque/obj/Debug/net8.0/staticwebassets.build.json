@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "G3FyHtEcOYJAOqxbB94lBq008dEkKTHm8rGDrZc/wkY=",
+  "Hash": "yoFvwDSj795mcj4Z+8eZoy95fFcA0tuqvubELV4wrdM=",
   "Source": "ControleEstoque",
   "BasePath": "_content/ControleEstoque",
   "Mode": "Default",
@@ -148,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\mask.js"
+    },
+    {
+      "Identity": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\js\\select2.js",
+      "SourceId": "ControleEstoque",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\",
+      "BasePath": "_content/ControleEstoque",
+      "RelativePath": "js/select2.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\select2.js"
     },
     {
       "Identity": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\js\\site.js",
@@ -813,6 +832,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\datatable.css"
+    },
+    {
+      "Identity": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\lib\\bootstrap\\dist\\css\\select2.css",
+      "SourceId": "ControleEstoque",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\",
+      "BasePath": "_content/ControleEstoque",
+      "RelativePath": "lib/bootstrap/dist/css/select2.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\select2.css"
     },
     {
       "Identity": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
