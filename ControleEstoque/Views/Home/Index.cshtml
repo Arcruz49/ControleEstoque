@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +24,12 @@
             .stat-box p {
                 margin: 0;
             }
+
+        /* Adicionando limite de tamanho para o gráfico de pizza */
+        #productsPieChart {
+            max-width: 350px;
+            max-height: 350px;
+        }
     </style>
 </head>
 <body>
@@ -53,7 +59,6 @@
         </div>
 
         <div class="row text-white">
-
             <div class="col-md-3">
                 <div class="stat-box" style="background-color: #E7E5DF">
                     <h3 id="totalSales">0</h3>
@@ -70,8 +75,8 @@
 
             <div class="col-md-3">
                 <div class="stat-box" style="background-color: #E38E8C">
-                    <h3 id="totalExpense">R$ 0,00</h3>
-                    <p>Valor Gasto</p>
+                    <h3 id="totalProductsSold">0</h3>
+                    <p>Produtos Vendidos</p>
                 </div>
             </div>
 
@@ -81,17 +86,18 @@
                     <p>Lucro Total</p>
                 </div>
             </div>
-            
-            
-            
         </div>
 
-        <!-- Gráfico -->
         <div class="row mt-4">
-            <div class="col-md-12">
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
                 <canvas id="salesChart"></canvas>
             </div>
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <canvas id="productsPieChart"></canvas>
+            </div>
         </div>
+
+
     </div>
 
     <script>
@@ -151,13 +157,22 @@
                             // Atualizar os valores do dashboard
                             $("#totalSales").text(response.quantidadeVendas);
                             $("#totalRevenue").text(`R$ ${response.valorGanho}`);
-                            $("#totalExpense").text(`R$ ${response.valorGasto}`);
+                            $("#totalProductsSold").text(response.produtosVendidos);
                             $("#totalProfit").text(`R$ ${response.lucroTotal}`);
 
-                            // Atualizar o gráfico
-                            salesChart.data.labels = response.graficoLabels;
-                            salesChart.data.datasets[0].data = response.graficoValores;
-                            salesChart.update();
+                            // Atualizar o gráfico de barras (se houver)
+                            if (response.graficoLabels && response.graficoValores) {
+                                salesChart.data.labels = response.graficoLabels;
+                                salesChart.data.datasets[0].data = response.graficoValores;
+                                salesChart.update();
+                            }
+
+                            // Atualizar o gráfico de pizza
+                            if (response.produtosTiposLabels && response.produtosTiposValores) {
+                                productsPieChart.data.labels = response.produtosTiposLabels; // Labels dos tipos de produtos
+                                productsPieChart.data.datasets[0].data = response.produtosTiposValores; // Quantidades de produtos vendidos
+                                productsPieChart.update();
+                            }
                         },
                         error: function (xhr, status, error) {
                             console.error("Erro ao obter dados:", error);
@@ -169,7 +184,7 @@
                 }
             });
 
-            // Configurações do gráfico
+            // Configurações do gráfico de barras
             const ctx = $("#salesChart")[0].getContext("2d");
             const salesChart = new Chart(ctx, {
                 type: "bar",
@@ -193,9 +208,38 @@
                     },
                 },
             });
+
+            // Configurações do gráfico de pizza
+            const ctxPie = $("#productsPieChart")[0].getContext("2d");
+            const productsPieChart = new Chart(ctxPie, {
+                type: "pie",
+                data: {
+                    labels: [], // Labels dos tipos de produtos
+                    datasets: [
+                        {
+                            label: "Produtos Vendidos",
+                            data: [], // Quantidade vendida para cada tipo de produto
+                            backgroundColor: [
+                                "rgba(255, 99, 132, 0.6)",
+                                "rgba(54, 162, 235, 0.6)",
+                                "rgba(255, 206, 86, 0.6)",
+                                "rgba(75, 192, 192, 0.6)",
+                                "rgba(153, 102, 255, 0.6)"
+                            ],
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: "top",
+                        },
+                    },
+                },
+            });
         });
-
-
     </script>
 </body>
 </html>

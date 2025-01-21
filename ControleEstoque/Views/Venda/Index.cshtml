@@ -92,7 +92,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Produtos adicionados dinamicamente serão exibidos aqui -->
                             </tbody>
                         </table>
 
@@ -113,34 +112,71 @@
 
 
     <div class="modal fade" id="editarVendaModal" tabindex="-1" aria-labelledby="editarVendaModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="editarVendaModalLabel">Adicionar Venda</h5>
-                    <button type="button" onclick="fecharModalEditar()" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    <h5 class="modal-title" id="editarVendaModalLabel">Editar Venda</h5>
+                    <button type="button" class="btn-close" onclick="fecharModalEditar()" data-bs-dismiss="modal" aria-label="Fechar"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="editarVendaForm" action="your_action_url_here" method="post">
-                        <input type="hidden" id="idVendaEdit" name="CdVenda" />
-                        <div class="mb-3">
-                            <label for="nomeVenda" class="form-label">Nome do Venda</label>
-                            <input type="text" class="form-control" id="nomeVendaEdit" name="NmVenda" required="required" placeholder="">
-                        </div>
-                        <div class="mb-3">
-                            <label for="statusVenda" class="form-label">Status</label>
-                            <select class="form-select" id="statusVendaEdit" name="Produtos[]" multiple="multiple">
-                                <option value="true">Ativo</option>
-                                <option value="false">Inativo</option>
-                            </select>
-                        </div>
-                        <button type="button" class="btn btn-secondary" onclick="fecharModalEditar()" data-bs-dismiss="modal">Fechar</button>
-                        <button type="submit" class="btn btn-primary">Salvar</button>
-                    </form>
+                    <form id="editarVendaForm" action="#" method="post">
 
+                        <!-- Cliente e Data da Venda -->
+                        <div class="mb-3 row">
+                            <div class="col-md-6">
+                                <label for="clienteVenda" class="form-label">Cliente</label>
+                                <input type="text" class="form-control" id="clienteVendaEdit" name="nmCliente" disabled>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="dataVenda" class="form-label">Data da Venda</label>
+                                <input type="date" class="form-control" id="dataVendaEdit" name="dtVenda" disabled>
+                            </div>
+                        </div>
+
+                        <!-- Produtos da Venda -->
+                        <div class="mb-3 row align-items-end">
+                            <div class="col-md-10">
+                                <label for="ProdutosVenda" class="form-label">Produtos</label>
+                                <select class="form-select" id="ProdutosVendaEdit" name="Produtos" disabled>
+                                    <!-- Os dados dos produtos serão carregados aqui via JavaScript -->
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Tabela de Produtos -->
+                        <table class="table" id="produtosTabelaEdit">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Produto</th>
+                                    <th>Tamanho</th>
+                                    <th>Quantidade</th>
+                                    <th>Preço</th>
+                                </tr>
+                            </thead>
+                            <tbody id="produtosTabelaBodyEdit">
+                                <!-- Os dados dos produtos selecionados serão carregados aqui -->
+                            </tbody>
+                        </table>
+
+                        <!-- Valor Total -->
+                        <div class="mb-3 row">
+                            <label for="valorTotalVenda" class="col-md-2 col-form-label">Valor Total:</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control-plaintext fw-bold" id="valorTotalVendaEdit" value="R$ 0,00" readonly>
+                            </div>
+                        </div>
+
+                        <!-- Botões -->
+                        <button type="button" class="btn btn-secondary" onclick="fecharModalEditar()" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary" onclick="editarVenda()">Editar</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+
 
 
     <script src="~/js/jquery.js"></script>
@@ -178,13 +214,13 @@
                     {
                         data: 'qtdProdutos',
                         render: function (data) {
-                            return data + ' itens'; // Exemplo de formatação de quantidade
+                            return data === 1 ? data + ' item' : data + ' itens';
                         }
                     },
                     {
                         data: 'id',
                         render: function (data) {
-                            return '<a onclick="editarVenda(' + data + ')" class=""><i title="Editar fornecedor" class="fa-solid fa-pen-to-square" style="color: #2d3034;"></i></a>';
+                            return '<a onclick="editarVenda(' + data + ')" class=""><i title="Editar Venda" class="fa-solid fa-pen-to-square" style="color: #2d3034;"></i></a>';
                         }
                     }
                 ],
@@ -253,10 +289,13 @@
             });
 
 
-            var today = new Date().toISOString().split('T')[0];
-            $('#dataVenda').val(today);
+            var today = new Date();
+            var formattedDate = today.getFullYear() + '-' +
+                String(today.getMonth() + 1).padStart(2, '0') + '-' +
+                String(today.getDate()).padStart(2, '0');
+            $('#dataVenda').val(formattedDate);
 
-
+            
 
             $.ajax({
                 url: '@Url.Action("GetProdutos", "Produto")',
@@ -308,13 +347,7 @@
                 }
             });
 
-
-
-
         });
-
-
-
 
 
         function adicionarVenda() {
@@ -323,17 +356,46 @@
 
         function editarVenda(cd) {
             $.ajax({
-                url: '@Url.Action("Edit", "Fornecedor")',
+                url: '@Url.Action("Edit", "Venda")',
                 type: 'GET',
-                data: { cd: cd },
+                data: { cdVenda: cd },
                 success: function (response) {
                     if (response.success) {
-                        $('#idFornecedorEdit').val(response.cdFornecedor);
-                        $('#nomeFornecedorEdit').val(response.nmFornecedor);
+                        // Preenche os campos do modal com os dados da venda
+                        $('#clienteVendaEdit').val(response.data.nmCliente);
+                        let dataVendaFormatada = response.data.dtVenda.split('T')[0];
+                        $('#dataVendaEdit').val(dataVendaFormatada);
 
-                        $('#statusFornecedorEdit').val(response.status ? 'true' : 'false');
+                        // Verifica se a lista de produtos existe e está no formato correto
+                        let produtos = response.data.produtos || [];
+                        let produtosTabelaBody = $('#produtosTabelaBodyEdit');
+                        produtosTabelaBody.empty(); // Limpa a tabela antes de preencher
 
-                        $('#editarFornecedorModal').modal('show');
+                        if (produtos.length > 0) {
+                            produtos.forEach(function (produto) {
+                                produtosTabelaBody.append(`
+                                    <tr>
+                                        <td>${produto.cdProduto}</td>
+                                        <td>${produto.nmProduto}</td>
+                                        <td>${produto.tamanho}</td>
+                                        <td>${produto.quantidade}</td>
+                                        <td>${produto.preco}</td>
+                                    </tr>
+                                `);
+                            });
+                        } else {
+                            produtosTabelaBody.append(`
+                                <tr>
+                                    <td colspan="5">Nenhum produto encontrado para esta venda.</td>
+                                </tr>
+                            `);
+                        }
+
+                        // Preenche o valor total da venda
+                        $('#valorTotalVendaEdit').val('R$ ' + response.data.valorVenda.toFixed(2).replace('.', ','));
+
+                        // Abre o modal de edição
+                        $('#editarVendaModal').modal('show');
                     } else {
                         Swal.fire({
                             icon: "error",
@@ -343,10 +405,15 @@
                     }
                 },
                 error: function () {
-                    alert("Erro ao enviar os dados.");
+                    Swal.fire({
+                        icon: "error",
+                        title: "Erro",
+                        text: "Erro ao carregar os dados da venda.",
+                    });
                 }
             });
         }
+
 
 
         function fecharModalAdicionar() {
@@ -355,7 +422,7 @@
         }
 
         function fecharModalEditar() {
-            $('#editarFornecedorModal').modal('hide');
+            $('#editarVendaModal').modal('hide');
 
         }
 
@@ -418,6 +485,7 @@
 
                         $('#adicionarVendaForm')[0].reset();
                         $('#adicionarVendaModal').modal('hide');
+                        limparTabela();
 
                         $('#VendaTable').DataTable().ajax.reload(null, false); 
                     } else {
@@ -543,7 +611,12 @@
 
 
 
+        function limparTabela() {
+            const tabela = document.getElementById("produtosTabela");
+            const tbody = tabela.querySelector("tbody");
 
+            tbody.innerHTML = '';
+        }
 
        
         

@@ -57,6 +57,7 @@ BEGIN
 	(
 		cdCliente INT PRIMARY KEY IDENTITY(1,1),
 		nmCliente nvarchar(256),
+		cpf nvarchar(256),
 		numeroCelular nvarchar(256),
 		cidade nvarchar(256),
 		bairro nvarchar(256),

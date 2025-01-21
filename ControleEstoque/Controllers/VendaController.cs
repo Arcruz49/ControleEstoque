@@ -30,10 +30,13 @@ namespace ControleEstoque.Controllers
             var totalRecords = db.cadVenda.Count();
 
             var query = db.cadVenda.AsQueryable();
-            //if (!string.IsNullOrEmpty(searchValue))
-            //{
-            //    query = query.Where(f => f.nmCliente.Contains(searchValue));
-            //}  
+            query = query.OrderByDescending(a => a.dtVenda);
+
+
+            if (!string.IsNullOrEmpty(searchValue))
+            {
+                query = query.Where(f => f.cdClienteNavigation.nmCliente.Contains(searchValue));
+            }
 
             var filteredRecords = query.Count();
 
@@ -141,6 +144,51 @@ namespace ControleEstoque.Controllers
                 return Json(new { success = false, message = ex.Message });
             }
         }
+
+        [HttpGet]
+        public JsonResult Edit(int cdVenda)
+        {
+            try
+            {
+                if (cdVenda <= 0)
+                {
+                    return Json(new { success = false, message = "Venda não encontrada." });
+                }
+
+                // Busca a venda no banco
+                var venda = db.cadVenda
+                    .Where(v => v.cdVenda == cdVenda)
+                    .Select(v => new
+                    {
+                        v.cdVenda,
+                        v.cdClienteNavigation.nmCliente,
+                        v.valorVenda,
+                        v.valorLucro,
+                        v.dtVenda,
+                        produtos = v.cadVenda_produtos.Select(p => new
+                        {
+                            p.cdProduto,
+                            p.quantidade,
+                            p.cdProdutoNavigation.nmProduto,
+                            p.cdProdutoNavigation.tamanho,
+                            preco = db.cadProdutos.FirstOrDefault(prod => prod.cdProduto == p.cdProduto).valorVenda
+                        }).ToList()
+                    })
+                    .FirstOrDefault();
+
+                if (venda == null)
+                {
+                    return Json(new { success = false, message = "Venda não encontrada." });
+                }
+
+                return Json(new { success = true, data = venda });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
+
 
 
     }
