@@ -175,8 +175,6 @@
         let table;
         $(document).ready(function () {
             table = $('#ProdutoTable').DataTable({
-                processing: true,
-                serverSide: true,
                 ajax: {
                     url: '@Url.Action("List", "Produto")',
                     type: 'GET',

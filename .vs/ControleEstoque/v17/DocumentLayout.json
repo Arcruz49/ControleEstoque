@@ -3,96 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\views\\venda\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\views\\venda\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\controllers\\vendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\controllers\\vendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\controleestoque.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\controleestoque.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\models\\resource\\resourceprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\models\\resource\\resourceprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\controllers\\fornecedorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\controllers\\fornecedorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\views\\fornecedor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\views\\fornecedor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\models\\cadcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\models\\cadcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\controleestoque.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\controleestoque.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\models\\cadvendum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\models\\cadvendum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\contexts\\controleestoquecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\contexts\\controleestoquecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\models\\resource\\resourcevenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\models\\resource\\resourcevenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\views\\produto\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\views\\produto\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\models\\cadproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\models\\cadproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\models\\resource\\resourceprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\models\\resource\\resourceprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\models\\cadfornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\models\\cadfornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\controllers\\vendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\controllers\\vendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\arthur cruz\\documents\\projetos pessoais\\controleestoque\\controleestoque\\views\\venda\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\views\\venda\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -102,11 +50,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 245,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "ControleEstoque\\Views\\Home\\Index.cshtml",
@@ -115,17 +63,18 @@
               "ViewState": "AgIAAEgAAAAAAAAAAAAAAGIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-01-20T03:05:06.264Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "ControleEstoque\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Controllers\\HomeController.cs",
               "RelativeToolTip": "ControleEstoque\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAArwD4AAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-20T03:29:25.229Z",
               "IsPinned": true,
@@ -133,13 +82,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "VendaController.cs",
               "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Controllers\\VendaController.cs",
               "RelativeDocumentMoniker": "ControleEstoque\\Controllers\\VendaController.cs",
               "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Controllers\\VendaController.cs",
               "RelativeToolTip": "ControleEstoque\\Controllers\\VendaController.cs",
-              "ViewState": "AgIAAIcAAAAAAAAAAAAUwKYAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAUwKYAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-19T04:55:50.768Z",
               "IsPinned": true,
@@ -147,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Views\\Venda\\Index.cshtml",
               "RelativeDocumentMoniker": "ControleEstoque\\Views\\Venda\\Index.cshtml",
@@ -159,239 +108,86 @@
               "IsPinned": true
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "web.config",
-              "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\web.config",
-              "RelativeDocumentMoniker": "ControleEstoque\\web.config",
-              "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\web.config",
-              "RelativeToolTip": "ControleEstoque\\web.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-01-21T03:43:20.893Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ControleEstoque.csproj",
-              "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\ControleEstoque.csproj",
-              "RelativeDocumentMoniker": "ControleEstoque\\ControleEstoque.csproj",
-              "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\ControleEstoque.csproj",
-              "RelativeToolTip": "ControleEstoque\\ControleEstoque.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-01-20T04:59:21.176Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ResourceProdutos.cs",
-              "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Models\\Resource\\ResourceProdutos.cs",
-              "RelativeDocumentMoniker": "ControleEstoque\\Models\\Resource\\ResourceProdutos.cs",
-              "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Models\\Resource\\ResourceProdutos.cs",
-              "RelativeToolTip": "ControleEstoque\\Models\\Resource\\ResourceProdutos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T01:08:55.261Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Views\\Cliente\\Index.cshtml",
-              "RelativeDocumentMoniker": "ControleEstoque\\Views\\Cliente\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Views\\Cliente\\Index.cshtml",
-              "RelativeToolTip": "ControleEstoque\\Views\\Cliente\\Index.cshtml",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-20T01:28:05.798Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "FornecedorController.cs",
-              "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Controllers\\FornecedorController.cs",
-              "RelativeDocumentMoniker": "ControleEstoque\\Controllers\\FornecedorController.cs",
-              "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Controllers\\FornecedorController.cs",
-              "RelativeToolTip": "ControleEstoque\\Controllers\\FornecedorController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T02:49:29.222Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "ControleEstoque\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "ControleEstoque\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-01-14T01:00:07.099Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Program.cs",
-              "RelativeDocumentMoniker": "ControleEstoque\\Program.cs",
-              "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Program.cs",
-              "RelativeToolTip": "ControleEstoque\\Program.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAEwA8AAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T01:19:47.769Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\appsettings.json",
               "RelativeDocumentMoniker": "ControleEstoque\\appsettings.json",
               "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\appsettings.json",
               "RelativeToolTip": "ControleEstoque\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-20T04:59:29.034Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "cadCliente.cs",
-              "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Models\\cadCliente.cs",
-              "RelativeDocumentMoniker": "ControleEstoque\\Models\\cadCliente.cs",
-              "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Models\\cadCliente.cs",
-              "RelativeToolTip": "ControleEstoque\\Models\\cadCliente.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAD4vwsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T01:40:14.285Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "ControleEstoque\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "ControleEstoque\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAByAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-19T04:58:07.836Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Views\\Fornecedor\\Index.cshtml",
-              "RelativeDocumentMoniker": "ControleEstoque\\Views\\Fornecedor\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Views\\Fornecedor\\Index.cshtml",
-              "RelativeToolTip": "ControleEstoque\\Views\\Fornecedor\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-19T20:22:09.333Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "cadVendum.cs",
-              "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Models\\cadVendum.cs",
-              "RelativeDocumentMoniker": "ControleEstoque\\Models\\cadVendum.cs",
-              "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Models\\cadVendum.cs",
-              "RelativeToolTip": "ControleEstoque\\Models\\cadVendum.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBMAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T01:33:01.62Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ControleEstoqueContext.cs",
-              "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Contexts\\ControleEstoqueContext.cs",
-              "RelativeDocumentMoniker": "ControleEstoque\\Contexts\\ControleEstoqueContext.cs",
-              "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Contexts\\ControleEstoqueContext.cs",
-              "RelativeToolTip": "ControleEstoque\\Contexts\\ControleEstoqueContext.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAYwB0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T19:57:40.424Z",
+              "WhenOpened": "2025-01-22T03:10:18.334Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ClienteController.cs",
-              "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Controllers\\ClienteController.cs",
-              "RelativeDocumentMoniker": "ControleEstoque\\Controllers\\ClienteController.cs",
-              "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Controllers\\ClienteController.cs",
-              "RelativeToolTip": "ControleEstoque\\Controllers\\ClienteController.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAlwI4AAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-13T20:55:27.159Z",
+              "DocumentIndex": 3,
+              "Title": "ControleEstoque",
+              "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\ControleEstoque.csproj",
+              "RelativeDocumentMoniker": "ControleEstoque\\ControleEstoque.csproj",
+              "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\ControleEstoque.csproj",
+              "RelativeToolTip": "ControleEstoque\\ControleEstoque.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-01-22T03:09:57.626Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 2,
+              "Title": "web.config",
+              "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\web.config",
+              "RelativeDocumentMoniker": "ControleEstoque\\web.config",
+              "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\web.config",
+              "RelativeToolTip": "ControleEstoque\\web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-01-22T03:09:46.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Views\\Produto\\Index.cshtml",
               "RelativeDocumentMoniker": "ControleEstoque\\Views\\Produto\\Index.cshtml",
               "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Views\\Produto\\Index.cshtml",
               "RelativeToolTip": "ControleEstoque\\Views\\Produto\\Index.cshtml",
-              "ViewState": "AgIAAG4BAAAAAAAAAAAAAKwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAAALYAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-17T03:41:10.938Z"
+              "WhenOpened": "2025-01-22T02:18:00.057Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 4,
               "Title": "ProdutoController.cs",
               "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Controllers\\ProdutoController.cs",
               "RelativeDocumentMoniker": "ControleEstoque\\Controllers\\ProdutoController.cs",
               "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Controllers\\ProdutoController.cs",
               "RelativeToolTip": "ControleEstoque\\Controllers\\ProdutoController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAuwAsAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBcAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T02:40:40.339Z",
+              "WhenOpened": "2025-01-22T02:17:46.672Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ResourceVenda.cs",
-              "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Models\\Resource\\ResourceVenda.cs",
-              "RelativeDocumentMoniker": "ControleEstoque\\Models\\Resource\\ResourceVenda.cs",
-              "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Models\\Resource\\ResourceVenda.cs",
-              "RelativeToolTip": "ControleEstoque\\Models\\Resource\\ResourceVenda.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAAvAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "ResourceProdutos.cs",
+              "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Models\\Resource\\ResourceProdutos.cs",
+              "RelativeDocumentMoniker": "ControleEstoque\\Models\\Resource\\ResourceProdutos.cs",
+              "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Models\\Resource\\ResourceProdutos.cs",
+              "RelativeToolTip": "ControleEstoque\\Models\\Resource\\ResourceProdutos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T01:08:34.596Z",
+              "WhenOpened": "2025-01-20T01:08:55.261Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "CadProduto.cs",
-              "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Models\\CadProduto.cs",
-              "RelativeDocumentMoniker": "ControleEstoque\\Models\\CadProduto.cs",
-              "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Models\\CadProduto.cs",
-              "RelativeToolTip": "ControleEstoque\\Models\\CadProduto.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAIA7wBsAAABcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T01:40:12.702Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "CadFornecedor.cs",
-              "DocumentMoniker": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Models\\CadFornecedor.cs",
-              "RelativeDocumentMoniker": "ControleEstoque\\Models\\CadFornecedor.cs",
-              "ToolTip": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\Models\\CadFornecedor.cs",
-              "RelativeToolTip": "ControleEstoque\\Models\\CadFornecedor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T01:40:13.54Z"
             }
           ]
         }

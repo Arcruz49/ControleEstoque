@@ -39,10 +39,10 @@ namespace ControleEstoque.Controllers
             var lucroTotal = 0.0;
             int? produtosVendidos = 0;
 
-            var graficoLabels = new List<string>();  // Labels para gráfico
-            var graficoValores = new List<double>(); // Valores para gráfico de vendas
-            var produtosTiposLabels = new List<string>(); // Labels para gráfico de pizza
-            var produtosTiposValores = new List<int>(); // Quantidade de cada produto para gráfico de pizza
+            var graficoLabels = new List<string>();  
+            var graficoValores = new List<double>();
+            var produtosTiposLabels = new List<string>(); 
+            var produtosTiposValores = new List<int>(); 
 
             switch (tipoFiltro)
             {
