@@ -57,9 +57,20 @@ body {
 }
 
 
+#clienteTable th:nth-child(1),
+#clienteTable td:nth-child(1) {
+    display: none;
+}
 
+#fornecedorTable th:nth-child(1),
+#fornecedorTable td:nth-child(1) {
+    display: none;
+}
 
-
+#VendaTable th:nth-child(1),
+#VendaTable td:nth-child(1) {
+    display: none;
+}
 
 /* Estilizando a barra de pesquisa */
 .dataTables_wrapper .dataTables_filter {
