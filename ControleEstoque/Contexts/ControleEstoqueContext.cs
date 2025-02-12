@@ -18,6 +18,8 @@ public partial class ControleEstoqueContext : DbContext
 
     public virtual DbSet<cadCliente> cadClientes { get; set; }
 
+    public virtual DbSet<cadConfiguracao> cadConfiguracaos { get; set; }
+
     public virtual DbSet<cadFornecedor> cadFornecedors { get; set; }
 
     public virtual DbSet<cadProduto> cadProdutos { get; set; }
@@ -46,6 +48,17 @@ public partial class ControleEstoqueContext : DbContext
             entity.Property(e => e.numero).HasMaxLength(256);
             entity.Property(e => e.numeroCelular).HasMaxLength(256);
             entity.Property(e => e.rua).HasMaxLength(256);
+        });
+
+        modelBuilder.Entity<cadConfiguracao>(entity =>
+        {
+            entity.HasKey(e => e.cdConfiguracao).HasName("PK__cadConfi__2235037D3F1CB3C8");
+
+            entity.ToTable("cadConfiguracao");
+
+            entity.Property(e => e.nomeMenu)
+                .HasMaxLength(256)
+                .IsUnicode(false);
         });
 
         modelBuilder.Entity<cadFornecedor>(entity =>

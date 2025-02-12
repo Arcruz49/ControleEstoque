@@ -1,0 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace ControleEstoque.Models;
+
+public partial class cadConfiguracao
+{
+    public int cdConfiguracao { get; set; }
+
+    public string? nomeMenu { get; set; }
+
+    public byte[]? imgSistema { get; set; }
+}

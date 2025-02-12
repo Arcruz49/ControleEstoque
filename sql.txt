@@ -105,3 +105,11 @@ BEGIN
 	);
 END;
 
+
+CREATE TABLE cadConfiguracao
+(
+    cdConfiguracao INT PRIMARY KEY IDENTITY(1,1),
+    nomeMenu VARCHAR(256),
+    imgSistema VARBINARY(MAX) 
+);
+
