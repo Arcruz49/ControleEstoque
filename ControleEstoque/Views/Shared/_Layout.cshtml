@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ControleEstoque</title>
+    <title id="title"></title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ControleEstoque.styles.css" asp-append-version="true" />
@@ -22,7 +22,7 @@
                 <a asp-area="" asp-controller="Home" asp-action="Index"><div class="sidebar-brand"><i class="fa-solid fa-house"></i></div></a>
             </div>
             <ul class="sidebar-nav">
-                <li class="nav-title">Hellen Nobrega</li>
+                <li id="nomeMenu" class="nav-title"></li>
                 <li class="nav-item">
                     <a class="nav-link" asp-area="" asp-controller="Fornecedor" asp-action="Index">
                         <i class="fa-solid fa-boxes-packing icon"></i> Fornecedores
@@ -51,7 +51,7 @@
             </ul>
         </div>
     </header>
-    <div class="mainContainer" style="margin-bottom: 300px   ">
+    <div class="mainContainer" style="margin-bottom: 300px">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -72,3 +72,27 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+    <script>
+        $(document).ready(function () {
+        $.ajax({
+        url: '@Url.Action("getNomeSistema", "Principal")',
+            type: 'GET',
+            success: function (response) {
+                if (response.success) {
+                    $('#nomeMenu').html(response.message);
+                    $('#title').html(response.message);
+                } else {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Erro",
+                        text: response.message,
+                    });
+                }
+            },
+            error: function () {
+                alert("Erro ao enviar os dados.");
+            }
+        });
+        });
+    </script>

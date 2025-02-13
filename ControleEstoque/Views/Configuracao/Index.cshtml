@@ -19,7 +19,7 @@
                 <a class="nav-link active" id="tabs-geral-tab" data-bs-toggle="tab" href="#tabs-geral" role="tab" aria-controls="tabs-geral" aria-selected="true">Geral</a>
             </li>
             <li class="nav-item" role="presentation">
-                <a class="nav-link" id="tabs-produtos-tab" data-bs-toggle="tab" href="#tabs-produtos" role="tab" aria-controls="tabs-produtos" aria-selected="false">produtos</a>
+                <a class="nav-link" id="tabs-produtos-tab" data-bs-toggle="tab" href="#tabs-produtos" role="tab" aria-controls="tabs-produtos" aria-selected="false">Produtos</a>
             </li>
         </ul>
 
@@ -44,28 +44,45 @@
                                 </div>
                                 <div class="me-3 d-flex align-items-center" style="margin-left:10px">
                                     <img id="previewImagem"
-                                         src="@("data:image/png;base64," +Convert.ToBase64String(Model.imgSistema))"
+                                         src="@("data:image/png;base64," + ( Model.imgSistema == null ? "" : Convert.ToBase64String(Model.imgSistema)))"
                                          style="max-width: 100px; max-height: 100px; border: 1px solid #ccc; padding: 5px; display: @(Model.imgSistema != null ? "block" : "none");">
                                 </div>
                             </div>
+
+                            <div class="col-md-5 configSubGroup mb-3 d-flex">
+                                <label for="nome" class="form-label me-3" style="min-width: 150px;">Nome Menu</label>
+                                <input type="text" class="form-control" id="nomeMenu" name="nomeMenu" placeholder="" value="@Model.nomeMenu">
+                            </div>
+
+
                         </div>
 
                     </fieldset>
                 </div>
 
                 <div class="tab-pane fade" id="tabs-produtos" role="tabpanel" aria-labelledby="tabs-produtos-tab">
-                    <fieldset class="border p-3">
-                        <legend class="w-auto px-2">produtos</legend>
-                        <div class="mb-3">
-                            <div class="col-md-4">
-                                <label for="telefone" class="form-label">Telefone</label>
-                                <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="Digite seu telefone">
+                    <fieldset class="border p-3 mb-4">
+                        <legend class="w-auto px-2">Produtos</legend>
+                        <hr />
+                        <div class="mb-3 configGroup">
+                            <div class="col-md-5 configSubGroup mb-3 d-flex">
+                                <label for="nome" class="form-label me-3" style="min-width: 150px;">Nome Menu</label>
+                                <input type="text" class="form-control" id="nomeMenu" name="nomeMenu" placeholder="" value="@Model.nomeMenu">
                             </div>
-                            <div class="col-md-8">
-                                <label for="mensagem" class="form-label">Mensagem</label>
-                                <textarea class="form-control" id="mensagem" name="mensagem" rows="4" placeholder="Digite sua mensagem"></textarea>
+
+                            <div class="d-flex align-items-center">
+                                <div class="col-md-5 configSubGroup d-flex align-items-center">
+                                    <label for="iconeSistema" class="form-label me-3" style="min-width: 150px;">Ícone do Sistema</label>
+                                    <input type="file" class="form-control" id="iconeSistema" name="iconeSistema" accept="image/*">
+                                </div>
+                                <div class="me-3 d-flex align-items-center" style="margin-left:10px">
+                                    <img id="previewImagem"
+                                         src="@("data:image/png;base64," + ( Model.imgSistema == null ? "" : Convert.ToBase64String(Model.imgSistema)))"
+                                         style="max-width: 100px; max-height: 100px; border: 1px solid #ccc; padding: 5px; display: @(Model.imgSistema != null ? "block" : "none");">
+                                </div>
                             </div>
                         </div>
+
                     </fieldset>
                 </div>
             </div>
@@ -119,7 +136,14 @@
                     data: formulario,
                     success: function (response) {
                         if (response.success) {
-                            alert(response.message);
+                                    Swal.fire({
+                                        icon: "success",
+                                        // title: "Erro",
+                                        text: response.message,
+                                    }).then(() => {
+                                        window.location.reload();
+                                    });
+
                         } else {
                             alert("Erro: " + response.message);
                         }

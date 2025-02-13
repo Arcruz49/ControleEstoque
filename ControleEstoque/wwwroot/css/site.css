@@ -40,6 +40,11 @@ body {
     text-align: center;
 }
 
+main{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
 .mainContainer {
     background-color: #fff;
     margin-right: 60px;

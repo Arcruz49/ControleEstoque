@@ -113,3 +113,13 @@ CREATE TABLE cadConfiguracao
     imgSistema VARBINARY(MAX) 
 );
 
+
+
+IF Not EXISTS (SELECT * FROM information_schema.columns 
+WHERE table_name = 'cadConfiguracao' AND column_name = 'corFundoSistema')
+BEGIN
+    ALTER TABLE cadConfiguracao
+    ADD corFundoSistema varchar(256);
+END
+GO
+
