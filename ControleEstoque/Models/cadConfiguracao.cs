@@ -10,4 +10,6 @@ public partial class cadConfiguracao
     public string? nomeMenu { get; set; }
 
     public byte[]? imgSistema { get; set; }
+
+    public string? corFundoSistema { get; set; }
 }

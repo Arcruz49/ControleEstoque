@@ -7,6 +7,42 @@
       "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\views\\configuracao\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\projetos pessoais\\controleestoque\\controleestoque\\controllers\\configuracaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\controllers\\configuracaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\projetos pessoais\\controleestoque\\controleestoque\\controllers\\principalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\controllers\\principalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\projetos pessoais\\controleestoque\\controleestoque\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\projetos pessoais\\controleestoque\\controleestoque\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\projetos pessoais\\controleestoque\\controleestoque\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\projetos pessoais\\controleestoque\\controleestoque\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\projetos pessoais\\controleestoque\\controleestoque\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\projetos pessoais\\controleestoque\\controleestoque\\views\\fornecedor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\views\\fornecedor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\projetos pessoais\\controleestoque\\controleestoque\\models\\cadconfiguracao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\models\\cadconfiguracao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\projetos pessoais\\controleestoque\\controleestoque\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -17,30 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\projetos pessoais\\controleestoque\\controleestoque\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\projetos pessoais\\controleestoque\\controleestoque\\views\\fornecedor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\views\\fornecedor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\projetos pessoais\\controleestoque\\controleestoque\\controllers\\configuracaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\controllers\\configuracaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\projetos pessoais\\controleestoque\\controleestoque\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\projetos pessoais\\controleestoque\\controleestoque\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\projetos pessoais\\controleestoque\\controleestoque\\controllers\\principalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\controllers\\principalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\projetos pessoais\\controleestoque\\controleestoque\\models\\cadconfiguracao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\models\\cadconfiguracao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\projetos pessoais\\controleestoque\\controleestoque\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -76,7 +88,7 @@
               "RelativeDocumentMoniker": "ControleEstoque\\Views\\Configuracao\\Index.cshtml",
               "ToolTip": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\Views\\Configuracao\\Index.cshtml",
               "RelativeToolTip": "ControleEstoque\\Views\\Configuracao\\Index.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAADAAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADIAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-01-22T04:00:11.9Z",
               "IsPinned": true,
@@ -84,13 +96,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "ConfiguracaoController.cs",
               "DocumentMoniker": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\Controllers\\ConfiguracaoController.cs",
               "RelativeDocumentMoniker": "ControleEstoque\\Controllers\\ConfiguracaoController.cs",
               "ToolTip": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\Controllers\\ConfiguracaoController.cs",
               "RelativeToolTip": "ControleEstoque\\Controllers\\ConfiguracaoController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAwAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-23T03:30:30.386Z",
               "IsPinned": true,
@@ -98,13 +110,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "PrincipalController.cs",
               "DocumentMoniker": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\Controllers\\PrincipalController.cs",
               "RelativeDocumentMoniker": "ControleEstoque\\Controllers\\PrincipalController.cs",
               "ToolTip": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\Controllers\\PrincipalController.cs",
               "RelativeToolTip": "ControleEstoque\\Controllers\\PrincipalController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAowB4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-12T00:42:29.926Z",
               "IsPinned": true,
@@ -112,13 +124,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "ControleEstoque\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "ControleEstoque\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAACwAAAAAAAAAAAAswDYAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAswB0AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-12T23:21:23.108Z",
               "IsPinned": true,
@@ -126,7 +138,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
+              "Title": "bootstrap.css",
+              "DocumentMoniker": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+              "RelativeDocumentMoniker": "ControleEstoque\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+              "ToolTip": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+              "RelativeToolTip": "ControleEstoque\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+              "ViewState": "AgIAALECAAAAAAAAAAAAAL8CAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-02-13T23:57:00.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "bootstrap.rtl.min.css",
+              "DocumentMoniker": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+              "RelativeDocumentMoniker": "ControleEstoque\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+              "ToolTip": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+              "RelativeToolTip": "ControleEstoque\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-02-13T23:55:51.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "ControleEstoque\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "ControleEstoque\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAL4AAAAAAAAAAAAhwNQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-02-13T23:08:30.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "bootstrap.min.css",
+              "DocumentMoniker": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+              "RelativeDocumentMoniker": "ControleEstoque\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+              "ToolTip": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+              "RelativeToolTip": "ControleEstoque\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAACAVwAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-02-13T23:55:31.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\Views\\Cliente\\Index.cshtml",
               "RelativeDocumentMoniker": "ControleEstoque\\Views\\Cliente\\Index.cshtml",
@@ -134,12 +198,11 @@
               "RelativeToolTip": "ControleEstoque\\Views\\Cliente\\Index.cshtml",
               "ViewState": "AgIAABUAAAAAAAAAAAAAABoAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-13T23:17:19.724Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T23:17:19.724Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\Views\\Produto\\Index.cshtml",
               "RelativeDocumentMoniker": "ControleEstoque\\Views\\Produto\\Index.cshtml",
@@ -147,25 +210,11 @@
               "RelativeToolTip": "ControleEstoque\\Views\\Produto\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-13T23:17:08.253Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T23:17:08.253Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "ControleEstoque\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "ControleEstoque\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAABcAAAAAAAAAAAAhwC4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-13T23:08:30.027Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\Views\\Fornecedor\\Index.cshtml",
               "RelativeDocumentMoniker": "ControleEstoque\\Views\\Fornecedor\\Index.cshtml",
@@ -191,7 +240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "ControleEstoque\\Views\\Home\\Index.cshtml",
@@ -199,12 +248,11 @@
               "RelativeToolTip": "ControleEstoque\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAACMAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-09T17:46:43.047Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-09T17:46:43.047Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "web.config",
               "DocumentMoniker": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\web.config",
               "RelativeDocumentMoniker": "ControleEstoque\\web.config",
@@ -216,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "ControleEstoque\\Controllers\\HomeController.cs",
@@ -228,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "Error.cshtml",
               "DocumentMoniker": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "ControleEstoque\\Views\\Shared\\Error.cshtml",
@@ -240,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "ClienteController.cs",
               "DocumentMoniker": "C:\\Projetos Pessoais\\ControleEstoque\\ControleEstoque\\Controllers\\ClienteController.cs",
               "RelativeDocumentMoniker": "ControleEstoque\\Controllers\\ClienteController.cs",

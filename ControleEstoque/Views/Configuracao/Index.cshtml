@@ -47,12 +47,14 @@
                                          src="@("data:image/png;base64," + ( Model.imgSistema == null ? "" : Convert.ToBase64String(Model.imgSistema)))"
                                          style="max-width: 100px; max-height: 100px; border: 1px solid #ccc; padding: 5px; display: @(Model.imgSistema != null ? "block" : "none");">
                                 </div>
+
+                                <div class="col-md-5 configSubGroup d-flex align-items-center">
+                                    <label for="corSistema" class="form-label me-3" style="min-width: 150px;">Cor do Sistema</label>
+                                    <input type="color" class="form-control form-control-color" id="corSistema" name="corSistema" value="@Model.corFundoSistema ?? " #ffffff"" title="Escolha a cor do sistema">
+                                </div>
                             </div>
 
-                            <div class="col-md-5 configSubGroup mb-3 d-flex">
-                                <label for="nome" class="form-label me-3" style="min-width: 150px;">Nome Menu</label>
-                                <input type="text" class="form-control" id="nomeMenu" name="nomeMenu" placeholder="" value="@Model.nomeMenu">
-                            </div>
+                            
 
 
                         </div>

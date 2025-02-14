@@ -75,24 +75,42 @@
 
     <script>
         $(document).ready(function () {
-        $.ajax({
-        url: '@Url.Action("getNomeSistema", "Principal")',
-            type: 'GET',
-            success: function (response) {
-                if (response.success) {
-                    $('#nomeMenu').html(response.message);
-                    $('#title').html(response.message);
-                } else {
-                    Swal.fire({
-                        icon: "error",
-                        title: "Erro",
-                        text: response.message,
-                    });
+            $.ajax({
+            url: '@Url.Action("GetNomeSistema", "Principal")',
+                type: 'GET',
+                success: function (response) {
+                    if (response.success) {
+                        $('#nomeMenu').html(response.message);
+                        $('#title').html(response.message);
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Erro",
+                            text: response.message,
+                        });
+                    }
+                },
+                error: function () {
+                    // alert("Erro ao enviar os dados.");
                 }
-            },
-            error: function () {
-                alert("Erro ao enviar os dados.");
-            }
-        });
+            });
+            $.ajax({
+                url: '@Url.Action("GetCorSistema", "Principal")',
+                type: 'GET',
+                success: function (response) {
+                    if (response.success) {
+                        $('body').css('background-color', response.message);
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Erro",
+                            text: response.message,
+                        });
+                    }
+                },
+                error: function () {
+                    // alert("Erro ao enviar os dados.");
+                }
+            });
         });
     </script>
