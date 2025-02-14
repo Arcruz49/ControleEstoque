@@ -212,3 +212,15 @@ main{
     align-items: center;
     margin-bottom: 0 !important;
 }
+
+input{
+    min-width:200px
+}
+
+.container{
+    max-width:100% !important
+}
+
+.menuDiv{
+    margin-left: 3%;
+}

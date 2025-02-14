@@ -31,8 +31,10 @@ namespace ControleEstoque.Controllers
         {
             try
             {
-                var cor = db.cadConfiguracaos.Select(a => a.corFundoSistema).FirstOrDefault() ?? "#f8f4f4";
-                return Json(new { success = true, message = cor });
+                var corFundo = db.cadConfiguracaos.Select(a => a.corFundoSistema).FirstOrDefault() ?? "#f8f4f4";
+                var corPrincipal = db.cadConfiguracaos.Select(a => a.corSistema).FirstOrDefault() ?? "#fff";
+                var corFonte = db.cadConfiguracaos.Select(a => a.corFonteTexto).FirstOrDefault() ?? "#000000";
+                return Json(new { success = true, corFundo = corFundo, corPrincipal = corPrincipal, corFonte = corFonte });
             }
             catch (Exception ex)
             {

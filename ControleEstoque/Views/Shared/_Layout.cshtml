@@ -15,7 +15,7 @@
     </style>
 </head>
     
-<body style="background-color: #f8f4f4;">
+<body>
     <header>
         <div class="sidebar sidebar-narrow-unfoldable border-end">
             <div class="sidebar-header border-bottom">
@@ -58,7 +58,7 @@
     </div>
 
     <footer style="margin-top: 10px; background-color: #fff" class="border-top footer text-muted">
-        <div class="container">
+        <div class="container" style="margin-left:10%">
             &copy; 2025 - Controle Estoque - <a asp-area="" asp-controller="Home" asp-action="Privacy">Arthur Cruz</a>
         </div>
     </footer>
@@ -83,11 +83,8 @@
                         $('#nomeMenu').html(response.message);
                         $('#title').html(response.message);
                     } else {
-                        Swal.fire({
-                            icon: "error",
-                            title: "Erro",
-                            text: response.message,
-                        });
+                        console.log('error: ' + response.message)
+
                     }
                 },
                 error: function () {
@@ -99,13 +96,14 @@
                 type: 'GET',
                 success: function (response) {
                     if (response.success) {
-                        $('body').css('background-color', response.message);
-                    } else {
-                        Swal.fire({
-                            icon: "error",
-                            title: "Erro",
-                            text: response.message,
-                        });
+                        $('body').css('background-color', response.corFundo);
+                        $('.mainContainer').css('background-color', response.corPrincipal);
+                        $('.sidebar').css('background-color', response.corPrincipal);
+                        $('.sidebar').css('color', response.corFonte);
+                        $('body').css('color', response.corFonte);
+                    } 
+                    else {
+                        console.log('error: '+ response.message)
                     }
                 },
                 error: function () {
