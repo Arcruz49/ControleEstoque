@@ -51,13 +51,19 @@
             </ul>
         </div>
     </header>
-    <div class="mainContainer" style="margin-bottom: 300px   ">
+    <!-- retirei a classe padrão para usar a minha  -->
+    @{
+        var viewName = System.IO.Path.GetFileNameWithoutExtension(ViewContext.View.Path);
+    }
+
+    <div class="@(viewName == "analytcsView" ? "" : "mainContainer")" style="margin-bottom: 300px;">
+
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
-    <footer style="margin-top: 10px; background-color: #fff" class="border-top footer text-muted">
+    <!--removi o footer do analytic dps olhar um jetio de voltar com ele -->
+    <footer style="margin-top: 10px; background-color: #fff" class="@(viewName == "analytcsView" ? "" : "border-top footer text-muted")" >
         <div class="container">
             &copy; 2025 - Controle Estoque - <a asp-area="" asp-controller="Home" asp-action="Privacy">Arthur Cruz</a>
         </div>

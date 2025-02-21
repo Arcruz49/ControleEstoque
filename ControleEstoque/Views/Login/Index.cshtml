@@ -1,0 +1,74 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["title"] = "Login";
+    Layout = null;
+}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/Materia.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/loginCss.css" asp-append-version="true" />
+
+<div class="container container-login">
+
+    <div class="logo">
+        <figure>
+        
+        <img src="~/imagens/logoMoveis.png" />
+   </figure>
+    </div>
+    <!--Ou consertra os inputs ou deixa placehodler -->
+    <div class="login d-flex justify-content-center align-items-center">
+
+        <div class="form-login d-flex justify-content-center align-items-center">
+            <form action="/" method="post">             
+                    <div id="divLogin" class="mb-1">
+                    <label for="inputLogin" id="labelLogin" class="form-label me-2">Login:</label>
+                        <input type="email" class="form-control" id="inputLogin" aria-describedby="Login" >
+                    </div>
+                    <div id="divSenha" class="mb-1">
+                    <label for="inputSenha" id="labelSenha" class="form-label me-2">Senha:</label>
+                        <input type="password" class="form-control" id="inputSenha" >
+                    </div>
+                     <a> Esqueceu a senhas?</a>
+                    <div class="d-flex justify-content-center align-items-center mt-5">
+                        <button type="submit" class="btn btn-primary">Logar</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="more-info  d-flex justify-content-center align-items-center ">
+        <p class="me-2">
+           <strong>
+           Para mais informações em mais infos    
+           </strong> 
+        </p>
+        <button type="button" class="btn btn-success text-ligth text-center" data-bs-toggle="modal" data-bs-target="#saibaMais"> Mais infos</button>
+    </div>
+</div>
+
+<!--Modal saiba mais-->
+<div class="modal fade" id="saibaMais" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="saibaMais" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="saibaMais">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <!-- Pensei em fazer algo no banco para setar coisas nesse modal,n sei se é uma boa-->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/login.js" defer></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+

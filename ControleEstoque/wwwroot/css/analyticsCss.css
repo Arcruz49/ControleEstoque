@@ -1,0 +1,175 @@
+﻿:root {
+    
+}
+htm, body {
+    height: 100vh;
+    margin: 0;
+    background: #d78a42;
+    background: linear-gradient(140deg,#d78a42 20%, #714006 50%);
+    background: -webkit-linear-gradient(140deg,#d78a42 20%, #714006 50%);
+    background: -moz-linear-gradient(140deg,#d78a42 20%, #714006 50%);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.containerAnalytics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+
+}
+.topGraphs, .botGraphs {
+    background-color: #F5E1C8;
+    
+    border-radius:30px;
+
+}
+.topGraphs {
+    margin-top: 3rem;
+    width: 140rem;
+    height: 19rem;
+}
+.botGraphs {
+
+    width: 140rem;
+    height: 50rem;
+}
+.headerGraphs {
+    width: 140rem;
+    height:3rem;
+    border-bottom:1px solid black;
+    margin-top:1.5rem;
+
+}
+.estatisticas
+{
+    width:140rem;
+    height:16rem;
+}
+.graphTop {
+    margin: 1rem;
+    width: 15rem;
+    border-radius: 30px;
+    color: white;
+    height: 7rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.h1Graphs
+{
+    height:2rem;
+    width:15rem;
+    border-bottom:1px solid white;
+}
+.h1Graphs h1 {
+    font-size: 1.5rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.numbers {
+    height: 5rem;
+    width: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.numbers p 
+{
+    font-size:2rem;
+}
+#lucro {
+    background-color: #5ECC62;
+}
+#gastos {
+    background-color: #C62C2C;
+}
+#produtosVendidos {
+    background-color: #66BFFF;
+}
+#produtosConcluidos {
+    background-color: #1B5E20;
+}
+#materiaisUsados {
+    background-color: #FF8D3A;
+}
+.modal-content{
+    background-color: #F5E1C8;
+}
+.modal-header {
+    border: 0 solid transparent;
+    border-bottom: 1px solid black;
+}
+.modal-footer {
+    border: 0 solid transparent;
+    border-top: 1px solid black;
+}
+input {
+    background-color: #F9F3E5;
+}
+.selctConfig {
+    background-color: #F9F3E5;
+    border:1px solid black;
+}
+.selctConfig:disabled {
+    background-color: #B0B0B0;
+}
+.selectPrincSecu {
+    max-width: 20rem;
+}
+.ivisivel {
+    display: none;
+}
+.dataInput
+{
+    display:flex;
+    justify-content:space-between;
+    width:18rem;
+}
+.seletores {
+    margin-top:2rem;
+    width: 140rem;
+    height:3rem;
+}
+.graphsArea {
+    margin-top: 2rem;
+    width: 140rem;
+    height: 38.5rem;
+}
+.graphs {
+    width: 90rem;
+    height: 38.5rem;
+}
+.legenda {
+    width: 50rem;
+    height: 38.5rem;
+}
+.graphs2 {
+    width: 110rem;
+    height: 38.5rem;
+}
+
+.legenda2 {
+    width: 30rem;
+    height: 38.5rem;
+}
+.graphs3 {
+    width: 125rem;
+    height: 38.5rem;
+}
+
+.legenda3 {
+    width: 15rem;
+    height: 38.5rem;
+}
+.divSelectTamanho
+{
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    margin-top:3rem;
+    margin-bottom:2rem;
+    width:88%;
+}

@@ -1,0 +1,160 @@
+﻿htm, body {
+    height: 100vh;
+    margin: 0;
+    background: #d78a42;
+    background: linear-gradient(140deg,#d78a42 20%, #714006 50%);
+    background: -webkit-linear-gradient(140deg,#d78a42 20%, #714006 50%);
+    background: -moz-linear-gradient(140deg,#d78a42 20%, #714006 50%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+}
+.container-login {
+    margin-top: 10rem;
+    height: 30rem;
+    width: 35rem;
+    position: relative;
+}
+
+
+.login {
+    border-radius: 1rem;
+    position: absolute;
+    height: 30rem;
+    width: 35rem;
+    right: 0;
+    background-color: #F5E1C8;
+}
+
+.logo {
+    z-index: 1;
+    position: absolute;
+    height: 8rem;
+    width: 8rem;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    border-radius: 50%;
+}
+    .logo img {
+        position: relative;
+        border: 1px solid black;
+        border-radius: 50%;
+        width: 8rem;
+        height:8rem;
+    }
+.form-login
+{
+    width:20rem;
+    height:20rem;
+}
+.form-control {
+    border: 0 solid transparent;
+    border-bottom: 1px solid black;
+}
+.more-info {
+    position: absolute;
+    left:0;
+    bottom: 0;
+    height:6rem;
+    width: 35rem;
+}
+.more-info .btn
+{
+    max-height:3rem;
+    max-width:8rem;
+    font-size:1rem;
+   
+    
+ }
+.form-label
+{
+    opacity:0;
+}
+@media (max-width:768px) {
+    htm, body {
+        height: 100vh;
+        margin: 0;
+        background: #d78a42;
+        background: linear-gradient(140deg,#d78a42 20%, #714006 50%);
+        background: -webkit-linear-gradient(140deg,#d78a42 20%, #714006 50%);
+        background: -moz-linear-gradient(140deg,#d78a42 20%, #714006 50%);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        overflow: hidden;
+    }
+
+    .container-login {
+        margin-top: 10rem;
+        height: 33rem;
+        width: 20rem;
+        position: relative;
+    }
+
+
+    .login {
+        position: absolute;
+        bottom: 0;
+        height: 33rem;
+        width: 20rem;
+        background-color: #F5E1C8;
+    }
+
+    .logo {
+        z-index: 1;
+        position: absolute;
+        height: 6rem;
+        width: 6rem;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: black;
+        border-radius: 50%;
+    }
+
+    .form-login {
+        width: 0rem;
+        height: 10rem;
+    }
+    .form-control {
+        border: 0 solid transparent;
+        border-bottom: 1px solid black;
+        height:1px;
+    }
+    .more-info {
+        position: absolute;
+        bottom: 0;
+        width: 20rem;
+    }
+    .more-info p 
+    {
+        font-size:0.7rem;
+    }
+    .more-info .btn {
+        max-height: 2rem;
+        max-width: 5rem;
+        font-size: 0.48rem;
+        margin-right:0.5rem;
+        }
+    .form-label {
+        opacity: 1;
+    }
+    #divSenha, #divlogin {
+        width: 15rem;
+        height:3rem;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo img {
+        position: relative;
+        border: 1px solid black;
+        border-radius: 50%;
+        width: 6rem;
+        height: 6rem;
+    }
+ 
+}

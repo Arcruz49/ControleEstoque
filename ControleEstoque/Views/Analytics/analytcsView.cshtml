@@ -1,0 +1,171 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["title"] = "Dados da Empresa";
+}
+
+<link rel="stylesheet" href="~/css/analyticsCss.css" asp-append-version="true" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<div class="containerAnalytics">
+
+    <div class="topGraphs">
+        <div class="headerGraphs d-flex justify-content-between align-items-center">
+              <h1 class="ms-5">Dados da Empresa</h1>
+            <button type="button" class="btn btn-success text-ligth text-center me-5" data-bs-toggle="modal" data-bs-target="#configTop"> <i class="bi bi-gear" style="color:white"></i></button>
+        </div>
+        <div class="estatisticas d-flex justify-content-evenly align-items-center">
+            <div class="graphTop" id="lucro">
+                <div class="h1Graphs">
+                    <h1>Lucro</h1>
+                </div>
+                <div class="numbers">
+                    <p>R$ 40.000,00</p>
+                </div>
+            </div>
+            <div class="graphTop" id="gastos">
+                <div class="h1Graphs">
+                    <h1>Gastos Totais</h1>
+                </div>
+                <div class="numbers">
+                    <p>R$ 20.000,00</p>
+                </div>
+            </div>
+            <div class="graphTop" id="produtosConcluidos">
+                <div class="h1Graphs">
+
+                    <h1>Projetos Concluidos</h1>
+                </div>
+                <div class="numbers">
+                    <p>6</p>
+                </div>
+            </div>
+            <div class="graphTop" id="produtosVendidos">
+                <div class="h1Graphs">
+                    <h1>Produtos Vendidos</h1>
+                </div>
+                <div class="numbers">
+                    <p>5</p>
+                </div>
+            </div>
+            <div class="graphTop" id="materiaisUsados">
+                <div class="h1Graphs">
+                    <h1>Materiais Usados</h1>
+                </div>
+                <div class="numbers">
+                    <p>120</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--dps mudar a descrição do arial-->
+    <div class="divSelectTamanho">
+        <select id="slectTamanho" class="form-select selctConfig selectPrincSecu" aria-label="Default select example">
+            <option selected>Escolha um tamanho para a legenda</option>
+            <option value="1">Padrão</option>
+            <option value="2">Tamanho 2</option>
+            <option value="3">Tamanho 3</option>
+        </select>
+    </div>
+    <div class="botGraphs">
+        <div class="headerGraphs d-flex justify-content-between align-items-center">
+            <h1 class="ms-5 ">Graficos da empresa</h1>
+            <button type="button" class="btn btn-success text-ligth text-center me-5 "> <i class="bi bi-plus" style="color:white"></i></button>
+        </div>
+        <div class="graphsComparação">
+            <div class="seletores d-flex justify-content-evenly align-items-center">
+                    <select id="slectGraphs" class="form-select selctConfig selectPrincSecu" aria-label="Default select example">
+                        <option selected>Escolha um tipo de grafico</option>
+                        <option value="1">Pizza</option>
+                        <option value="2">Barras</option>
+                        <option value="3">Linha</option>
+                    </select>
+                    <select id="selctAçao" class="form-select selctConfig selectPrincSecu" aria-label="Default select example">
+                        <option selected>Escolha a informação do grafico</option>
+                        <option value="1">Comparação de Produtos</option>
+                        <option value="2">Número de Pedidos</option>
+                        <option value="3">Pedidos Realizados</option>
+                        <option value="3">Pedidos Concluidos</option>
+                        <option value="3">Lucro</option>
+                        <option value="3">Gastos</option>
+                        <option value="3">Materiais Gastos total</option>
+                    </select>
+                    <select id="slectDate" class="form-select selctConfig selectPrincSecu" aria-label="Default select example">
+                        <option selected>Escolha uma das opções abaixo</option>
+                        <option value="1">Semana</option>
+                        <option value="2">Mês</option>
+                        <option value="3">Ano</option>
+                    </select>
+                    <select id="slectProd" class="form-select selctConfig selectPrincSecu" aria-label="Default select example" disabled>
+                        <option selected>Escolha um produto</option>
+                        <option value="1">Tabuas</option>
+                        <option value="2">Parafusos</option>
+                        <option value="3">outro prod</option>
+                    </select>
+            </div>
+            <div class="graphsArea d-flex justify-content-center align-items-center">
+
+                <div class="graphs">
+
+            </div>
+            <div class="legenda">
+
+            </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<!--modal da parte de cima -->
+<div class="modal fade" id="configTop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="configTop" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="configTop">Configurações das estatisticas</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form>
+            <div class="modal-body">
+                    
+                    <div>
+                        <p>Estatisticas Recentes</p>
+                        <select id="selctOptions" class="form-select selctConfig" aria-label="Default select example">
+                            <option selected>Escolha uma das opções abaixo</option>
+                            <option value="1">Desta Semana</option>
+                            <option value="2">Deste Mês</option>
+                            <option value="3">Deste Ano</option>
+                        </select>
+                    </div>
+                    <div class="form-check form-switch mt-3">
+                        <input class="form-check-input" type="checkbox" role="switch" id="switchData" checked>
+                        <label class="form-check-label" for="switchData">Usar estatisticas recents?</label>
+                    </div>
+                    <div class="divPeriodoData ivisivel">
+                        <p>Escolha o periodo que desejar</p>
+                    <div>
+                            <div class="dataInput mt-2 ">
+                        <label for="dataInicio">Data de inicio:</label>
+                        <input type="date" id="dataInicio"/>
+
+                        </div>
+                        <div class="dataInput mt-3">
+
+                        <label for="dataFinal">Data final:</label>
+                        <input type="date" id="dataFinal"/>
+                         </div>
+
+                    </div>
+                    </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Salvar</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/js/analytics.js" asp-append-version="true" defer></script>
