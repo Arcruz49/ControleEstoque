@@ -12,7 +12,7 @@
     <div class="topGraphs">
         <div class="headerGraphs d-flex justify-content-between align-items-center">
               <h1 class="ms-5">Dados da Empresa</h1>
-            <button type="button" class="btn btn-success text-ligth text-center me-5" data-bs-toggle="modal" data-bs-target="#configTop"> <i class="bi bi-gear" style="color:white"></i></button>
+            <button type="button"  class="btn btn-success text-ligth text-center me-5 " data-bs-toggle="modal" data-bs-target="#configTop"> <i class="bi bi-gear" style="color:white"></i></button>
         </div>
         <div class="estatisticas d-flex justify-content-evenly align-items-center">
             <div class="graphTop" id="lucro">
@@ -61,44 +61,46 @@
     </div>
     <!--dps mudar a descrição do arial-->
     <div class="divSelectTamanho">
-        <select id="slectTamanho" class="form-select selctConfig selectPrincSecu" aria-label="Default select example">
+        <select id="slectTamanho" class="form-select selctConfig selectPrincSecu" >
             <option selected>Escolha um tamanho para a legenda</option>
             <option value="1">Padrão</option>
             <option value="2">Tamanho 2</option>
             <option value="3">Tamanho 3</option>
         </select>
     </div>
-    <div class="botGraphs">
+    <!-- Fazer um btn delete all-->
+
+    <div id="botGraphs1" class="botGraphs">
         <div class="headerGraphs d-flex justify-content-between align-items-center">
             <h1 class="ms-5 ">Graficos da empresa</h1>
-            <button type="button" class="btn btn-success text-ligth text-center me-5 "> <i class="bi bi-plus" style="color:white"></i></button>
+            <button class="moreGraphs btn btn-success text-light  text-center me-5 "> <i class="bi bi-plus" style="color:white"></i></button>
         </div>
         <div class="graphsComparação">
             <div class="seletores d-flex justify-content-evenly align-items-center">
-                    <select id="slectGraphs" class="form-select selctConfig selectPrincSecu" aria-label="Default select example">
+                <select id="slectGraphs" class="form-select selctConfig selectPrincSecu slectGraphs">
                         <option selected>Escolha um tipo de grafico</option>
                         <option value="1">Pizza</option>
                         <option value="2">Barras</option>
                         <option value="3">Linha</option>
                     </select>
-                    <select id="selctAçao" class="form-select selctConfig selectPrincSecu" aria-label="Default select example">
+                <select id="selctAçao" class="form-select selctConfig selectPrincSecu selctAçao">
                         <option selected>Escolha a informação do grafico</option>
-                        <option value="1">Comparação de Produtos</option>
+                        <option value="1">Verificar Material</option>
                         <option value="2">Número de Pedidos</option>
                         <option value="3">Pedidos Realizados</option>
-                        <option value="3">Pedidos Concluidos</option>
-                        <option value="3">Lucro</option>
-                        <option value="3">Gastos</option>
-                        <option value="3">Materiais Gastos total</option>
+                        <option value="4">Pedidos Concluidos</option>
+                        <option value="5">Lucro</option>
+                        <option value="6">Gastos</option>
+                        <option value="7">Materiais Gastos total</option>
                     </select>
-                    <select id="slectDate" class="form-select selctConfig selectPrincSecu" aria-label="Default select example">
+                <select id="slectDate" class="form-select selctConfig selectPrincSecu slectDate">
                         <option selected>Escolha uma das opções abaixo</option>
                         <option value="1">Semana</option>
                         <option value="2">Mês</option>
                         <option value="3">Ano</option>
                     </select>
-                    <select id="slectProd" class="form-select selctConfig selectPrincSecu" aria-label="Default select example" disabled>
-                        <option selected>Escolha um produto</option>
+                <select id="slectMaterial" class="form-select selctConfig selectPrincSecu slectMaterial" disabled>
+                        <option selected>Escolha um material</option>
                         <option value="1">Tabuas</option>
                         <option value="2">Parafusos</option>
                         <option value="3">outro prod</option>
@@ -106,10 +108,10 @@
             </div>
             <div class="graphsArea d-flex justify-content-center align-items-center">
 
-                <div class="graphs">
+                <div id="graphs" class="graphs">
 
-            </div>
-            <div class="legenda">
+                </div>
+                <div id="legenda" class="legenda">
 
             </div>
             </div>

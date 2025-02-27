@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Rafael\\source\\repos\\New Pi\\ControleEstoque\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\rafael\\source\\repos\\new pi\\controleestoque\\controleestoque\\wwwroot\\css\\analyticscss.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\wwwroot\\css\\analyticscss.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\rafael\\source\\repos\\new pi\\controleestoque\\controleestoque\\wwwroot\\js\\analytics.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\wwwroot\\js\\analytics.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\rafael\\source\\repos\\new pi\\controleestoque\\controleestoque\\views\\analytics\\analytcsview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\views\\analytics\\analytcsview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\rafael\\source\\repos\\new pi\\controleestoque\\controleestoque\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\rafael\\source\\repos\\new pi\\controleestoque\\controleestoque\\controllers\\analyticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\rafael\\source\\repos\\new pi\\controleestoque\\controleestoque\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\rafael\\source\\repos\\new pi\\controleestoque\\controleestoque\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|solutionrelative:controleestoque\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{556DEE47-4EF5-4327-89B2-E360C4A28101}|ControleEstoque\\ControleEstoque.csproj|c:\\users\\rafael\\source\\repos\\new pi\\controleestoque\\controleestoque\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -46,25 +54,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 245,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "analytcsView.cshtml",
               "DocumentMoniker": "C:\\Users\\Rafael\\source\\repos\\New Pi\\ControleEstoque\\ControleEstoque\\Views\\Analytics\\analytcsView.cshtml",
               "RelativeDocumentMoniker": "ControleEstoque\\Views\\Analytics\\analytcsView.cshtml",
-              "ToolTip": "C:\\Users\\Rafael\\source\\repos\\New Pi\\ControleEstoque\\ControleEstoque\\Views\\Analytics\\analytcsView.cshtml*",
-              "RelativeToolTip": "ControleEstoque\\Views\\Analytics\\analytcsView.cshtml*",
-              "ViewState": "AgIAACIAAAAAAAAAAAAAAEEAAAAkAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Rafael\\source\\repos\\New Pi\\ControleEstoque\\ControleEstoque\\Views\\Analytics\\analytcsView.cshtml",
+              "RelativeToolTip": "ControleEstoque\\Views\\Analytics\\analytcsView.cshtml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAG4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-14T11:44:12.421Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "AnalyticsController.cs",
               "DocumentMoniker": "C:\\Users\\Rafael\\source\\repos\\New Pi\\ControleEstoque\\ControleEstoque\\Controllers\\AnalyticsController.cs",
               "RelativeDocumentMoniker": "ControleEstoque\\Controllers\\AnalyticsController.cs",
@@ -77,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\Rafael\\source\\repos\\New Pi\\ControleEstoque\\ControleEstoque\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "ControleEstoque\\wwwroot\\css\\site.css",
@@ -94,7 +101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Rafael\\source\\repos\\New Pi\\ControleEstoque\\ControleEstoque\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "ControleEstoque\\Views\\Shared\\_Layout.cshtml",
@@ -106,7 +113,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
+              "Title": "analyticsCss.css",
+              "DocumentMoniker": "C:\\Users\\Rafael\\source\\repos\\New Pi\\ControleEstoque\\ControleEstoque\\wwwroot\\css\\analyticsCss.css",
+              "RelativeDocumentMoniker": "ControleEstoque\\wwwroot\\css\\analyticsCss.css",
+              "ToolTip": "C:\\Users\\Rafael\\source\\repos\\New Pi\\ControleEstoque\\ControleEstoque\\wwwroot\\css\\analyticsCss.css",
+              "RelativeToolTip": "ControleEstoque\\wwwroot\\css\\analyticsCss.css",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAG0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-02-20T13:32:39.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "analytics.js",
+              "DocumentMoniker": "C:\\Users\\Rafael\\source\\repos\\New Pi\\ControleEstoque\\ControleEstoque\\wwwroot\\js\\analytics.js",
+              "RelativeDocumentMoniker": "ControleEstoque\\wwwroot\\js\\analytics.js",
+              "ToolTip": "C:\\Users\\Rafael\\source\\repos\\New Pi\\ControleEstoque\\ControleEstoque\\wwwroot\\js\\analytics.js",
+              "RelativeToolTip": "ControleEstoque\\wwwroot\\js\\analytics.js",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAIwPYAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-02-20T13:50:55.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Rafael\\source\\repos\\New Pi\\ControleEstoque\\ControleEstoque\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "ControleEstoque\\Controllers\\HomeController.cs",
@@ -118,19 +150,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Rafael\\source\\repos\\New Pi\\ControleEstoque\\ControleEstoque\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "ControleEstoque\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\Rafael\\source\\repos\\New Pi\\ControleEstoque\\ControleEstoque\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "ControleEstoque\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAALIAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-14T11:52:12.541Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Rafael\\source\\repos\\New Pi\\ControleEstoque\\ControleEstoque\\Views\\Login\\Index.cshtml",
               "RelativeDocumentMoniker": "ControleEstoque\\Views\\Login\\Index.cshtml",
@@ -142,7 +174,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "loginCss.css",
               "DocumentMoniker": "C:\\Users\\Rafael\\source\\repos\\New Pi\\ControleEstoque\\ControleEstoque\\wwwroot\\css\\loginCss.css",
               "RelativeDocumentMoniker": "ControleEstoque\\wwwroot\\css\\loginCss.css",
@@ -154,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Materia.css",
               "DocumentMoniker": "C:\\Users\\Rafael\\source\\repos\\New Pi\\ControleEstoque\\ControleEstoque\\wwwroot\\css\\Materia.css",
               "RelativeDocumentMoniker": "ControleEstoque\\wwwroot\\css\\Materia.css",

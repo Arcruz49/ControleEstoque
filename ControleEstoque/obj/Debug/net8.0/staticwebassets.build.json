@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "F/FyeGAwW53g7PSkQMlBIUvv+8+uv7bofJgFqzXaf5A=",
+  "Hash": "G/Wv7ZB3JZklFYNIN5uoMQ20UFmpMz/pE105ON3/Tfg=",
   "Source": "ControleEstoque",
   "BasePath": "_content/ControleEstoque",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "ybh4802bqw",
-      "Integrity": "Qucay32sGNziHa03n6QeS/Q9Ts1rQkayS/0DmgltiOE=",
+      "Fingerprint": "ms69hxw3zz",
+      "Integrity": "ph+V8cbBElcc5gVpRzEFVPObxKVyGpy81PNT1fMYgss=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\analyticsCss.css"
@@ -199,8 +199,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "lxciagbptg",
-      "Integrity": "+YuubGAP51Q+iasMeR31ZmAQVjjuqURn0xyYHLrpnV0=",
+      "Fingerprint": "tq0xbmneht",
+      "Integrity": "+4r934AHdJnCjj6K6FWN7fzQK9Ea5XeXA+vcnPWQLxc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\analytics.js"
@@ -1768,7 +1768,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2703"
+          "Value": "3188"
         },
         {
           "Name": "Content-Type",
@@ -1776,11 +1776,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Qucay32sGNziHa03n6QeS/Q9Ts1rQkayS/0DmgltiOE=\""
+          "Value": "\"ph+V8cbBElcc5gVpRzEFVPObxKVyGpy81PNT1fMYgss=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 19 Feb 2025 14:56:52 GMT"
+          "Value": "Sat, 22 Feb 2025 17:16:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1790,12 +1790,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Qucay32sGNziHa03n6QeS/Q9Ts1rQkayS/0DmgltiOE="
+          "Value": "sha256-ph+V8cbBElcc5gVpRzEFVPObxKVyGpy81PNT1fMYgss="
         }
       ]
     },
     {
-      "Route": "css/analyticsCss.ybh4802bqw.css",
+      "Route": "css/analyticsCss.ms69hxw3zz.css",
       "AssetFile": "C:\\Users\\Rafael\\source\\repos\\New Pi\\ControleEstoque\\ControleEstoque\\wwwroot\\css\\analyticsCss.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1805,7 +1805,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2703"
+          "Value": "3188"
         },
         {
           "Name": "Content-Type",
@@ -1813,11 +1813,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Qucay32sGNziHa03n6QeS/Q9Ts1rQkayS/0DmgltiOE=\""
+          "Value": "\"ph+V8cbBElcc5gVpRzEFVPObxKVyGpy81PNT1fMYgss=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 19 Feb 2025 14:56:52 GMT"
+          "Value": "Sat, 22 Feb 2025 17:16:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1827,7 +1827,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ybh4802bqw"
+          "Value": "ms69hxw3zz"
         },
         {
           "Name": "label",
@@ -1835,7 +1835,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Qucay32sGNziHa03n6QeS/Q9Ts1rQkayS/0DmgltiOE="
+          "Value": "sha256-ph+V8cbBElcc5gVpRzEFVPObxKVyGpy81PNT1fMYgss="
         }
       ]
     },
@@ -2260,7 +2260,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "861"
+          "Value": "4453"
         },
         {
           "Name": "Content-Type",
@@ -2268,11 +2268,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+YuubGAP51Q+iasMeR31ZmAQVjjuqURn0xyYHLrpnV0=\""
+          "Value": "\"+4r934AHdJnCjj6K6FWN7fzQK9Ea5XeXA+vcnPWQLxc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 19 Feb 2025 14:33:23 GMT"
+          "Value": "Sat, 22 Feb 2025 17:28:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2282,12 +2282,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-+YuubGAP51Q+iasMeR31ZmAQVjjuqURn0xyYHLrpnV0="
+          "Value": "sha256-+4r934AHdJnCjj6K6FWN7fzQK9Ea5XeXA+vcnPWQLxc="
         }
       ]
     },
     {
-      "Route": "js/analytics.lxciagbptg.js",
+      "Route": "js/analytics.tq0xbmneht.js",
       "AssetFile": "C:\\Users\\Rafael\\source\\repos\\New Pi\\ControleEstoque\\ControleEstoque\\wwwroot\\js\\analytics.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2297,7 +2297,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "861"
+          "Value": "4453"
         },
         {
           "Name": "Content-Type",
@@ -2305,11 +2305,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+YuubGAP51Q+iasMeR31ZmAQVjjuqURn0xyYHLrpnV0=\""
+          "Value": "\"+4r934AHdJnCjj6K6FWN7fzQK9Ea5XeXA+vcnPWQLxc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 19 Feb 2025 14:33:23 GMT"
+          "Value": "Sat, 22 Feb 2025 17:28:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2319,7 +2319,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "lxciagbptg"
+          "Value": "tq0xbmneht"
         },
         {
           "Name": "label",
@@ -2327,7 +2327,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-+YuubGAP51Q+iasMeR31ZmAQVjjuqURn0xyYHLrpnV0="
+          "Value": "sha256-+4r934AHdJnCjj6K6FWN7fzQK9Ea5XeXA+vcnPWQLxc="
         }
       ]
     },

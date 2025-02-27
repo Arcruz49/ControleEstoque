@@ -173,3 +173,11 @@ input {
     margin-bottom:2rem;
     width:88%;
 }
+.btns
+{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:9rem;
+    height:3rem;
+}
