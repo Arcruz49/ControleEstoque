@@ -129,8 +129,7 @@
               "ViewState": "AgIAABEAAAAAAAAAAAAQwCQAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-23T03:30:30.386Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -156,8 +155,7 @@
               "ViewState": "AgIAAEsAAAAAAAAAAAAAAGUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-12T23:21:23.108Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -197,8 +195,7 @@
               "RelativeToolTip": "ControleEstoque\\wwwroot\\css\\site.css",
               "ViewState": "AgIAALoAAAAAAAAAAAAAAOAAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-13T23:08:30.027Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T23:08:30.027Z"
             },
             {
               "$type": "Document",
