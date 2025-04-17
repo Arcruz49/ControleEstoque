@@ -28,6 +28,13 @@
                         <i class="fa-solid fa-boxes-packing icon"></i> Fornecedores
                     </a>
                 </li>
+
+                <li id="menuMateriais" class="nav-item" style="display: none;">
+                    <a class="nav-link" asp-area="" asp-controller="Materiais" asp-action="Index">
+                        <i class="fa-solid fa-screwdriver-wrench icon"></i> Materiais
+                    </a>
+                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" asp-area="" asp-controller="Produto" asp-action="Index">
                         <i class="fa-solid fa-tags icon"></i> Produtos
@@ -110,5 +117,21 @@
                     // alert("Erro ao enviar os dados.");
                 }
             });
+        });
+
+        $(document).ready(function () {
+            $.ajax({
+                url: '@Url.Action("GetUtilizaMateriais", "Principal")',
+                type: 'GET',
+                success: function (response) {
+                    if (response.success == true) {
+                        $('#menuMateriais').show();
+                    }
+                },
+                error: function () {
+                    console.log("Erro ao verificar utilizaMateriais.");
+                }
+            });
+
         });
     </script>

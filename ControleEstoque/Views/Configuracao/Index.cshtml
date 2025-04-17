@@ -100,6 +100,27 @@
                             </div>
                         </div>
 
+
+
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="tabelaTiposMateriais">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Tipo Material</th>
+                                        <th style="width: 50px;">
+                                            <button type="button" class="btn btn-sm btn-success" title="Adicionar tipo" onclick="adicionarTipoMaterial()">
+                                                <i class="fa-solid fa-plus" title="Adicionar Tipo de Material"></i>
+                                            </button>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+
                     </fieldset>
                 </div>
             </div>
@@ -115,6 +136,10 @@
 
     <script>
         $(document).ready(function () {
+            carregarTiposMateriais();
+
+
+
             let base64String = "";
 
             
@@ -184,7 +209,68 @@
             syncColors('#corSistema', '#corSistemaInput');
             syncColors('#corFonteTexto', '#corFonteTextoInput');
 
+
+
+            
+
+
         });
+
+
+
+        function adicionarTipoMaterial() {
+            const tbody = document.querySelector("#tabelaTiposMateriais tbody");
+
+            const novaLinha = document.createElement("tr");
+            novaLinha.innerHTML = `
+                        <td>
+                            <input type="text" name="tiposMateriais[]" class="form-control" placeholder="Digite o tipo de material" />
+                        </td>
+                        <td class="text-center">
+                            <button type="button" class="btn btn-sm btn-danger" onclick="removerLinha(this)" title="Remover">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                        `;
+
+            tbody.appendChild(novaLinha);
+        }
+
+        function removerLinha(botao) {
+            const linha = botao.closest("tr");
+            linha.remove();
+        }
+
+        function carregarTiposMateriais() {
+            $.ajax({
+                url: '/Materiais/GetTiposMateriais',
+                type: 'GET',
+                success: function (data) {
+                    const tbody = $("#tabelaTiposMateriais tbody");
+                    tbody.empty();
+
+                    data.forEach(function (item) {
+                        const linha = `
+                            <tr>
+                                <td>
+                                    <input type="hidden" name="tiposMateriaisIds[]" value="${item.id}" />
+                                    <input type="text" name="tiposMateriais[]" class="form-control" value="${item.nmTipoMaterial}" />
+                                </td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-sm btn-danger" onclick="removerLinha(this)" title="Remover">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>`;
+                        tbody.append(linha);
+                    });
+                },
+                error: function () {
+                    alert("Erro ao carregar os tipos de materiais.");
+                }
+            });
+        }
+
     </script>
 </body>
 </html>

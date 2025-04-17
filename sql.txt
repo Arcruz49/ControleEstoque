@@ -152,3 +152,18 @@ BEGIN
 END
 GO
 
+
+
+IF NOT EXISTS (
+    SELECT 1 
+    FROM INFORMATION_SCHEMA.TABLES 
+    WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'cadTipoMaterias'
+)
+BEGIN
+	CREATE TABLE cadTipoMaterias
+	(
+	id int Primary key identity(1,1),
+	nmTipoMaterial varchar(256)
+	)
+END;
+

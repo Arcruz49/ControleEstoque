@@ -1,5 +1,6 @@
 ﻿using ControleEstoque.Contexts;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ControleEstoque.Controllers
 {
@@ -40,6 +41,16 @@ namespace ControleEstoque.Controllers
             {
                 return Json(new { success = false, message = ex.Message });
             }
+        }
+
+        [HttpGet]
+        public JsonResult GetUtilizaMateriais()
+        {
+            var utiliza = db.cadConfiguracaos
+                                  .Select(c => c.utilizaMateriais)
+                                  .FirstOrDefault();
+
+            return Json(new { success = (utiliza == true)});
         }
     }
 }

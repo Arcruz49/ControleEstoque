@@ -24,6 +24,8 @@ public partial class ControleEstoqueContext : DbContext
 
     public virtual DbSet<cadProduto> cadProdutos { get; set; }
 
+    public virtual DbSet<cadTipoMateria> cadTipoMaterias { get; set; }
+
     public virtual DbSet<cadVenda_produto> cadVenda_produtos { get; set; }
 
     public virtual DbSet<cadVendum> cadVenda { get; set; }
@@ -36,7 +38,7 @@ public partial class ControleEstoqueContext : DbContext
     {
         modelBuilder.Entity<cadCliente>(entity =>
         {
-            entity.HasKey(e => e.cdCliente).HasName("PK__cadClien__64864EC629BB460D");
+            entity.HasKey(e => e.cdCliente).HasName("PK__cadClien__64864EC6C9355263");
 
             entity.ToTable("cadCliente");
 
@@ -52,7 +54,7 @@ public partial class ControleEstoqueContext : DbContext
 
         modelBuilder.Entity<cadConfiguracao>(entity =>
         {
-            entity.HasKey(e => e.cdConfiguracao).HasName("PK__cadConfi__2235037D1F4F4419");
+            entity.HasKey(e => e.cdConfiguracao).HasName("PK__cadConfi__2235037D3F1CB3C8");
 
             entity.ToTable("cadConfiguracao");
 
@@ -72,7 +74,7 @@ public partial class ControleEstoqueContext : DbContext
 
         modelBuilder.Entity<cadFornecedor>(entity =>
         {
-            entity.HasKey(e => e.cdFornecedor).HasName("PK__cadForne__CE234A906BD715C6");
+            entity.HasKey(e => e.cdFornecedor).HasName("PK__cadForne__CE234A90F6B99BD1");
 
             entity.ToTable("cadFornecedor");
 
@@ -82,7 +84,7 @@ public partial class ControleEstoqueContext : DbContext
 
         modelBuilder.Entity<cadProduto>(entity =>
         {
-            entity.HasKey(e => e.cdProduto).HasName("PK__cadProdu__8897B7737865BAC9");
+            entity.HasKey(e => e.cdProduto).HasName("PK__cadProdu__8897B773F9A38E82");
 
             entity.ToTable("cadProduto");
 
@@ -99,9 +101,18 @@ public partial class ControleEstoqueContext : DbContext
                 .HasConstraintName("FK_cadProduto_cadFornecedor");
         });
 
+        modelBuilder.Entity<cadTipoMateria>(entity =>
+        {
+            entity.HasKey(e => e.id).HasName("PK__cadTipoM__3213E83FE0B4C0C6");
+
+            entity.Property(e => e.nmTipoMaterial)
+                .HasMaxLength(256)
+                .IsUnicode(false);
+        });
+
         modelBuilder.Entity<cadVenda_produto>(entity =>
         {
-            entity.HasKey(e => e.cdVendaProduto).HasName("PK__cadVenda__CB73D0B5E67F5D7F");
+            entity.HasKey(e => e.cdVendaProduto).HasName("PK__cadVenda__CB73D0B560E79845");
 
             entity.ToTable("cadVenda_produto");
 
@@ -118,7 +129,7 @@ public partial class ControleEstoqueContext : DbContext
 
         modelBuilder.Entity<cadVendum>(entity =>
         {
-            entity.HasKey(e => e.cdVenda).HasName("PK__cadVenda__CD0A7B10EBF94768");
+            entity.HasKey(e => e.cdVenda).HasName("PK__cadVenda__CD0A7B1033BFD889");
 
             entity.Property(e => e.dtVenda).HasColumnType("datetime");
             entity.Property(e => e.valorLucro).HasColumnType("decimal(18, 2)");
