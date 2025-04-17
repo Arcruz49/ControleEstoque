@@ -16,4 +16,6 @@ public partial class cadConfiguracao
     public string? corSistema { get; set; }
 
     public string? corFonteTexto { get; set; }
+
+    public bool? utilizaMateriais { get; set; }
 }

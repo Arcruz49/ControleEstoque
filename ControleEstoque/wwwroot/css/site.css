@@ -224,3 +224,7 @@ input{
 .menuDiv{
     margin-left: 3%;
 }
+
+.form-check-input{
+    min-width:0;
+}

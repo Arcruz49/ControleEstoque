@@ -123,3 +123,32 @@ BEGIN
 END
 GO
 
+
+IF Not EXISTS (SELECT * FROM information_schema.columns 
+WHERE table_name = 'cadConfiguracao' AND column_name = 'corFonteTexto')
+BEGIN
+    ALTER TABLE cadConfiguracao
+    ADD corFonteTexto varchar(256);
+END
+GO
+
+
+
+IF Not EXISTS (SELECT * FROM information_schema.columns 
+WHERE table_name = 'cadConfiguracao' AND column_name = 'corSistema')
+BEGIN
+    ALTER TABLE cadConfiguracao
+    ADD corSistema varchar(256);
+END
+GO
+
+
+
+IF Not EXISTS (SELECT * FROM information_schema.columns 
+WHERE table_name = 'cadConfiguracao' AND column_name = 'utilizaMateriais')
+BEGIN
+    ALTER TABLE cadConfiguracao
+    ADD utilizaMateriais bit;
+END
+GO
+
