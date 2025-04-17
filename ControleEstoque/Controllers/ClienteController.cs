@@ -38,7 +38,7 @@ namespace ControleEstoque.Controllers
             var filteredRecords = query.Count();
 
 
-            var fornecedores = query
+            var clientes = query
                 .OrderBy(f => f.cdCliente)
                 .Skip(start)
                 .Take(length)
@@ -58,7 +58,7 @@ namespace ControleEstoque.Controllers
                 draw = draw,
                 recordsTotal = totalRecords,
                 recordsFiltered = filteredRecords,
-                data = fornecedores
+                data = clientes
             });
         }
 
@@ -69,7 +69,7 @@ namespace ControleEstoque.Controllers
             try
             {
                 if (string.IsNullOrEmpty(cliente.nmCliente) || string.IsNullOrWhiteSpace(cliente.nmCliente)) return Json(new { success = false, message = "Nome inválido" });
-
+                if(cliente.cpf.Length != 14) return Json(new { success = false, message = "CPF inválido" });
                 db.cadClientes.Add(cliente);
                 db.SaveChanges();
 
@@ -109,11 +109,9 @@ namespace ControleEstoque.Controllers
                 if (cliente.cdCliente == 0) return Json(new { success = false, message = "Cliente não identificado" });
                 if (string.IsNullOrWhiteSpace(cliente.nmCliente)) return Json(new { success = false, message = "Nome inválido" });
 
-                // verificar se o cliente existe:
                 var clienteAntigo = db.cadClientes.Find(cliente.cdCliente);
                 if (clienteAntigo == null) return Json(new { success = false, message = "Cliente não identificado" });
 
-                // Atualiza os valores
                 clienteAntigo.nmCliente = cliente.nmCliente;
                 clienteAntigo.numeroCelular = cliente.numeroCelular;
                 clienteAntigo.cidade = cliente.cidade;
