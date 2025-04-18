@@ -7,4 +7,6 @@ namespace ControleEstoque.Models.Resource
         public int quantidade { get; set; }
         public decimal preco { get; set; }
     }
+
+    
 }

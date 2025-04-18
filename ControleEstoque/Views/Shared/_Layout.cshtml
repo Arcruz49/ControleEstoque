@@ -55,6 +55,11 @@
                         <i class="fa-solid fa-gear icon"></i> Configurações
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="FerramentaConsulta" asp-action="Index">
+                        <i class="fa-solid fa-magnifying-glass icon"></i> Consulta
+                    </a>
+                </li>
             </ul>
         </div>
     </header>
@@ -70,13 +75,17 @@
         </div>
     </footer>
 
+    <script src="@Url.Content("~/js/jquery.js")"></script>
+    <script src="@Url.Content("~/js/jqueryDatatable.js")"></script>
+
+
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://cdn.jsdelivr.net/npm/@@coreui/coreui@5.2.0/dist/js/coreui.bundle.min.js" integrity="sha384-JdRP5GRWP6APhoVS1OM/pOKMWe7q9q8hpl+J2nhCfVJKoS+yzGtELC5REIYKrymn" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/4327c32687.js" crossorigin="anonymous"></script>
     <script src="~/js/sweetAlert.js"></script>
 
-    @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>
 
