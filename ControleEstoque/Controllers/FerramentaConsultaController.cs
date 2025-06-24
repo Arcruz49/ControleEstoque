@@ -3,20 +3,13 @@ using ControleEstoque.Models;
 using ControleEstoque.Models.Resource;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Runtime.CompilerServices;
 
 namespace ControleEstoque.Controllers
 {
-    public class FerramentaConsultaController : Controller
+    public class FerramentaConsultaController(ControleEstoqueContext _db) : Controller
     {
 
-        private readonly ControleEstoqueContext db;
-
-        public FerramentaConsultaController(ControleEstoqueContext _db)
-        {
-            db = _db;
-        }
-
+        private readonly ControleEstoqueContext db = _db;
 
         public IActionResult Index()
         {
@@ -55,7 +48,7 @@ namespace ControleEstoque.Controllers
                         return Json(new { success = true, message = "", dados = resultado });
                     }
                 }
-            }
+            } 
             catch (Exception ex)
             {
                 return Json(new { success = false, message = ex.Message });
@@ -83,3 +76,4 @@ namespace ControleEstoque.Controllers
 
     }
 }
+ 

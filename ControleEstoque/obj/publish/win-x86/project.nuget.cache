@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rVhFH5WfhoQ=",
+  "dgSpecHash": "0rngCPC7soc=",
   "success": true,
   "projectFilePath": "C:\\Users\\Arthur Cruz\\Documents\\projetos pessoais\\ControleEstoque\\ControleEstoque\\ControleEstoque.csproj",
   "expectedPackageFiles": [
@@ -83,10 +83,10 @@
     "C:\\Users\\Arthur Cruz\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512",
     "C:\\Users\\Arthur Cruz\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\Arthur Cruz\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
-    "C:\\Users\\Arthur Cruz\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\8.0.10\\microsoft.netcore.app.runtime.win-x86.8.0.10.nupkg.sha512",
-    "C:\\Users\\Arthur Cruz\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\8.0.10\\microsoft.windowsdesktop.app.runtime.win-x86.8.0.10.nupkg.sha512",
-    "C:\\Users\\Arthur Cruz\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\8.0.10\\microsoft.aspnetcore.app.runtime.win-x86.8.0.10.nupkg.sha512",
-    "C:\\Users\\Arthur Cruz\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\8.0.10\\microsoft.netcore.app.crossgen2.win-x64.8.0.10.nupkg.sha512"
+    "C:\\Users\\Arthur Cruz\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\8.0.16\\microsoft.netcore.app.runtime.win-x86.8.0.16.nupkg.sha512",
+    "C:\\Users\\Arthur Cruz\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\8.0.16\\microsoft.windowsdesktop.app.runtime.win-x86.8.0.16.nupkg.sha512",
+    "C:\\Users\\Arthur Cruz\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\8.0.16\\microsoft.aspnetcore.app.runtime.win-x86.8.0.16.nupkg.sha512",
+    "C:\\Users\\Arthur Cruz\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\8.0.16\\microsoft.netcore.app.crossgen2.win-x64.8.0.16.nupkg.sha512"
   ],
   "logs": []
 }

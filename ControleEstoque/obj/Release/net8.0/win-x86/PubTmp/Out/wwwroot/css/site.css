@@ -40,6 +40,11 @@ body {
     text-align: center;
 }
 
+main{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
 .mainContainer {
     background-color: #fff;
     margin-right: 60px;
@@ -57,9 +62,20 @@ body {
 }
 
 
+#clienteTable th:nth-child(1),
+#clienteTable td:nth-child(1) {
+    display: none;
+}
 
+#fornecedorTable th:nth-child(1),
+#fornecedorTable td:nth-child(1) {
+    display: none;
+}
 
-
+#VendaTable th:nth-child(1),
+#VendaTable td:nth-child(1) {
+    display: none;
+}
 
 /* Estilizando a barra de pesquisa */
 .dataTables_wrapper .dataTables_filter {
@@ -184,4 +200,31 @@ body {
     height: 50px; /* Ajuste o valor para o tamanho desejado */
     padding-top: .375rem;
     padding-bottom: .375rem;
+}
+
+
+.configSubGroup{
+    padding: 20px
+}
+
+.form-label {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0 !important;
+}
+
+input{
+    min-width:200px
+}
+
+.container{
+    max-width:100% !important
+}
+
+.menuDiv{
+    margin-left: 3%;
+}
+
+.form-check-input{
+    min-width:0;
 }

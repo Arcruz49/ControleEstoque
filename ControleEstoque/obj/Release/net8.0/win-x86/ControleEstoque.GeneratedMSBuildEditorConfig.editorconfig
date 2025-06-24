@@ -22,6 +22,14 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Arthur Cruz/Documents/projetos pessoais/ControleEstoque/ControleEstoque/Views/Configuracao/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmlndXJhY2FvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Arthur Cruz/Documents/projetos pessoais/ControleEstoque/ControleEstoque/Views/FerramentaConsulta/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVycmFtZW50YUNvbnN1bHRhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Arthur Cruz/Documents/projetos pessoais/ControleEstoque/ControleEstoque/Views/Fornecedor/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybmVjZWRvclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -32,6 +40,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Arthur Cruz/Documents/projetos pessoais/ControleEstoque/ControleEstoque/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Arthur Cruz/Documents/projetos pessoais/ControleEstoque/ControleEstoque/Views/Materiais/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWlzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Arthur Cruz/Documents/projetos pessoais/ControleEstoque/ControleEstoque/Views/Produto/Index.cshtml]

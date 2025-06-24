@@ -2445,7 +2445,7 @@ textarea.form-control-lg {
 }
 
 .form-control-color {
-    width: 3rem;
+    /*width: 3rem;*/
     height: calc(1.5em + .75rem + calc(var(--bs-border-width) * 2));
     padding: .375rem
 }

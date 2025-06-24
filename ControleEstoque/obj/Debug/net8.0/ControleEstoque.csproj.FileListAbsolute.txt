@@ -16,11 +16,6 @@ C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque
 C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque\obj\Debug\net8.0\ControleEstoque.sourcelink.json
 C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque\obj\Debug\net8.0\staticwebassets\msbuild.ControleEstoque.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque\obj\Debug\net8.0\staticwebassets\msbuild.build.ControleEstoque.props
-C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ControleEstoque.props
-C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ControleEstoque.props
-C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque\obj\Debug\net8.0\scopedcss\bundle\ControleEstoque.styles.css
 C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque\obj\Debug\net8.0\scopedcss\projectbundle\ControleEstoque.bundle.scp.css
@@ -280,3 +275,7 @@ C:\Projetos Pessoais\ControleEstoque\ControleEstoque\obj\Debug\net8.0\ControleEs
 C:\Projetos Pessoais\ControleEstoque\ControleEstoque\obj\Debug\net8.0\ControleEstoque.genruntimeconfig.cache
 C:\Projetos Pessoais\ControleEstoque\ControleEstoque\obj\Debug\net8.0\ref\ControleEstoque.dll
 C:\Projetos Pessoais\ControleEstoque\ControleEstoque\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque\bin\Debug\net8.0\ControleEstoque.staticwebassets.endpoints.json
+C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Arthur Cruz\Documents\projetos pessoais\ControleEstoque\ControleEstoque\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
