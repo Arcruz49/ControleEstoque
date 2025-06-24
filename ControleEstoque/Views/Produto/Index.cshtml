@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Produtos</title>
+    <title>Lista de Materiais</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/datatable.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <form>
+
 
     <div class="container mt-5">
-        <h2 style="margin-bottom:30px">Produtos</h2>
+        <h2 style="margin-bottom:30px">Materiais</h2>
         <table id="ProdutoTable" class="table table-striped">
             <thead>
                 <tr>
@@ -165,7 +167,7 @@
         </div>
     </div>
 
-
+    </form>
 
     <script src="~/js/jquery.js"></script>
     <script src="~/js/jqueryDatatable.js"></script>
@@ -174,55 +176,57 @@
     <script>
         let table;
         $(document).ready(function () {
-            table = $('#ProdutoTable').DataTable({
-                ajax: {
-                    url: '@Url.Action("List", "Produto")',
-                    type: 'GET',
-                },
-                columns: [
-                    { data: 'id' },
-                    { data: 'codigo' }, 
-                    { data: 'nome' },
-                    { data: 'descricao' },
-                    {
-                        data: 'valorCompra',
-                        render: function (data) {
-                            return 'R$ ' + parseFloat(data).toFixed(2).replace('.', ',');
-                        }
-                    },
-                    {
-                        data: 'valorVenda',
-                        render: function (data) {
-                            return 'R$ ' + parseFloat(data).toFixed(2).replace('.', ',');
-                        }
-                    },
-                    { data: 'dataCriacao' },
-                    { data: 'quantidade' },
-                    { data: 'tamanho' },
-                    { data: 'fornecedor' },
-                    {
-                        data: 'id',
-                        render: function (data) {
-                            return '<a onclick="editarProduto(' + data + ')" class=""><i title="Editar produto" class="fa-solid fa-pen-to-square" style="color: #2d3034;"></i></a>';
-                        }
+                table = $('#ProdutoTable').DataTable({
+            processing: true,             
+            serverSide: true,             
+
+            ajax: {
+                url: '@Url.Action("List", "Produto")',
+                type: 'GET',
+            },
+            columns: [
+                { data: 'id' },
+                { data: 'codigo' },
+                { data: 'nome' },
+                { data: 'descricao' },
+                {
+                    data: 'valorCompra',
+                    render: function (data) {
+                        return 'R$ ' + parseFloat(data).toFixed(2).replace('.', ',');
                     }
-                ],
-                
-                pagingType: "full_numbers",
-                stateSave: true,
-                language: {
-                    search: "Pesquisar:",
-                    lengthMenu: "Mostrar _MENU_",
-                    info: "Mostrando _START_ a _END_ de _TOTAL_",
-                    infoFiltered: "",
-                    paginate: {
-                        first: "Primeiro",
-                        last: "Último",
-                        next: "Próximo",
-                        previous: "Anterior"
+                },
+                {
+                    data: 'valorVenda',
+                    render: function (data) {
+                        return 'R$ ' + parseFloat(data).toFixed(2).replace('.', ',');
+                    }
+                },
+                { data: 'dataCriacao' },
+                { data: 'quantidade' },
+                { data: 'tamanho' },
+                { data: 'fornecedor' },
+                {
+                    data: 'id',
+                    render: function (data) {
+                        return '<a onclick="editarProduto(' + data + ')" class=""><i title="Editar produto" class="fa-solid fa-pen-to-square" style="color: #2d3034;"></i></a>';
                     }
                 }
-            });
+            ],
+            pagingType: "full_numbers",
+            stateSave: true,
+            language: {
+                search: "Pesquisar:",
+                lengthMenu: "Mostrar _MENU_",
+                info: "Mostrando _START_ a _END_ de _TOTAL_",
+                infoFiltered: "",
+                paginate: {
+                    first: "Primeiro",
+                    last: "Último",
+                    next: "Próximo",
+                    previous: "Anterior"
+                }
+            }
+        });
         });
 
 
