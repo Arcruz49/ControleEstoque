@@ -19,24 +19,24 @@ namespace ControleEstoque.Controllers
             return View();
         }
 
-        [HttpGet]
+        [HttpPost]
         public JsonResult List()
         {
-            var draw = Request.Query["draw"].FirstOrDefault();
-            var start = int.Parse(Request.Query["start"].FirstOrDefault() ?? "0");
-            var length = int.Parse(Request.Query["length"].FirstOrDefault() ?? "10");
-            var searchValue = Request.Query["search[value]"].FirstOrDefault();
+            var draw = Request.Form["draw"].FirstOrDefault();
+            var start = int.Parse(Request.Form["start"].FirstOrDefault() ?? "0");
+            var length = int.Parse(Request.Form["length"].FirstOrDefault() ?? "10");
+            var searchValue = Request.Form["search[value]"].FirstOrDefault();
 
             var totalRecords = db.cadProdutos.Count();
 
             var query = db.cadProdutos.AsQueryable();
+
             if (!string.IsNullOrEmpty(searchValue))
             {
                 query = query.Where(f => f.nmProduto.Contains(searchValue));
             }
 
             var filteredRecords = query.Count();
-
 
             var produtos = query
                 .OrderBy(f => f.cdProduto)
@@ -65,6 +65,7 @@ namespace ControleEstoque.Controllers
                 data = produtos
             });
         }
+
 
 
         [HttpPost]
